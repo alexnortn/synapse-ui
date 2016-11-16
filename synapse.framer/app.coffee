@@ -9,3 +9,5 @@ Framer.Info =
 	description: ""
 
 
+ViewController = require 'ViewController'
+
