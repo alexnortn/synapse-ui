@@ -7,6 +7,7 @@ Trackball = require "three-trackballcontrols"
 
 #  threejs globals
 camera 		= ''
+controls 	= ''
 scene 		= ''
 renderer 	= ''
 geometry 	= ''
@@ -25,25 +26,32 @@ setup = (_layer, _canvas) =>
 	scene = new THREE.Scene();
 
 	geometry = new THREE.IcosahedronGeometry(200, 1 );
-	material =  new THREE.MeshBasicMaterial({
-	                                        color: 0xfff999fff,
-	                                        wireframe: true,  
-	                                        wireframelinewidth:8 })
+	material =  new THREE.MeshBasicMaterial(
+		{
+	        color: 0xfff999fff,
+	        wireframe: true,  
+	        wireframelinewidth:8
+	    }
+	)
 	
 	mesh = new THREE.Mesh(geometry, material);
 	scene.add( mesh );
 
 	renderer = new THREE.WebGLRenderer({ canvas: _canvas, antialias: true, alpha:true });
 	renderer.setSize(_width, _height);
-  
+
+	controls = new Trackball( camera );
+	  
 
 animate = () =>
 	window.requestAnimationFrame( animate );
 
-	mesh.rotation.x = Date.now() * 0.00005;
-	mesh.rotation.y = Date.now() * 0.0001; 
+	mesh.rotation.x = Date.now() * 0.00001;
+	mesh.rotation.y = Date.now() * 0.00001; 
 	mesh.position.y += 0.0005;
 	mesh.position.z += 0.05;  
+
+	controls.update(); # Trackball Update
 
 	renderer.render( scene, camera);
 

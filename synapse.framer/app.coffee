@@ -29,10 +29,12 @@ Utils = require("utils")
 
 for name, layer of synapse
 	layer.visible = true
-	layer.opacity = 0
+	layer.opacity = 1
 # 	layer.x = 0
 # 	layer.y = 0
 	layer.scale = 1
+	
+synapse.Cell.opacity = 0
 
 # Create a layer that's the same size as the device screen
 # Add it above the sketch bg
@@ -56,5 +58,11 @@ THREE_Layer._element.appendChild(THREE_Canvas);
 # Initialize our 3D Viewer
 Overview.setup(THREE_Layer, THREE_Canvas)
 Overview.animate()
+
+# Reorder layers
+# Draw layerC last 
+THREE_Layer.sendToBack()
+synapse.BG.sendToBack()
+
 
 
