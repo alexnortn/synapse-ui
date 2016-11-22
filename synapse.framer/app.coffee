@@ -29,3 +29,12 @@ for name, layer of synapse
 # Create a layer that's the same size as the device screen
 # Add it above the sketch bg
 # But below foreground layers
+
+THREE_Layer = new Layer
+THREE_Layer.name = "THREE_Layer"
+THREE_Layer.width = Screen.width
+THREE_Layer.height = Screen.height
+
+THREE_Layer.html = '<canvas></canvas>'
+
+
