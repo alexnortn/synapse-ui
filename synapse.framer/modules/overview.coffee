@@ -1,14 +1,9 @@
-# File: modules/npm.coffee 
 
-# Interface for requiring npm files in FramerStudio
-THREE = require "three"
-exports.THREE = THREE
 
-Trackball = require("npm").trackball
 
-# 3D Navigation
-trackball = require "three-trackballcontrols"
-exports.trackball = trackball
+
+THREE 	  = require "three"
+Trackball = require "three-trackballcontrols"
 
 #  threejs globals
 camera 		= ''
@@ -18,11 +13,11 @@ geometry 	= ''
 material 	= ''
 mesh 		= ''
 
-init = (layer) =>
-	_width  = layer.width
-	_height = layer.height
-	_x      = layer.x
-	_y      = layer.y
+init = (_layer, _canvas) =>
+	_width  = _layer.width
+	_height = _layer.height
+	_x      = _layer.x
+	_y      = _layer.y
 
 	camera = new THREE.PerspectiveCamera( 75, _width / _height, 1, 1000 );
 	camera.position.z = 500;
@@ -38,10 +33,12 @@ init = (layer) =>
 	mesh = new THREE.Mesh(geometry, material);
 	scene.add( mesh );
 
-	renderer = new THREE.WebGLRenderer();
+	renderer = new THREE.WebGLRenderer({ canvas: _canvas, antialias: true, alpha:true });
+	renderer.setSize(_width, _height);
+
 	renderer.setSize( window.innerWidth, window.innerHeight ) ;
 
-	document.body.appendChild( renderer.domElement ) ;
+	# document.body.appendChild( renderer.domElement ) ;
   
 
 animation = () =>
@@ -57,28 +54,18 @@ animation = () =>
 
 # init();
 # animation();
+exports.init = init
+exports.animation = animation
 
+# exports = {
+# 	init: (_layer) =>
+# 		return init(_layer);
+# 	animation: (x) =>
+# 		return animation();
+# }
 
-
-
-
-
-# overviewCanvas = document.createElement "canvas"
-# overviewCanvas.setAttribute("width","750px")
-# overviewCanvas.setAttribute("height","500px")
-# overviewCanvas.setAttribute("style","border: 2px solid black; background: #CCC")
-
-# container = new Layer
-#     height: 1334
-#     width: 750
-#     backgroundColor: "white"
-
-# container._element.appendChild(overviewCanvas)
-# ctx = overviewCanvas.getContext "2d"
-
-# ctx.fillStyle = "blue"
-# ctx.fillRect(0, 0, 50, 50)
-
+# exports.init = init()
+# exports.animation = animation()
 
 
 
