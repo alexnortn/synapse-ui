@@ -53,8 +53,8 @@ THREE_Canvas.style.height = Utils.pxify(THREE_Layer.height)
 # Add canvas element
 THREE_Layer._element.appendChild(THREE_Canvas);
 
-console.log(THREE_Layer.width)
 # Initialize our 3D Viewer
-# Overview.init(THREE_Layer, canvas_elem)
+Overview.setup(THREE_Layer, THREE_Canvas)
+Overview.animate()
 
 

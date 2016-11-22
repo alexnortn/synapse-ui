@@ -13,7 +13,7 @@ geometry 	= ''
 material 	= ''
 mesh 		= ''
 
-init = (_layer, _canvas) =>
+setup = (_layer, _canvas) =>
 	_width  = _layer.width
 	_height = _layer.height
 	_x      = _layer.x
@@ -35,14 +35,10 @@ init = (_layer, _canvas) =>
 
 	renderer = new THREE.WebGLRenderer({ canvas: _canvas, antialias: true, alpha:true });
 	renderer.setSize(_width, _height);
-
-	renderer.setSize( window.innerWidth, window.innerHeight ) ;
-
-	# document.body.appendChild( renderer.domElement ) ;
   
 
-animation = () =>
-	window.requestAnimationFrame( animation );
+animate = () =>
+	window.requestAnimationFrame( animate );
 
 	mesh.rotation.x = Date.now() * 0.00005;
 	mesh.rotation.y = Date.now() * 0.0001; 
@@ -52,20 +48,20 @@ animation = () =>
 	renderer.render( scene, camera);
 
 
-# init();
-# animation();
-exports.init = init
-exports.animation = animation
+# setup();
+# animate();
+exports.setup = setup
+exports.animate = animate
 
 # exports = {
-# 	init: (_layer) =>
-# 		return init(_layer);
-# 	animation: (x) =>
-# 		return animation();
+# 	setup: (_layer) =>
+# 		return setup(_layer);
+# 	animate: (x) =>
+# 		return animate();
 # }
 
-# exports.init = init()
-# exports.animation = animation()
+# exports.setup = setup()
+# exports.animate = animate()
 
 
 
