@@ -13,8 +13,7 @@ Framer.Info =
 synapse = Framer.Importer.load("imported/SynapseDesign@2x")
 
 ViewController = require 'ViewController'
-three = require("npm").three
-controls = require("npm").controls
+overview = require("npm").overview
 
 # Define and set custom device 
 # Framer.Device.deviceType = "apple-imac"
@@ -22,9 +21,11 @@ controls = require("npm").controls
 
 for name, layer of synapse
 	layer.visible = true
-	layer.opacity = 0
-	layer.x = 0
-	layer.y = 0
+	layer.opacity = 1
+# 	layer.x = 0
+# 	layer.y = 0
 	layer.scale = 1
-	
-synapse.Overview_Sidebar_Home_Select_1.opacity = 1
+
+# Create a layer that's the same size as the device screen
+# Add it above the sketch bg
+# But below foreground layers
