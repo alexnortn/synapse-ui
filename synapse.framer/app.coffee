@@ -14,6 +14,7 @@ synapse = Framer.Importer.load("imported/SynapseDesign@2x")
 
 ViewController = require 'ViewController'
 three = require("npm").three
+controls = require("npm").controls
 
 # Define and set custom device 
 # Framer.Device.deviceType = "apple-imac"
