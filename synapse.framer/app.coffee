@@ -13,7 +13,7 @@ Framer.Info =
 synapse = Framer.Importer.load("imported/SynapseDesign@2x")
 
 # Framer Modules
-ViewController = require 'ViewController'
+ViewController = require('ViewController')
 
 # NPM Modules
 # overview = require("npm").overview

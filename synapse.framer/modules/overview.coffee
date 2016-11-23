@@ -4,6 +4,9 @@
 
 THREE 	  = require "three"
 Trackball = require "three-trackballcontrols"
+OBJLoader = require('three-obj-loader')
+
+OBJLoader(THREE);
 
 #  threejs globals
 camera 		= ''
@@ -14,7 +17,7 @@ geometry 	= ''
 material 	= ''
 mesh 		= ''
 
-setup = (_layer, _canvas) =>
+setup = (_layer, _canvas) ->
 	_width  = _layer.width
 	_height = _layer.height
 	_x      = _layer.x
@@ -25,51 +28,52 @@ setup = (_layer, _canvas) =>
 
 	scene = new THREE.Scene();
 
-	geometry = new THREE.IcosahedronGeometry(200, 1 );
-	material =  new THREE.MeshBasicMaterial(
-		{
-	        color: 0xfff999fff,
-	        wireframe: true,  
-	        wireframelinewidth:8
-	    }
-	)
+	# Lights
+	ambient = new THREE.AmbientLight( 0x101030 );
+	scene.add( ambient );
 	
-	mesh = new THREE.Mesh(geometry, material);
-	scene.add( mesh );
+	directionalLight = new THREE.DirectionalLight( 0xffeedd );
+	directionalLight.position.set( 0, 0, 1 );
+	scene.add( directionalLight );
 
 	renderer = new THREE.WebGLRenderer({ canvas: _canvas, antialias: true, alpha:true });
 	renderer.setSize(_width, _height);
 
 	controls = new Trackball( camera );
+
+	setupLoader()
+
+
+# Setup Texture Loader
+setupLoader = () ->
+	manager = new THREE.LoadingManager();
+	manager.onProgress = ( item, loaded, total ) ->
+		console.log( item, loaded, total );
+
+
+	loader = new THREE.OBJLoader( manager );
+	loader.load( 'images/70014.obj', ( object ) ->
+		mesh = object
+		scene.add( object );
+	);
 	  
 
-animate = () =>
+animate = () ->
 	window.requestAnimationFrame( animate );
 
-	mesh.rotation.x = Date.now() * 0.00001;
-	mesh.rotation.y = Date.now() * 0.00001; 
-	mesh.position.y += 0.0005;
-	mesh.position.z += 0.05;  
+	if (mesh)
+		mesh.rotation.x = Date.now() * 0.0001;
+		mesh.rotation.y = Date.now() * 0.0001; 
+	# mesh.position.y += 0.0005;
+	# mesh.position.z += 0.05;  
 
 	controls.update(); # Trackball Update
 
 	renderer.render( scene, camera);
 
 
-# setup();
-# animate();
 exports.setup = setup
 exports.animate = animate
-
-# exports = {
-# 	setup: (_layer) =>
-# 		return setup(_layer);
-# 	animate: (x) =>
-# 		return animate();
-# }
-
-# exports.setup = setup()
-# exports.animate = animate()
 
 
 
