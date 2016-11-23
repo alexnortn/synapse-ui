@@ -12,3 +12,11 @@ pxify = (val) =>
 	return val += "px"
 
 exports.pxify = pxify
+
+
+# Maintain consistency + precision between Sketch and Framer wrt scaling 
+# (i.e.) "223" | "2x" => "446"
+scalify = (val, scaleFactor) =>
+	return val *= scaleFactor
+
+exports.scalify = scalify

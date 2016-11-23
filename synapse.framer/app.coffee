@@ -11,6 +11,7 @@ Framer.Info =
 
 # Import file "SynapseDesign" (sizes and positions are scaled 1:2)
 synapse = Framer.Importer.load("imported/SynapseDesign@2x")
+scaleFactor = 2
 
 # Framer Modules
 ViewController = require('ViewController')
@@ -20,6 +21,7 @@ ViewController = require('ViewController')
 
 # My Modules
 Overview = require("overview")
+States = require("states")
 Utils = require("utils")
 
 
@@ -57,12 +59,27 @@ THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize our 3D Viewer
 Overview.setup(THREE_Layer, THREE_Canvas)
-Overview.animate()
+# Overview.animate()
 
 # Reorder layers
-# Draw layerC last 
 THREE_Layer.sendToBack()
 synapse.BG.sendToBack()
+
+# Initialize element states
+# Pass in reference to @Sketch Imported layers
+States.setup(synapse)
+ 
+# Animate N layers together with similar properties 
+animateLayer = (layer) ->
+	layer.stateCycle()
+
+# Event Handlers
+synapse.Navbar.on Events.Click, (event, layer) ->
+	for layer in [synapse.Navbar, synapse.Sidebar]
+		animateLayer(layer)
+	
+
+
 
 
 
