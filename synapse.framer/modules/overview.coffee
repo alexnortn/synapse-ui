@@ -41,11 +41,13 @@ setup = (_layer, _canvas) ->
 
 	controls = new Trackball( camera );
 
-	setupLoader()
+	material = new THREE.MeshPhongMaterial()
+
+	setupLoader(material)
 
 
 # Setup Texture Loader
-setupLoader = () ->
+setupLoader = (material) ->
 	manager = new THREE.LoadingManager();
 	manager.onProgress = ( item, loaded, total ) ->
 		console.log( item, loaded, total );
@@ -53,6 +55,12 @@ setupLoader = () ->
 
 	loader = new THREE.OBJLoader( manager );
 	loader.load( 'images/70014.obj', ( object ) ->
+
+		object.traverse( ( child ) ->
+	        if ( child instanceof THREE.Mesh )
+	            child.material = material;
+	    );
+
 		mesh = object
 		scene.add( object );
 	);
@@ -62,8 +70,8 @@ animate = () ->
 	window.requestAnimationFrame( animate );
 
 	if (mesh)
-		mesh.rotation.x = Date.now() * 0.0001;
-		mesh.rotation.y = Date.now() * 0.0001; 
+		mesh.rotation.x = Date.now() * 0.00005;
+		mesh.rotation.y = Date.now() * 0.00005; 
 	# mesh.position.y += 0.0005;
 	# mesh.position.z += 0.05;  
 
