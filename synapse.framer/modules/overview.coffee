@@ -39,7 +39,9 @@ setup = (_layer, _canvas) ->
 	renderer = new THREE.WebGLRenderer({ canvas: _canvas, antialias: true, alpha:true });
 	renderer.setSize(_width, _height);
 
-	controls = new Trackball( camera );
+	controls = new Trackball( camera ); # Only interact when over canvas
+	controls.noPan = false;
+	controls.domElement = _canvas;
 
 	material = new THREE.MeshPhongMaterial()
 

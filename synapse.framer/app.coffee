@@ -38,9 +38,18 @@ for name, layer of synapse
 	
 synapse.Cell.opacity = 0
 
-# Create a layer that's the same size as the device screen
-# Add it above the sketch bg
-# But below foreground layers
+# Setup scrollable sidebar
+scrollSidebar = ScrollComponent.wrap(synapse.Sidebar)
+scrollSidebar.width = synapse.Sidebar.width
+scrollSidebar.height = Screen.height
+# 
+# # Allow scrolling with mouse --> Breaks interactivity?
+# scrollSidebar.mouseWheelEnabled = true
+scrollSidebar.scrollHorizontal = false
+
+	
+
+
 
 THREE_Layer = new Layer
 THREE_Layer.name = "THREE_Layer"
@@ -59,7 +68,7 @@ THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize our 3D Viewer
 Overview.setup(THREE_Layer, THREE_Canvas)
-# Overview.animate()
+Overview.animate()
 
 # Reorder layers
 THREE_Layer.sendToBack()

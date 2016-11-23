@@ -11,18 +11,26 @@ setup = (layers) ->
 	layers.Sidebar.states.open =
 		x: layers.Sidebar.x
 		y: 0
+		animationOptions:
+			curve: "spring(200, 17.5, 0)"
 	# Sidebar Close
 	layers.Sidebar.states.close = 
 		x: layers.Sidebar.x + layers.Sidebar.width
 		y: 0	
+		animationOptions:
+			curve: "spring(200, 17.5, 0)"
 	# Navbar Open
 	layers.Navbar.states.open =
 		x: layers.Navbar.x
 		y: 0
+		animationOptions:
+			curve: "spring(200, 17.5, 0)"
 	# Sidebar Close
 	layers.Navbar.states.close = 
 		x: layers.Navbar.x + layers.Sidebar.width
 		y: 0
+		animationOptions:
+			curve: "spring(200, 17.5, 0)"
 
 
 exports.setup = setup
