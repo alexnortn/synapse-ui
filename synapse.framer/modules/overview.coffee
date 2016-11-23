@@ -29,10 +29,10 @@ setup = (_layer, _canvas) ->
 	scene = new THREE.Scene();
 
 	# Lights
-	ambient = new THREE.AmbientLight( 0x101030 );
+	ambient = new THREE.AmbientLight( 0xffffff, 0.5 );
 	scene.add( ambient );
 	
-	directionalLight = new THREE.DirectionalLight( 0xffeedd );
+	directionalLight = new THREE.DirectionalLight( 0xffffff, 0.25 );
 	directionalLight.position.set( 0, 0, 1 );
 	scene.add( directionalLight );
 
