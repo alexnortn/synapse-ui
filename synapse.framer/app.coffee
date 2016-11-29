@@ -8,9 +8,10 @@ Framer.Info =
 	twitter: "@alexnortn"
 	description: "Prototypes for Neo Game"
 
+# Import file "SynapseDesign_V2"
+synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
+layers = [synapse.Navbar, synapse.Overview, synapse.Leaderboard]
 
-# Import file "SynapseDesign" (sizes and positions are scaled 1:2)
-synapse = Framer.Importer.load("imported/SynapseDesign@2x")
 scaleFactor = 2
 
 # Framer Modules
@@ -22,40 +23,44 @@ ViewController = require('ViewController')
 # My Modules
 Overview = require("overview")
 States = require("states")
-Utils = require("utils")
+Utils = require("utils") 
 
 
 # Define and set custom device 
-# Framer.Device.deviceType = "apple-imac"
-# Framer.Device.contentScale = 1
+Framer.Device.deviceType = "desktop-safari-1440-900"
+synapseParameters =
+	size: 
+		width: 1440
+		height: 900
 
-for name, layer of synapse
-	layer.visible = true
-	layer.opacity = 1
-# 	layer.x = 0
-# 	layer.y = 0
-	layer.scale = 1
-	
-synapse.Cell.opacity = 0
 
-# Setup scrollable sidebar
-scrollSidebar = ScrollComponent.wrap(synapse.Sidebar)
-scrollSidebar.width = synapse.Sidebar.width
-scrollSidebar.height = Screen.height
-# 
+# Initially hide Leaderboard
+synapse.Overview.opacity = 0 
+
+
+# Setup scrollable sidebar => Overview
+# scrollOverview = ScrollComponent.wrap(synapse.Overview)
+# scrollOverview.width = synapse.Overview.width
+# scrollOverview.height = synapse.Navbar.height
+# # # Allow scrolling with mouse --> Breaks interactivity?
+# # scrollOverview.mouseWheelEnabled = true
+# scrollOverview.scrollHorizontal = false
+
+# Setup scrollable sidebar => Leaderboard
+scrollLeaderboard = ScrollComponent.wrap(synapse.Leaderboard)
+scrollLeaderboard.width = synapse.Leaderboard.width
+scrollLeaderboard.height = synapse.Navbar.height
 # # Allow scrolling with mouse --> Breaks interactivity?
-# scrollSidebar.mouseWheelEnabled = true
-scrollSidebar.scrollHorizontal = false
-
-	
-
+# scrollLeaderboard.mouseWheelEnabled = true
+scrollLeaderboard.scrollHorizontal = false
 
 
 THREE_Layer = new Layer
 THREE_Layer.name = "THREE_Layer"
 THREE_Layer.backgroundColor = "none"
-THREE_Layer.width = Screen.width
-THREE_Layer.height = Screen.height
+THREE_Layer.width = synapseParameters.size.width
+THREE_Layer.height = synapseParameters.size.height
+
 
 # Create canvas element --> For adding 3D
 THREE_Canvas = document.createElement("canvas");
@@ -63,12 +68,13 @@ THREE_Canvas = document.createElement("canvas");
 THREE_Canvas.style.width = Utils.pxify(THREE_Layer.width)
 THREE_Canvas.style.height = Utils.pxify(THREE_Layer.height)
 
+
 # Add canvas element
 THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize our 3D Viewer
-Overview.setup(THREE_Layer, THREE_Canvas)
-Overview.animate()
+# Overview.setup(THREE_Layer, THREE_Canvas)
+# Overview.animate()
 
 # Reorder layers
 THREE_Layer.sendToBack()
@@ -76,7 +82,7 @@ synapse.BG.sendToBack()
 
 # Initialize element states
 # Pass in reference to @Sketch Imported layers
-States.setup(synapse)
+States.setup(layers, synapse.Overview.width)
  
 # Animate N layers together with similar properties 
 animateLayer = (layer) ->
@@ -84,7 +90,7 @@ animateLayer = (layer) ->
 
 # Event Handlers
 synapse.Navbar.on Events.Click, (event, layer) ->
-	for layer in [synapse.Navbar, synapse.Sidebar]
+	for layer in layers
 		animateLayer(layer)
 	
 

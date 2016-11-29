@@ -41,11 +41,10 @@ setup = (_layer, _canvas) ->
 
 	controls = new Trackball( camera ); # Only interact when over canvas
 	controls.noPan = false;
-	controls.domElement = _canvas;
 
-	material = new THREE.MeshPhongMaterial()
+	material = new THREE.MeshPhongMaterial();
 
-	setupLoader(material)
+	setupLoader(material);
 
 
 # Setup Texture Loader
@@ -74,11 +73,8 @@ animate = () ->
 	if (mesh)
 		mesh.rotation.x = Date.now() * 0.00005;
 		mesh.rotation.y = Date.now() * 0.00005; 
-	# mesh.position.y += 0.0005;
-	# mesh.position.z += 0.05;  
 
 	controls.update(); # Trackball Update
-
 	renderer.render( scene, camera);
 
 

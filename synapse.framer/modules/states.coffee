@@ -6,31 +6,19 @@
 # Alex Norton | 2016
 
 # Intialized layer states
-setup = (layers) ->	
-	# Sidebar Open
-	layers.Sidebar.states.open =
-		x: layers.Sidebar.x
-		y: 0
-		animationOptions:
-			curve: "spring(200, 17.5, 0)"
-	# Sidebar Close
-	layers.Sidebar.states.close = 
-		x: layers.Sidebar.x + layers.Sidebar.width
-		y: 0	
-		animationOptions:
-			curve: "spring(200, 17.5, 0)"
-	# Navbar Open
-	layers.Navbar.states.open =
-		x: layers.Navbar.x
-		y: 0
-		animationOptions:
-			curve: "spring(200, 17.5, 0)"
-	# Sidebar Close
-	layers.Navbar.states.close = 
-		x: layers.Navbar.x + layers.Sidebar.width
-		y: 0
-		animationOptions:
-			curve: "spring(200, 17.5, 0)"
-
+setup = (layers, sidebarWidth) ->	
+	for layer in layers
+		# Sidebar Open
+		layer.states.open =
+			x: layer.x
+			y: 0
+			animationOptions:
+				curve: "spring(200, 17.5, 0)"
+		# Sidebar Close
+		layer.states.close = 
+			x: layer.x + sidebarWidth
+			y: 0	
+			animationOptions:
+				curve: "spring(200, 17.5, 0)"
 
 exports.setup = setup
