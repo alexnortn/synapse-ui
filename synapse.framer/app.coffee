@@ -54,7 +54,7 @@ prefix =
 
 
 # Initially hide select elements
-synapse.container_sidebar_leaderboard.opacity = 0
+# synapse.container_sidebar_leaderboard.visible = false
 navbarActive.childrenWithName('active_leaderboard')[0].opacity = 0
 navbarActive.childrenWithName('active_overview')[0].opacity = 0 
 
@@ -128,23 +128,21 @@ for child in navbarTiles.subLayers
 		layer.stateSwitch('transparent')
 		layer.animate('visible')
 		layer.on Events.MouseOut, (event, layer2) ->
-	#	Maintain highlight state
-			if (layer2.name != activeTile.name)
+			if (layer2.name != activeTile.name) # Maintain highlight state
 				layer2.animate('transparent')
 
 # Click
 for child in navbarTiles.subLayers
 	child.on Events.Click, (event, layer) ->
-		for other in navbarTiles.subLayers
-			other.animate('transparent') # Fadeout all other tiles
-
 		changeView(layer, synapse)
+		for other in navbarTiles.subLayers
+			if (other.name != activeTile.name) # Maintain highlight state
+				other.animate('transparent') # Fadeout all other tiles
 
 
 # View Controller
 changeView = (layer, comp) -> 
-	activeTile = layer
-
+	
 	regAfter = /[^_]*$/g 		# regex for matching string after "_"
 	regBefore = /^([^_]+)/g	# regex for matching string before "_"
 	
@@ -165,6 +163,8 @@ changeView = (layer, comp) ->
 	if (noMatch)
 		return
 
+	activeTile = layer
+
 	for name, child of comp
 		matchBefore = (child.name).match(regBefore)[0]
 		matchAfter = (child.name).match(regAfter)[0]
@@ -172,10 +172,7 @@ changeView = (layer, comp) ->
 			if ( matchAfter == currentAfter ) # FadeIn new View
 				currentIcon = prefix.icon + currentAfter
 				currentActive = prefix.active + currentAfter
-
-				layer.stateSwitch('transparent')
-				layer.animate('visible')
-
+				
 				# Reset Icons
 				for icon in navbarIcons.children
 					icon.animate('visible')
@@ -187,11 +184,13 @@ changeView = (layer, comp) ->
 				navbarIcons.childrenWithName(currentIcon)[0].animate('transparent')
 				navbarActive.childrenWithName(currentActive)[0].animate('visible')
 
-				child.visible = true # FadeIn old View
+				child.parent.parent.visible = true # FadeIn new View
 				child.animate('visible')
+				print 'in', child.parent.parent.name
+				print child.opacity, child.visible
 			else
 				child.animate('transparent') # FadeOut old View
-				child.visible = false
+				child.parent.parent.visible = false
 
 	# Reset new scroll component
 	currentScroll = "container_sidebar_" + currentAfter
@@ -224,8 +223,8 @@ THREE_Canvas.style.height = Utils.pxify(THREE_Layer.height)
 THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize 3D Viewer
-# Overview.setup(THREE_Layer, THREE_Canvas)
-# Overview.animate()
+Overview.setup(THREE_Layer, THREE_Canvas)
+Overview.animate()
 
 # Reorder layers
 THREE_Layer.sendToBack()

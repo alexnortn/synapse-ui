@@ -18,6 +18,23 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"children": []
 	},
 	{
+		"objectId": "4E74332D-5C3B-46AC-92AC-88CACC0E7B10",
+		"kind": "artboard",
+		"name": "container_sidebar_bg",
+		"originalName": "container_sidebar_bg",
+		"maskFrame": null,
+		"layerFrame": {
+			"x": 1083,
+			"y": -313,
+			"width": 320,
+			"height": 900
+		},
+		"visible": true,
+		"metadata": {},
+		"backgroundColor": "rgba(24, 26.000000000000004, 30, 1)",
+		"children": []
+	},
+	{
 		"objectId": "ACEE159E-4E94-4536-8145-55F10CFE3C7F",
 		"kind": "artboard",
 		"name": "container_sidebar_leaderboard",
