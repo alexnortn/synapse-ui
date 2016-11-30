@@ -47,19 +47,46 @@ document.body.style.cursor = "auto"
 # Initially hide Leaderboard
 synapse.Leaderboard.opacity = 0 
 
-
-# Setup scrollable sidebar => Overview
+# Overview scroll component
 scrollOverview = ScrollComponent.wrap(synapse.Overview)
-scrollOverview.width = synapse.Overview.width
-scrollOverview.height = synapse.Navbar.height
-# # Allow scrolling with mouse --> Breaks interactivity?
-# scrollOverview.mouseWheelEnabled = true
 scrollOverview.scrollHorizontal = false
+scrollOverview.propagateEvents = false
 
 
-# Setup scrollable sidebar => Leaderboard
-scrollLeaderboard = new ScrollComponent
-	wrap: synapse.Leaderboard, scrollHorizontal: false, width: synapse.Leaderboard.width, height: synapse.Navbar.height
+# Leaderboard scroll component
+scrollLeaderboard = ScrollComponent.wrap(synapse.Leaderboard)
+scrollLeaderboard.scrollHorizontal = false
+scrollLeaderboard.propagateEvents = false
+
+
+# # Create a new ScrollComponent for Leaderboard
+# scrollOverview = new ScrollComponent
+# 	width: synapse.Overview.width
+# 	height: synapse.Navbar.height
+# 	x: synapse.Overview.x
+# 	y: synapse.Overview.y
+# 	scrollHorizontal: false
+# 	
+# synapse.Overview.x = 0
+# synapse.Overview.y = 0
+#  
+# # Include a Layer 
+# synapse.Overview.superLayer = scrollOverview.content
+# 
+# 
+# # Create a new ScrollComponent for Leaderboard
+# scrollLeaderboard = new ScrollComponent
+# 	width: synapse.Leaderboard.width
+# 	height: synapse.Navbar.height
+# 	x: synapse.Leaderboard.x
+# 	y: synapse.Leaderboard.y
+# 	scrollHorizontal: false
+# 	
+# synapse.Leaderboard.x = 0
+# synapse.Leaderboard.y = 0
+#  
+# # Include a Layer 
+# synapse.Leaderboard.superLayer = scrollLeaderboard.content
 
 
 THREE_Layer = new Layer
@@ -122,11 +149,15 @@ for child in navbarTiles.subLayers
 
 		if (layer.name == "logo_tile")
 			synapse.Leaderboard.animate('transparent')
+			synapse.Leaderboard.visible = false
+			synapse.Overview.visible = true
 			scrollOverview.scrollY = 0 # Reset scroll
 			synapse.Overview.animate('visible')
 
 		if (layer.name == "leaderboard_tile")
 			synapse.Overview.animate('transparent')
+			synapse.Overview.visible = false
+			synapse.Leaderboard.visible = true
 			scrollLeaderboard.scrollY = 0 # Reset scroll
 			synapse.Leaderboard.animate('visible')
 
