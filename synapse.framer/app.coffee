@@ -39,12 +39,22 @@ document.body.style.cursor = "auto"
 synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
 
 
+# Setup Globals
+# --------------------------------------------------------------------------------
+
 # Navbar Elements 
 navbarTiles = synapse.container_view_navbar.childrenWithName("view_navbar")[0].childrenWithName("tiles")[0]
 navbarIcons = synapse.container_view_navbar.childrenWithName("view_navbar")[0].childrenWithName("icons")[0]
 navbarActive = synapse.container_view_navbar.childrenWithName("view_navbar")[0].childrenWithName("active")[0]
 
+# State Handler
+State = 
+	current_view: "overview"
+	open: true
+
 # Regex Helpers
+regAfter  = /[^_]*$/g 		# regex for matching string after "_"
+regBefore = /^([^_]+)/g		# regex for matching string before "_"
 prefix = 
 	view:		"view_"
 	sidebar: 	"sidebar_"
@@ -52,6 +62,29 @@ prefix =
 	icon: 		"icon_"
 	tile: 		"tile_"
 
+sidebarViews = []
+sidebarContainers = []
+
+
+# Setup Scroll Components
+# --------------------------------------------------------------------------------
+
+# Overview scroll component
+scroll_overview = ScrollComponent.wrap(synapse.container_sidebar_overview)
+scroll_overview.scrollHorizontal = false
+scroll_overview.propagateEvents = false
+
+
+# Leaderboard scroll component
+scroll_leaderboard = ScrollComponent.wrap(synapse.container_sidebar_leaderboard)
+scroll_leaderboard.scrollHorizontal = false
+scroll_leaderboard.propagateEvents = false
+
+scroll_components = [ scroll_overview, scroll_leaderboard ]
+
+
+# Setup States
+# --------------------------------------------------------------------------------
 
 # Initially hide select elements
 # synapse.container_sidebar_leaderboard.visible = false
@@ -64,20 +97,19 @@ for child in navbarTiles.subLayers
 
 # Setup Sidebar States
 setupSidebar = (comp) -> 
-	regAfter = /[^_]*$/g 		# regex for matching string after "_"
-	regBefore = /^([^_]+)/g	# regex for matching string before "_"
-	layers = []
-
 	# Swap Views
 	for name, child of comp
 		matchBefore = (child.name).match(regBefore)[0]
 		matchAfter = (child.name).match(regAfter)[0]
 
 		if ( matchBefore == "sidebar" )
-			layers.push(child)
+			sidebarViews.push(child)
+			sidebarContainers.push(child.parent.parent)
 
-	States.setupScroll(layers, synapse.container_sidebar_overview.width)
-	States.setupFade(layers)
+	sidebarContainers.push(synapse.container_view_navbar) # Add Navbar
+
+	States.setupSlide(sidebarContainers, synapse.container_sidebar_overview.width)
+	States.setupFade(sidebarViews)
 
 setupSidebar(synapse)
 
@@ -95,29 +127,14 @@ navbarIcons.childrenWithName('icon_overview')[0].stateSwitch('transparent')
 navbarTiles.childrenWithName('tile_overview')[0].stateSwitch('visible')
 navbarActive.childrenWithName('active_overview')[0].stateSwitch('visible')
 
-# Overview scroll component
-scroll_overview = ScrollComponent.wrap(synapse.container_sidebar_overview)
-scroll_overview.scrollHorizontal = false
-scroll_overview.propagateEvents = false
 
-
-# Leaderboard scroll component
-scroll_leaderboard = ScrollComponent.wrap(synapse.container_sidebar_leaderboard)
-scroll_leaderboard.scrollHorizontal = false
-scroll_leaderboard.propagateEvents = false
-
-scroll_components = [ scroll_overview, scroll_leaderboard ]
-
- 
 # Animate N layers together with similar properties 
-animateLayer = (layer) ->
-	layer.stateCycle()
+animateLayer = (layer, state) ->
+	layer.animate(state)
 
 
 # Event Handlers
-# synapse.view_navbar.on Events.Click, (event, layer) ->
-# 	for layer in layers
-# 		animateLayer(layer)
+# --------------------------------------------------------------------------------
 
 # MouseOver
 for child in navbarTiles.subLayers
@@ -134,6 +151,20 @@ for child in navbarTiles.subLayers
 # Click
 for child in navbarTiles.subLayers
 	child.on Events.Click, (event, layer) ->
+		layerAfter = (layer.name).match(regAfter)[0]
+		# if Open, Close Sidebar
+		if (State.current_view == layerAfter)
+			animation = ""
+			
+			if ( State.open )
+				animation = "close"
+			else
+				animation = "open"
+				
+			State.open = !State.open
+			for layer in sidebarContainers # Toggle Open/Close containers
+				animateLayer(layer, animation)
+
 		changeView(layer, synapse)
 		for other in navbarTiles.subLayers
 			if (other.name != activeTile.name) # Maintain highlight state
@@ -141,11 +172,10 @@ for child in navbarTiles.subLayers
 
 
 # View Controller
+# --------------------------------------------------------------------------------
+
 changeView = (layer, comp) -> 
-	
-	regAfter = /[^_]*$/g 		# regex for matching string after "_"
-	regBefore = /^([^_]+)/g	# regex for matching string before "_"
-	
+
 	currentAfter  = (layer.name).match(regAfter)[0] 	# Layer Name | "flag"
 	currentBefore = (layer.name).match(regBefore)[0]	# Layer Type | "tile" 
 
@@ -173,6 +203,8 @@ changeView = (layer, comp) ->
 				currentIcon = prefix.icon + currentAfter
 				currentActive = prefix.active + currentAfter
 				
+				State.current_view = currentAfter # Set Global State
+				
 				# Reset Icons
 				for icon in navbarIcons.children
 					icon.animate('visible')
@@ -186,8 +218,6 @@ changeView = (layer, comp) ->
 
 				child.parent.parent.visible = true # FadeIn new View
 				child.animate('visible')
-				print 'in', child.parent.parent.name
-				print child.opacity, child.visible
 			else
 				child.animate('transparent') # FadeOut old View
 				child.parent.parent.visible = false
@@ -199,8 +229,9 @@ changeView = (layer, comp) ->
 			scroll.scrollY = 0
 
 
+# Threejs
+# --------------------------------------------------------------------------------
 
-# ThreeJs 
 THREE_Layer = new Layer
 THREE_Layer.name = "THREE_Layer"
 THREE_Layer.backgroundColor = "none"
