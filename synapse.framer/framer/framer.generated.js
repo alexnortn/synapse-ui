@@ -680,8 +680,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
 		"objectId": "ACEE159E-4E94-4536-8145-55F10CFE3C7F",
 		"kind": "artboard",
-		"name": "view_leaderboard",
-		"originalName": "view-leaderboard",
+		"name": "sidebar_leaderboard",
+		"originalName": "sidebar-leaderboard",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": 1083,
@@ -770,8 +770,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
 		"objectId": "284EA459-ABF2-4C2E-A53D-B58291E58BE8",
 		"kind": "artboard",
-		"name": "view_overview",
-		"originalName": "view-overview",
+		"name": "sidebar_overview",
+		"originalName": "sidebar-overview",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": 1083,

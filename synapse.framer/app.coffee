@@ -11,6 +11,7 @@ Framer.Info =
 
 # Framer Modules
 ViewController = require('ViewController')
+{ƒ,ƒƒ} = require 'findModule'
 
 # NPM Modules
 # overview = require("npm").overview
@@ -36,16 +37,24 @@ document.body.style.cursor = "auto"
 
 # Import file "SynapseDesign_V2"
 synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
-layers = [synapse.view_navbar, synapse.view_overview, synapse.view_leaderboard]
+layers = [synapse.view_navbar, synapse.sidebar_overview, synapse.sidebar_leaderboard]
 
 # Navbar Elements 
 navbarTiles = synapse.view_navbar.childrenWithName("navbar")[0].childrenWithName("tiles")[0]
 navbarIcons = synapse.view_navbar.childrenWithName("navbar")[0].childrenWithName("icons")[0]
 navbarActive = synapse.view_navbar.childrenWithName("navbar")[0].childrenWithName("active")[0]
 
+# Regex Helpers
+prefix = 
+	view:		"view_"
+	sidebar: 	"sidebar_"
+	active: 	"active_"
+	icon: 		"icon_"
+	tile: 		"tile_"
+
 
 # Initially hide select elements
-synapse.view_leaderboard.opacity = 0
+synapse.sidebar_leaderboard.opacity = 0
 navbarActive.childrenWithName('active_leaderboard')[0].opacity = 0
 navbarActive.childrenWithName('active_overview')[0].opacity = 0 
 
@@ -55,7 +64,7 @@ for child in navbarTiles.subLayers
 
 # Initialize element states
 # Pass in reference to @Sketch Imported layers
-States.setup(layers, synapse.view_overview.width)
+States.setup(layers, synapse.sidebar_overview.width)
 States.setupFade(layers)
 States.setupFade(navbarTiles.subLayers)
 States.setupFade(navbarIcons.subLayers)
@@ -69,15 +78,15 @@ navbarTiles.childrenWithName('tile_overview')[0].stateSwitch('visible')
 navbarActive.childrenWithName('active_overview')[0].stateSwitch('visible')
 
 # Overview scroll component
-scrollOverview = ScrollComponent.wrap(synapse.view_overview)
-scrollOverview.scrollHorizontal = false
-scrollOverview.propagateEvents = false
+scroll_overview = ScrollComponent.wrap(synapse.sidebar_overview)
+scroll_overview.scrollHorizontal = false
+scroll_overview.propagateEvents = false
 
 
 # Leaderboard scroll component
-scrollLeaderboard = ScrollComponent.wrap(synapse.view_leaderboard)
-scrollLeaderboard.scrollHorizontal = false
-scrollLeaderboard.propagateEvents = false
+scroll_leaderboard = ScrollComponent.wrap(synapse.sidebar_leaderboard)
+scroll_leaderboard.scrollHorizontal = false
+scroll_leaderboard.propagateEvents = false
 
  
 # Animate N layers together with similar properties 
@@ -112,39 +121,65 @@ for child in navbarTiles.subLayers
 		layer.animate('visible')
 
 		if (layer.name == "tile_overview")
-			activeTile = layer
-			synapse.view_leaderboard.animate('transparent')
-
-			synapse.view_leaderboard.visible = false
-			synapse.view_overview.visible = true
-		#	Swap >> Icons
+			changeView(layer)
+			
+			synapse.sidebar_leaderboard.animate('transparent')
+			synapse.sidebar_leaderboard.visible = false
 			navbarActive.childrenWithName('active_leaderboard')[0].animate('transparent')
+			navbarIcons.childrenWithName('icon_leaderboard')[0].animate('visible')
+			
+			synapse.sidebar_overview.visible = true
 			navbarActive.childrenWithName('active_overview')[0].animate('visible')
 			navbarIcons.childrenWithName('icon_overview')[0].animate('transparent')
-			navbarIcons.childrenWithName('icon_leaderboard')[0].animate('visible')
-
-			scrollOverview.scrollY = 0 # Reset scroll
-			synapse.view_overview.animate('visible')
+			scroll_overview.scrollY = 0 # Reset scroll
+			synapse.sidebar_overview.animate('visible')
 
 		if (layer.name == "tile_leaderboard")
-			activeTile = layer
-			synapse.view_overview.animate('transparent')
+			changeView(layer)
+			synapse.sidebar_overview.animate('transparent')
 
-			synapse.view_overview.visible = false
-			synapse.view_leaderboard.visible = true
+			synapse.sidebar_overview.visible = false
+			synapse.sidebar_leaderboard.visible = true
 		#	Swap >> Icons
 			navbarActive.childrenWithName('active_overview')[0].animate('transparent')
 			navbarActive.childrenWithName('active_leaderboard')[0].animate('visible')
 			navbarIcons.childrenWithName('icon_leaderboard')[0].animate('transparent')
 			navbarIcons.childrenWithName('icon_overview')[0].animate('visible')
 
-			scrollLeaderboard.scrollY = 0 # Reset scroll
-			synapse.view_leaderboard.animate('visible')
+			scroll_leaderboard.scrollY = 0 # Reset scroll
+			synapse.sidebar_leaderboard.animate('visible')
 
 # # View Controller
-# changeView = (layer) -> 
-# 	activeTile = layer
+changeView = (comp, layer) -> 
+	activeTile = layer
 
+	regAfter = /[^_]*$/g 		# regex for matching string after "_"
+	regBefore = /^([^_]+)/g	# regex for matching string before "_"
+	
+	currentAfter  = layer.name.match(regAfter)[0]
+	currentBefore = layer.name.match(regBefore)[0]
+	
+	
+
+	for child in comp.children
+		matchBefore = child.name.match(regBefore)[0]
+		matchAfter = child.name.match(regBefore)[0]
+
+		if ( matchBefore == "sidebar" )
+			if ( matchAfter == currentAfter ) # FadeIn new View
+				child.visible = true
+				child.animate('visible')
+			else
+				child.animate('transparent') # Fadeout old View
+				child.visible = false
+
+		if ( matchBefore == "navbar" )
+			if ( matchAfter == currentAfter ) # FadeIn new Navbar Element
+				child.visible = true
+				child.animate('visible')
+			else
+				child.animate('transparent') # Fadeout old Navbar Element
+				child.visible = false
 
 # ThreeJs 
 THREE_Layer = new Layer
