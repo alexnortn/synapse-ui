@@ -66,16 +66,15 @@ for child in navbarTiles.subLayers
 setupSidebar = (comp) -> 
 	regAfter = /[^_]*$/g 		# regex for matching string after "_"
 	regBefore = /^([^_]+)/g	# regex for matching string before "_"
+	layers = []
 
 	# Swap Views
 	for name, child of comp
 		matchBefore = (child.name).match(regBefore)[0]
 		matchAfter = (child.name).match(regAfter)[0]
-		layers = []
 
 		if ( matchBefore == "sidebar" )
-			layer = child.children[0]
-			layers.push(layer)
+			layers.push(child)
 
 	States.setupScroll(layers, synapse.container_sidebar_overview.width)
 	States.setupFade(layers)
@@ -107,9 +106,7 @@ scroll_leaderboard = ScrollComponent.wrap(synapse.container_sidebar_leaderboard)
 scroll_leaderboard.scrollHorizontal = false
 scroll_leaderboard.propagateEvents = false
 
-scroll_components = 
-	overview: scroll_overview
-	leaderboard: scroll_leaderboard
+scroll_components = [ scroll_overview, scroll_leaderboard ]
 
  
 # Animate N layers together with similar properties 
@@ -140,10 +137,8 @@ for child in navbarTiles.subLayers
 	child.on Events.Click, (event, layer) ->
 		for other in navbarTiles.subLayers
 			other.animate('transparent') # Fadeout all other tiles
-		layer.stateSwitch('transparent')
-		layer.animate('visible')
 
-# 		changeView(layer, synapse)
+		changeView(layer, synapse)
 
 
 # View Controller
@@ -156,38 +151,53 @@ changeView = (layer, comp) ->
 	currentAfter  = (layer.name).match(regAfter)[0] 	# Layer Name | "flag"
 	currentBefore = (layer.name).match(regBefore)[0]	# Layer Type | "tile" 
 
+	# Only continue for supported states
+	noMatch = true
+
+	for name, child of comp
+		matchBefore = (child.name).match(regBefore)[0]
+		matchAfter = (child.name).match(regAfter)[0]
+		if (matchBefore == "sidebar")
+			if (matchAfter == currentAfter)
+				noMatch = false
+
 	# Swap Views
+	if (noMatch)
+		return
+
 	for name, child of comp
 		matchBefore = (child.name).match(regBefore)[0]
 		matchAfter = (child.name).match(regAfter)[0]
 		if ( matchBefore == "sidebar" )
 			if ( matchAfter == currentAfter ) # FadeIn new View
-				print(child)
-				child.visible = true
+				currentIcon = prefix.icon + currentAfter
+				currentActive = prefix.active + currentAfter
+
+				layer.stateSwitch('transparent')
+				layer.animate('visible')
+
+				# Reset Icons
+				for icon in navbarIcons.children
+					icon.animate('visible')
+				# Reset Active Icons
+				for icon in navbarActive.children
+					icon.animate('transparent')
+
+				# Set current Icons + Active Icons
+				navbarIcons.childrenWithName(currentIcon)[0].animate('transparent')
+				navbarActive.childrenWithName(currentActive)[0].animate('visible')
+
+				child.visible = true # FadeIn old View
 				child.animate('visible')
 			else
-				child.animate('transparent') # Fadeout old View
+				child.animate('transparent') # FadeOut old View
 				child.visible = false
 
 	# Reset new scroll component
-	currentScroll = "scroll" + currentAfter
-	for scroll in scroll_components
+	currentScroll = "container_sidebar_" + currentAfter
+	for name, scroll of scroll_components
 		if ( scroll.name == currentScroll )
 			scroll.scrollY = 0
-
-	currentIcon = prefix.icon + currentAfter
-	currentActive = prefix.active + currentAfter
-	
-	# Reset Icons
-	for icon in navbarIcons.children
-		icon.animate('visible')
-	# Reset Active Icons
-	for icon in navbarActive.children
-		icon.animate('transparent')
-		
-	# Set current Icons + Active Icons
-	navbarIcons.childrenWithName(currentIcon)[0].animate('transparent')
-	navbarActive.childrenWithName(currentActive)[0].animate('visible')
 
 
 
