@@ -6,7 +6,7 @@
 # Alex Norton | 2016
 
 # Sidebar Open/Close
-setup = (layers, sidebarWidth) ->	
+setupScroll = (layers, sidebarWidth) ->	
 	for layer in layers
 		# Sidebar Open
 		layer.states.open =
@@ -34,5 +34,5 @@ setupFade = (layers) ->
 			animationOptions: curve: "ease", time: 0.25
 
 
-exports.setup = setup
+exports.setupScroll = setupScroll
 exports.setupFade = setupFade

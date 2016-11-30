@@ -3,8 +3,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
 		"objectId": "EE3398C3-7887-4852-9260-09B4635DE777",
 		"kind": "artboard",
-		"name": "view_bg",
-		"originalName": "view-bg",
+		"name": "container_view_bg",
+		"originalName": "container-view-bg",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": -37,
@@ -20,8 +20,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
 		"objectId": "ACEE159E-4E94-4536-8145-55F10CFE3C7F",
 		"kind": "artboard",
-		"name": "sidebar_leaderboard",
-		"originalName": "sidebar-leaderboard",
+		"name": "container_sidebar_leaderboard",
+		"originalName": "container-sidebar-leaderboard",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": 1083,
@@ -36,8 +36,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 			{
 				"objectId": "C4A1C569-B704-4599-89A4-E88E6A02F448",
 				"kind": "group",
-				"name": "leaderboard",
-				"originalName": "leaderboard",
+				"name": "sidebar_leaderboard",
+				"originalName": "sidebar-leaderboard",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": -1,
@@ -50,7 +50,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-leaderboard-qzrbmum1.png",
+					"path": "images/Layer-sidebar_leaderboard-qzrbmum1.png",
 					"frame": {
 						"x": -1,
 						"y": 0,
@@ -65,8 +65,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
 		"objectId": "4117B9D1-9034-49A1-9C8A-CE4BFC9B2EF0",
 		"kind": "artboard",
-		"name": "view_chat",
-		"originalName": "view-chat",
+		"name": "container_view_chat",
+		"originalName": "container-view-chat",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": -37,
@@ -81,8 +81,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 			{
 				"objectId": "71F57C37-0F36-4A17-AD66-BE0A2EC5CCD3",
 				"kind": "group",
-				"name": "chat",
-				"originalName": "chat",
+				"name": "view_chat",
+				"originalName": "view-chat",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 20,
@@ -95,7 +95,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-chat-nzfgntdd.png",
+					"path": "images/Layer-view_chat-nzfgntdd.png",
 					"frame": {
 						"x": 20,
 						"y": 209,
@@ -110,8 +110,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
 		"objectId": "284EA459-ABF2-4C2E-A53D-B58291E58BE8",
 		"kind": "artboard",
-		"name": "sidebar_overview",
-		"originalName": "sidebar-overview",
+		"name": "container_sidebar_overview",
+		"originalName": "container-sidebar-overview",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": 1083,
@@ -126,8 +126,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 			{
 				"objectId": "BE17C681-45AE-4A7B-B2C8-3C0CDBB4AB93",
 				"kind": "group",
-				"name": "overview",
-				"originalName": "overview",
+				"name": "sidebar_overview",
+				"originalName": "sidebar-overview",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": -1,
@@ -140,7 +140,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-overview-qkuxn0m2.png",
+					"path": "images/Layer-sidebar_overview-qkuxn0m2.png",
 					"frame": {
 						"x": -1,
 						"y": 0,
@@ -155,8 +155,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
 		"objectId": "B68F1401-C868-499B-91ED-FC14CE0562B7",
 		"kind": "artboard",
-		"name": "view_navbar",
-		"originalName": "view-navbar",
+		"name": "container_view_navbar",
+		"originalName": "container-view-navbar",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": 1027,
@@ -171,8 +171,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 			{
 				"objectId": "39D5F044-17F6-43CF-BC46-16B66F82E512",
 				"kind": "group",
-				"name": "navbar",
-				"originalName": "navbar",
+				"name": "view_navbar",
+				"originalName": "view-navbar",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 0,
@@ -185,7 +185,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-navbar-mzlenuyw.png",
+					"path": "images/Layer-view_navbar-mzlenuyw.png",
 					"frame": {
 						"x": 0,
 						"y": -1,

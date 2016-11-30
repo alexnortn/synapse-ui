@@ -37,12 +37,12 @@ document.body.style.cursor = "auto"
 
 # Import file "SynapseDesign_V2"
 synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
-layers = [synapse.view_navbar, synapse.sidebar_overview, synapse.sidebar_leaderboard]
+
 
 # Navbar Elements 
-navbarTiles = synapse.view_navbar.childrenWithName("navbar")[0].childrenWithName("tiles")[0]
-navbarIcons = synapse.view_navbar.childrenWithName("navbar")[0].childrenWithName("icons")[0]
-navbarActive = synapse.view_navbar.childrenWithName("navbar")[0].childrenWithName("active")[0]
+navbarTiles = synapse.container_view_navbar.childrenWithName("view_navbar")[0].childrenWithName("tiles")[0]
+navbarIcons = synapse.container_view_navbar.childrenWithName("view_navbar")[0].childrenWithName("icons")[0]
+navbarActive = synapse.container_view_navbar.childrenWithName("view_navbar")[0].childrenWithName("active")[0]
 
 # Regex Helpers
 prefix = 
@@ -54,7 +54,7 @@ prefix =
 
 
 # Initially hide select elements
-synapse.sidebar_leaderboard.opacity = 0
+synapse.container_sidebar_leaderboard.opacity = 0
 navbarActive.childrenWithName('active_leaderboard')[0].opacity = 0
 navbarActive.childrenWithName('active_overview')[0].opacity = 0 
 
@@ -62,10 +62,29 @@ for child in navbarTiles.subLayers
 	child.opacity = 0
 
 
+# Setup Sidebar States
+setupSidebar = (comp) -> 
+	regAfter = /[^_]*$/g 		# regex for matching string after "_"
+	regBefore = /^([^_]+)/g	# regex for matching string before "_"
+
+	# Swap Views
+	for name, child of comp
+		matchBefore = (child.name).match(regBefore)[0]
+		matchAfter = (child.name).match(regAfter)[0]
+		layers = []
+
+		if ( matchBefore == "sidebar" )
+			layer = child.children[0]
+			layers.push(layer)
+
+	States.setupScroll(layers, synapse.container_sidebar_overview.width)
+	States.setupFade(layers)
+
+setupSidebar(synapse)
+
+
 # Initialize element states
 # Pass in reference to @Sketch Imported layers
-States.setup(layers, synapse.sidebar_overview.width)
-States.setupFade(layers)
 States.setupFade(navbarTiles.subLayers)
 States.setupFade(navbarIcons.subLayers)
 States.setupFade(navbarActive.subLayers)
@@ -78,15 +97,19 @@ navbarTiles.childrenWithName('tile_overview')[0].stateSwitch('visible')
 navbarActive.childrenWithName('active_overview')[0].stateSwitch('visible')
 
 # Overview scroll component
-scroll_overview = ScrollComponent.wrap(synapse.sidebar_overview)
+scroll_overview = ScrollComponent.wrap(synapse.container_sidebar_overview)
 scroll_overview.scrollHorizontal = false
 scroll_overview.propagateEvents = false
 
 
 # Leaderboard scroll component
-scroll_leaderboard = ScrollComponent.wrap(synapse.sidebar_leaderboard)
+scroll_leaderboard = ScrollComponent.wrap(synapse.container_sidebar_leaderboard)
 scroll_leaderboard.scrollHorizontal = false
 scroll_leaderboard.propagateEvents = false
+
+scroll_components = 
+	overview: scroll_overview
+	leaderboard: scroll_leaderboard
 
  
 # Animate N layers together with similar properties 
@@ -120,66 +143,53 @@ for child in navbarTiles.subLayers
 		layer.stateSwitch('transparent')
 		layer.animate('visible')
 
-		if (layer.name == "tile_overview")
-			changeView(layer)
-			
-			synapse.sidebar_leaderboard.animate('transparent')
-			synapse.sidebar_leaderboard.visible = false
-			navbarActive.childrenWithName('active_leaderboard')[0].animate('transparent')
-			navbarIcons.childrenWithName('icon_leaderboard')[0].animate('visible')
-			
-			synapse.sidebar_overview.visible = true
-			navbarActive.childrenWithName('active_overview')[0].animate('visible')
-			navbarIcons.childrenWithName('icon_overview')[0].animate('transparent')
-			scroll_overview.scrollY = 0 # Reset scroll
-			synapse.sidebar_overview.animate('visible')
+# 		changeView(layer, synapse)
 
-		if (layer.name == "tile_leaderboard")
-			changeView(layer)
-			synapse.sidebar_overview.animate('transparent')
 
-			synapse.sidebar_overview.visible = false
-			synapse.sidebar_leaderboard.visible = true
-		#	Swap >> Icons
-			navbarActive.childrenWithName('active_overview')[0].animate('transparent')
-			navbarActive.childrenWithName('active_leaderboard')[0].animate('visible')
-			navbarIcons.childrenWithName('icon_leaderboard')[0].animate('transparent')
-			navbarIcons.childrenWithName('icon_overview')[0].animate('visible')
-
-			scroll_leaderboard.scrollY = 0 # Reset scroll
-			synapse.sidebar_leaderboard.animate('visible')
-
-# # View Controller
-changeView = (comp, layer) -> 
+# View Controller
+changeView = (layer, comp) -> 
 	activeTile = layer
 
 	regAfter = /[^_]*$/g 		# regex for matching string after "_"
 	regBefore = /^([^_]+)/g	# regex for matching string before "_"
 	
-	currentAfter  = layer.name.match(regAfter)[0]
-	currentBefore = layer.name.match(regBefore)[0]
-	
-	
+	currentAfter  = (layer.name).match(regAfter)[0] 	# Layer Name | "flag"
+	currentBefore = (layer.name).match(regBefore)[0]	# Layer Type | "tile" 
 
-	for child in comp.children
-		matchBefore = child.name.match(regBefore)[0]
-		matchAfter = child.name.match(regBefore)[0]
-
+	# Swap Views
+	for name, child of comp
+		matchBefore = (child.name).match(regBefore)[0]
+		matchAfter = (child.name).match(regAfter)[0]
 		if ( matchBefore == "sidebar" )
 			if ( matchAfter == currentAfter ) # FadeIn new View
+				print(child)
 				child.visible = true
 				child.animate('visible')
 			else
 				child.animate('transparent') # Fadeout old View
 				child.visible = false
 
-		if ( matchBefore == "navbar" )
-			if ( matchAfter == currentAfter ) # FadeIn new Navbar Element
-				child.visible = true
-				child.animate('visible')
-			else
-				child.animate('transparent') # Fadeout old Navbar Element
-				child.visible = false
+	# Reset new scroll component
+	currentScroll = "scroll" + currentAfter
+	for scroll in scroll_components
+		if ( scroll.name == currentScroll )
+			scroll.scrollY = 0
+
+	currentIcon = prefix.icon + currentAfter
+	currentActive = prefix.active + currentAfter
+	
+	# Reset Icons
+	for icon in navbarIcons.children
+		icon.animate('visible')
+	# Reset Active Icons
+	for icon in navbarActive.children
+		icon.animate('transparent')
+		
+	# Set current Icons + Active Icons
+	navbarIcons.childrenWithName(currentIcon)[0].animate('transparent')
+	navbarActive.childrenWithName(currentActive)[0].animate('visible')
+
+
 
 # ThreeJs 
 THREE_Layer = new Layer
@@ -187,6 +197,10 @@ THREE_Layer.name = "THREE_Layer"
 THREE_Layer.backgroundColor = "none"
 THREE_Layer.width = synapseParameters.size.width
 THREE_Layer.height = synapseParameters.size.height
+
+
+# Framer Layers ingore events by default 
+THREE_Layer.ignoreEvents = false
 
 
 # Create canvas element --> For adding 3D
@@ -205,6 +219,6 @@ THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Reorder layers
 THREE_Layer.sendToBack()
-synapse.view_bg.sendToBack()
+synapse.container_view_bg.sendToBack()
 
 
