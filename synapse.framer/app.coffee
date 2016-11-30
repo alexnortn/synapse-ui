@@ -11,6 +11,11 @@ Framer.Info =
 # Import file "SynapseDesign_V2"
 synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
 layers = [synapse.Navbar, synapse.Overview, synapse.Leaderboard]
+navbarTiles = synapse.Navbar.childrenWithName("_Navbar")[0].childrenWithName("tiles")[0]
+
+# Reset opacity for Navbar Tiles 
+for child in navbarTiles.subLayers
+	child.opacity = 0
 
 scaleFactor = 2
 
@@ -28,31 +33,33 @@ Utils = require("utils")
 
 # Define and set custom device 
 Framer.Device.deviceType = "desktop-safari-1440-900"
+Framer.Device.background.backgroundColor = "#181A1E"
 synapseParameters =
 	size: 
 		width: 1440
 		height: 900
 
 
+# Use desktop cursor
+document.body.style.cursor = "auto"
+
+
 # Initially hide Leaderboard
-synapse.Overview.opacity = 0 
+synapse.Leaderboard.opacity = 0 
 
 
 # Setup scrollable sidebar => Overview
-# scrollOverview = ScrollComponent.wrap(synapse.Overview)
-# scrollOverview.width = synapse.Overview.width
-# scrollOverview.height = synapse.Navbar.height
-# # # Allow scrolling with mouse --> Breaks interactivity?
-# # scrollOverview.mouseWheelEnabled = true
-# scrollOverview.scrollHorizontal = false
+scrollOverview = ScrollComponent.wrap(synapse.Overview)
+scrollOverview.width = synapse.Overview.width
+scrollOverview.height = synapse.Navbar.height
+# # Allow scrolling with mouse --> Breaks interactivity?
+# scrollOverview.mouseWheelEnabled = true
+scrollOverview.scrollHorizontal = false
+
 
 # Setup scrollable sidebar => Leaderboard
-scrollLeaderboard = ScrollComponent.wrap(synapse.Leaderboard)
-scrollLeaderboard.width = synapse.Leaderboard.width
-scrollLeaderboard.height = synapse.Navbar.height
-# # Allow scrolling with mouse --> Breaks interactivity?
-# scrollLeaderboard.mouseWheelEnabled = true
-scrollLeaderboard.scrollHorizontal = false
+scrollLeaderboard = new ScrollComponent
+	wrap: synapse.Leaderboard, scrollHorizontal: false, width: synapse.Leaderboard.width, height: synapse.Navbar.height
 
 
 THREE_Layer = new Layer
@@ -83,18 +90,44 @@ synapse.BG.sendToBack()
 # Initialize element states
 # Pass in reference to @Sketch Imported layers
 States.setup(layers, synapse.Overview.width)
+States.setupFade(layers)
+States.setupFade(navbarTiles.subLayers)
  
 # Animate N layers together with similar properties 
 animateLayer = (layer) ->
 	layer.stateCycle()
 
 # Event Handlers
-synapse.Navbar.on Events.Click, (event, layer) ->
-	for layer in layers
-		animateLayer(layer)
-	
+# synapse.Navbar.on Events.Click, (event, layer) ->
+# 	for layer in layers
+# 		animateLayer(layer)
 
+# MouseOver
+for child in navbarTiles.subLayers
+	child.on Events.MouseOver, (event, layer) ->
+		for other in navbarTiles.subLayers
+			other.animate('transparent') # Fadeout all other tiles
+		layer.stateSwitch('transparent')
+		layer.animate('visible')
+		layer.on Events.MouseOut, (event, layer2) ->
+			layer2.animate('transparent')
 
+# Click
+for child in navbarTiles.subLayers
+	child.on Events.Click, (event, layer) ->
+		for other in navbarTiles.subLayers
+			other.animate('transparent') # Fadeout all other tiles
+		layer.stateSwitch('transparent')
+		layer.animate('visible')
 
+		if (layer.name == "logo_tile")
+			synapse.Leaderboard.animate('transparent')
+			scrollOverview.scrollY = 0 # Reset scroll
+			synapse.Overview.animate('visible')
+
+		if (layer.name == "leaderboard_tile")
+			synapse.Overview.animate('transparent')
+			scrollLeaderboard.scrollY = 0 # Reset scroll
+			synapse.Leaderboard.animate('visible')
 
 
