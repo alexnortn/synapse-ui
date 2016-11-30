@@ -8,7 +8,7 @@
   "deviceType" : "custom",
   "selectedHand" : "",
   "updateDelay" : 0,
-  "deviceScale" : 0.25,
+  "deviceScale" : "fit",
   "foldedCodeRanges" : [
 
   ],

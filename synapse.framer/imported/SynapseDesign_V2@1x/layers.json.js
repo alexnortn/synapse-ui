@@ -14,7 +14,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		},
 		"visible": true,
 		"metadata": {},
-		"backgroundColor": "rgba(22, 23, 26, 1)",
+		"backgroundColor": "rgba(24.48, 26.009999999999998, 30.599999999999998, 1)",
 		"children": []
 	},
 	{
@@ -201,10 +201,10 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"originalName": "active",
 						"maskFrame": null,
 						"layerFrame": {
-							"x": 14.1796875,
-							"y": 26.66015625,
-							"width": 27,
-							"height": 93
+							"x": 20.1796875,
+							"y": 32.66015625,
+							"width": 17,
+							"height": 81
 						},
 						"visible": true,
 						"metadata": {
@@ -218,22 +218,22 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "active-overview",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 14.1796875,
-									"y": 26.66015625,
-									"width": 27,
-									"height": 27
+									"x": 20.1796875,
+									"y": 32.66015625,
+									"width": 17,
+									"height": 15
 								},
 								"visible": true,
 								"metadata": {
-									"opacity": 0
+									"opacity": 1
 								},
 								"image": {
 									"path": "images/Layer-active_overview-q0uxrdiw.png",
 									"frame": {
-										"x": 14.1796875,
-										"y": 26.66015625,
-										"width": 27,
-										"height": 27
+										"x": 20.1796875,
+										"y": 32.66015625,
+										"width": 17,
+										"height": 15
 									}
 								},
 								"children": []
@@ -245,22 +245,22 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "active-leaderboard",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 14.1796875,
-									"y": 92.66015625,
-									"width": 27,
-									"height": 27
+									"x": 20.1796875,
+									"y": 98.66015625,
+									"width": 17,
+									"height": 15
 								},
 								"visible": true,
 								"metadata": {
-									"opacity": 0
+									"opacity": 1
 								},
 								"image": {
 									"path": "images/Layer-active_leaderboard-otncrdbg.png",
 									"frame": {
-										"x": 14.1796875,
-										"y": 92.66015625,
-										"width": 27,
-										"height": 27
+										"x": 20.1796875,
+										"y": 98.66015625,
+										"width": 17,
+										"height": 15
 									}
 								},
 								"children": []
@@ -476,8 +476,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							{
 								"objectId": "59744DA7-753D-4575-8090-CACC0BD72B71",
 								"kind": "group",
-								"name": "stats_icon",
-								"originalName": "stats_icon",
+								"name": "leaderboard_icon",
+								"originalName": "leaderboard_icon",
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 20.1796875,
@@ -490,7 +490,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-stats_icon-ntk3ndre.png",
+									"path": "images/Layer-leaderboard_icon-ntk3ndre.png",
 									"frame": {
 										"x": 20.1796875,
 										"y": 96.66015625,
@@ -503,8 +503,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							{
 								"objectId": "C0B9102D-BE60-4A94-A937-D6BB880E07DE",
 								"kind": "group",
-								"name": "logo_icon",
-								"originalName": "logo_icon",
+								"name": "overview_icon",
+								"originalName": "overview_icon",
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 17.1796875,
@@ -838,8 +838,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							{
 								"objectId": "903DA717-CAD0-410F-957F-755D891341D3",
 								"kind": "group",
-								"name": "logo_tile",
-								"originalName": "logo_tile",
+								"name": "overview_tile",
+								"originalName": "overview_tile",
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 0.1796875,
@@ -852,7 +852,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-logo_tile-otazree3.png",
+									"path": "images/Layer-overview_tile-otazree3.png",
 									"frame": {
 										"x": 0.1796875,
 										"y": -0.33984375,
