@@ -197,7 +197,6 @@ for child in navbarTiles.subLayers
 # Chat Click Interaction
 chatElement.on Events.Click, (event, layer) ->
 	for elem in activeChatElements
-		print elem.name
 		elem.stateCycle()
 
 # View Controller
@@ -281,8 +280,8 @@ THREE_Canvas.style.height = Utils.pxify(THREE_Layer.height)
 THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize 3D Viewer
-# Overview.setup(THREE_Layer, THREE_Canvas)
-# Overview.animate()
+Overview.setup(THREE_Layer, THREE_Canvas)
+Overview.animate()
 
 # Reorder layers
 THREE_Layer.sendToBack()
