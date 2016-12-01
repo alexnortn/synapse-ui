@@ -95,31 +95,291 @@
 		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "71F57C37-0F36-4A17-AD66-BE0A2EC5CCD3",
+				"objectId": "CA2D8376-D42C-400F-999C-07DF255314DD",
 				"kind": "group",
 				"name": "view_chat",
 				"originalName": "view-chat",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 20,
-					"y": 209,
-					"width": 278,
+					"y": 208,
+					"width": 277,
 					"height": 392
 				},
 				"visible": true,
 				"metadata": {
 					"opacity": 1
 				},
-				"image": {
-					"path": "images/Layer-view_chat-nzfgntdd.png",
-					"frame": {
-						"x": 20,
-						"y": 209,
-						"width": 278,
-						"height": 392
+				"children": [
+					{
+						"objectId": "B13BCBFD-5D12-4EA8-BC36-19633EF210CB",
+						"kind": "group",
+						"name": "view_chat_textInput",
+						"originalName": "view-chat-textInput",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 31,
+							"y": 576,
+							"width": 266,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-view_chat_textInput-qjezqknc.png",
+							"frame": {
+								"x": 31,
+								"y": 576,
+								"width": 266,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "7DE0B226-81FA-4A40-8798-6951331A973A",
+						"kind": "group",
+						"name": "view_chat_scrollbar",
+						"originalName": "view-chat-scrollbar",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 20,
+							"y": 215,
+							"width": 6,
+							"height": 322
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-view_chat_scrollbar-n0rfmeiy.png",
+							"frame": {
+								"x": 20,
+								"y": 215,
+								"width": 6,
+								"height": 322
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "FF993276-D49F-4D3A-B342-A5919DA0E4F4",
+						"kind": "group",
+						"name": "view_chat_activity",
+						"originalName": "view-chat-activity",
+						"maskFrame": {
+							"x": 0,
+							"y": 0,
+							"width": 264,
+							"height": 336
+						},
+						"layerFrame": {
+							"x": 40,
+							"y": 204,
+							"width": 264,
+							"height": 336
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-view_chat_activity-rky5otmy.png",
+							"frame": {
+								"x": 40,
+								"y": 204,
+								"width": 264,
+								"height": 336
+							}
+						},
+						"children": [
+							{
+								"objectId": "5E3DB52E-60D7-4DBC-BBEF-AA238A39B7E1",
+								"kind": "group",
+								"name": "Chat_Activity",
+								"originalName": "Chat_Activity",
+								"maskFrame": null,
+								"layerFrame": {
+									"x": 40,
+									"y": 208,
+									"width": 232,
+									"height": 329
+								},
+								"visible": true,
+								"metadata": {
+									"opacity": 1
+								},
+								"children": [
+									{
+										"objectId": "D9957B03-345A-4804-BCF4-59E0E602EB9A",
+										"kind": "group",
+										"name": "Links",
+										"originalName": "Links",
+										"maskFrame": null,
+										"layerFrame": {
+											"x": 40,
+											"y": 272,
+											"width": 192,
+											"height": 43
+										},
+										"visible": true,
+										"metadata": {
+											"opacity": 1
+										},
+										"image": {
+											"path": "images/Layer-Links-rdk5ntdc.png",
+											"frame": {
+												"x": 40,
+												"y": 272,
+												"width": 192,
+												"height": 43
+											}
+										},
+										"children": []
+									},
+									{
+										"objectId": "EB06C42E-A79B-4BFA-A8B6-1EA1AB1FA357",
+										"kind": "text",
+										"name": "Anouncement",
+										"originalName": "Anouncement",
+										"maskFrame": null,
+										"layerFrame": {
+											"x": 40,
+											"y": 248,
+											"width": 212,
+											"height": 11
+										},
+										"visible": true,
+										"metadata": {
+											"opacity": 1,
+											"string": "Synchronized Swimming vs. Rhythmic Gynamstics!",
+											"css": [
+												"/* Synchronized Swimmin: */",
+												"font-family: SourceSansPro-Regular;",
+												"font-size: 10px;",
+												"color: #6CD9A7;",
+												"letter-spacing: 0;",
+												"line-height: 16px;"
+											]
+										},
+										"image": {
+											"path": "images/Layer-Anouncement-ruiwnkm0.png",
+											"frame": {
+												"x": 40,
+												"y": 248,
+												"width": 212,
+												"height": 11
+											}
+										},
+										"children": []
+									},
+									{
+										"objectId": "A7DD2B08-A4B4-4FB3-9FA8-B16164197612",
+										"kind": "text",
+										"name": "Congrats",
+										"originalName": "Congrats",
+										"maskFrame": null,
+										"layerFrame": {
+											"x": 40,
+											"y": 208,
+											"width": 232,
+											"height": 27
+										},
+										"visible": true,
+										"metadata": {
+											"opacity": 1,
+											"string": "Congrates to <Nseraf> with 32962 points yesterday, and <brianamywa> with 99.96% accuracy!",
+											"css": [
+												"/* Congrates to <Nseraf: */",
+												"font-family: SourceSansPro-Regular;",
+												"font-size: 10px;",
+												"color: #B36CD9;",
+												"letter-spacing: 0;",
+												"line-height: 16px;"
+											]
+										},
+										"image": {
+											"path": "images/Layer-Congrats-qtderdjc.png",
+											"frame": {
+												"x": 40,
+												"y": 208,
+												"width": 232,
+												"height": 27
+											}
+										},
+										"children": []
+									},
+									{
+										"objectId": "EBC7B88B-2172-48C6-B477-C94174DE673C",
+										"kind": "group",
+										"name": "Conversation",
+										"originalName": "Conversation",
+										"maskFrame": null,
+										"layerFrame": {
+											"x": 40,
+											"y": 328,
+											"width": 228,
+											"height": 121
+										},
+										"visible": true,
+										"metadata": {
+											"opacity": 1
+										},
+										"image": {
+											"path": "images/Layer-Conversation-rujdn0i4.png",
+											"frame": {
+												"x": 40,
+												"y": 328,
+												"width": 228,
+												"height": 121
+											}
+										},
+										"children": []
+									},
+									{
+										"objectId": "8757E06D-BB3F-4B57-821F-4F3F53690BF0",
+										"kind": "text",
+										"name": "Awards",
+										"originalName": "Awards",
+										"maskFrame": null,
+										"layerFrame": {
+											"x": 40,
+											"y": 464,
+											"width": 182,
+											"height": 73
+										},
+										"visible": true,
+										"metadata": {
+											"opacity": 1,
+											"string": "annkri trailblazed a cube!\nantonieb trailblazed a cube!\nalrianne earned 58 points\nantoineb earned 55 points from trailblazing\nalrianne trailblazed a cube!",
+											"css": [
+												"/* annkri trailblazed a: */",
+												"font-family: SourceSansPro-Regular;",
+												"font-size: 10px;",
+												"color: #6F747F;",
+												"letter-spacing: 0;",
+												"line-height: 16px;"
+											]
+										},
+										"image": {
+											"path": "images/Layer-Awards-odc1n0uw.png",
+											"frame": {
+												"x": 40,
+												"y": 464,
+												"width": 182,
+												"height": 73
+											}
+										},
+										"children": []
+									}
+								]
+							}
+						]
 					}
-				},
-				"children": []
+				]
 			}
 		]
 	},

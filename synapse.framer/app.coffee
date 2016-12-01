@@ -47,8 +47,11 @@ navbarTiles = synapse.container_view_navbar.childrenWithName("view_navbar")[0].c
 navbarIcons = synapse.container_view_navbar.childrenWithName("view_navbar")[0].childrenWithName("icons")[0]
 navbarActive = synapse.container_view_navbar.childrenWithName("view_navbar")[0].childrenWithName("active")[0]
 
-# State Handler
-State = 
+# Chat Elements
+chatElement = synapse.container_view_chat
+
+# SidebarState Handler
+SidebarState = 
 	current_view: "overview"
 	open: true
 
@@ -95,6 +98,14 @@ for child in navbarTiles.subLayers
 	child.opacity = 0
 
 
+# Setup Chat States
+activeChatElements = []
+activeChatElements.push(ƒ('view_chat_activity'))
+activeChatElements.push(ƒ('view_chat_scrollbar'))
+
+States.setupFade(activeChatElements)
+
+
 # Setup Sidebar States
 setupSidebar = (comp) -> 
 	# Swap Views
@@ -122,7 +133,7 @@ States.setupFade(navbarIcons.subLayers)
 States.setupFade(navbarActive.subLayers)
 
 
-# Setup initial Active State 
+# Setup initial Active SidebarState 
 activeTile = navbarTiles.childrenWithName('tile_overview')[0].name
 navbarIcons.childrenWithName('icon_overview')[0].stateSwitch('transparent')
 navbarTiles.childrenWithName('tile_overview')[0].stateSwitch('visible')
@@ -137,7 +148,7 @@ animateLayer = (layer, state) ->
 # Event Handlers
 # --------------------------------------------------------------------------------
 
-# MouseOver
+# Sidebar MouseOver Interaction
 for child in navbarTiles.subLayers
 	child.on Events.MouseOver, (event, layer) ->
 		for other in navbarTiles.subLayers
@@ -149,20 +160,20 @@ for child in navbarTiles.subLayers
 			if (layer2.name != activeTile) # Maintain highlight state
 				layer2.animate('transparent')
 
-# Click
+# Sidebar Click Interaction
 for child in navbarTiles.subLayers
 	child.on Events.Click, (event, layer) ->
 		layerAfter = (layer.name).match(regAfter)[0]
 		# if Open, Close Sidebar
-		if (State.current_view == layerAfter || !State.open)
+		if (SidebarState.current_view == layerAfter || !SidebarState.open)
 			animation = ""
 
-			if ( State.open )
+			if ( SidebarState.open )
 				animation = "close"
 
 				# Update current Icons + Active Icons
-				currentIcon = "icon_" + State.current_view
-				currentActive = "active_" + State.current_view
+				currentIcon = "icon_" + SidebarState.current_view
+				currentActive = "active_" + SidebarState.current_view
 
 				# Swap Icon --> >> -> [ ]
 				navbarActive.childrenWithName(currentActive)[0].animate('transparent')
@@ -173,7 +184,7 @@ for child in navbarTiles.subLayers
 			else
 				animation = "open"
 
-			State.open = !State.open
+			SidebarState.open = !SidebarState.open
 			for layer in sidebarContainers # Toggle Open/Close containers
 				animateLayer(layer, animation)
 
@@ -183,6 +194,11 @@ for child in navbarTiles.subLayers
 			if (other.name != activeTile) # Maintain highlight state
 				other.animate('transparent') # Fadeout all other tiles
 
+# Chat Click Interaction
+chatElement.on Events.Click, (event, layer) ->
+	for elem in activeChatElements
+		print elem.name
+		elem.stateCycle()
 
 # View Controller
 # --------------------------------------------------------------------------------
@@ -214,7 +230,7 @@ changeView = (layerCurrent, comp) ->
 				currentIcon = prefix.icon + layerCurrent
 				currentActive = prefix.active + layerCurrent
 
-				State.current_view = layerCurrent # Set Global State
+				SidebarState.current_view = layerCurrent # Set Global SidebarState
 
 				# Reset Icons
 				for icon in navbarIcons.children
