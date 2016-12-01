@@ -123,7 +123,7 @@ States.setupFade(navbarActive.subLayers)
 
 
 # Setup initial Active State 
-activeTile = navbarTiles.childrenWithName('tile_overview')[0]
+activeTile = navbarTiles.childrenWithName('tile_overview')[0].name
 navbarIcons.childrenWithName('icon_overview')[0].stateSwitch('transparent')
 navbarTiles.childrenWithName('tile_overview')[0].stateSwitch('visible')
 navbarActive.childrenWithName('active_overview')[0].stateSwitch('visible')
@@ -141,12 +141,12 @@ animateLayer = (layer, state) ->
 for child in navbarTiles.subLayers
 	child.on Events.MouseOver, (event, layer) ->
 		for other in navbarTiles.subLayers
-			if (other.name != activeTile.name)
+			if (other.name != activeTile)
 				other.animate('transparent') # Fadeout all other tiles
 		layer.stateSwitch('transparent')
 		layer.animate('visible')
 		layer.on Events.MouseOut, (event, layer2) ->
-			if (layer2.name != activeTile.name) # Maintain highlight state
+			if (layer2.name != activeTile) # Maintain highlight state
 				layer2.animate('transparent')
 
 # Click
@@ -180,7 +180,7 @@ for child in navbarTiles.subLayers
 		changeView(layerAfter, synapse)
 
 		for other in navbarTiles.subLayers
-			if (other.name != activeTile.name) # Maintain highlight state
+			if (other.name != activeTile) # Maintain highlight state
 				other.animate('transparent') # Fadeout all other tiles
 
 

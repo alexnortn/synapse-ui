@@ -186,28 +186,28 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"backgroundColor": "rgba(255, 255, 255, 1)",
 		"children": [
 			{
-				"objectId": "39D5F044-17F6-43CF-BC46-16B66F82E512",
+				"objectId": "98340238-C5D9-4057-A95E-DC22257AC77F",
 				"kind": "group",
 				"name": "view_navbar",
 				"originalName": "view-navbar",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 0,
-					"y": -1,
-					"width": 57,
-					"height": 901
+					"y": 0,
+					"width": 56,
+					"height": 900
 				},
 				"visible": true,
 				"metadata": {
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-view_navbar-mzlenuyw.png",
+					"path": "images/Layer-view_navbar-otgznday.png",
 					"frame": {
 						"x": 0,
-						"y": -1,
-						"width": 57,
-						"height": 901
+						"y": 0,
+						"width": 56,
+						"height": 900
 					}
 				},
 				"children": [
@@ -218,8 +218,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"originalName": "active",
 						"maskFrame": null,
 						"layerFrame": {
-							"x": 20.1796875,
-							"y": 32.66015625,
+							"x": 21,
+							"y": 33,
 							"width": 17,
 							"height": 81
 						},
@@ -235,8 +235,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "active-overview",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 20.1796875,
-									"y": 32.66015625,
+									"x": 21,
+									"y": 33,
 									"width": 17,
 									"height": 15
 								},
@@ -247,8 +247,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-active_overview-q0uxrdiw.png",
 									"frame": {
-										"x": 20.1796875,
-										"y": 32.66015625,
+										"x": 21,
+										"y": 33,
 										"width": 17,
 										"height": 15
 									}
@@ -262,8 +262,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "active-leaderboard",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 20.1796875,
-									"y": 98.66015625,
+									"x": 21,
+									"y": 99,
 									"width": 17,
 									"height": 15
 								},
@@ -274,8 +274,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-active_leaderboard-otncrdbg.png",
 									"frame": {
-										"x": 20.1796875,
-										"y": 98.66015625,
+										"x": 21,
+										"y": 99,
 										"width": 17,
 										"height": 15
 									}
@@ -291,8 +291,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"originalName": "icons",
 						"maskFrame": null,
 						"layerFrame": {
-							"x": 17.1796875,
-							"y": 28.66015625,
+							"x": 17,
+							"y": 29,
 							"width": 22,
 							"height": 831
 						},
@@ -308,8 +308,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "icon-help",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 18.1796875,
-									"y": 840.66015625,
+									"x": 18,
+									"y": 841,
 									"width": 18,
 									"height": 19
 								},
@@ -320,8 +320,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-icon_help-q0ngmjm5.png",
 									"frame": {
-										"x": 18.1796875,
-										"y": 840.66015625,
+										"x": 18,
+										"y": 841,
 										"width": 18,
 										"height": 19
 									}
@@ -335,8 +335,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "icon-settings",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 17.1796875,
-									"y": 792.66015625,
+									"x": 17,
+									"y": 793,
 									"width": 20,
 									"height": 18
 								},
@@ -347,8 +347,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-icon_settings-qti0mjhc.png",
 									"frame": {
-										"x": 17.1796875,
-										"y": 792.66015625,
+										"x": 17,
+										"y": 793,
 										"width": 20,
 										"height": 18
 									}
@@ -362,8 +362,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "icon-audio",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 17.1796875,
-									"y": 742.66015625,
+									"x": 17,
+									"y": 743,
 									"width": 21,
 									"height": 19
 								},
@@ -374,8 +374,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-icon_audio-ntc1mdqy.png",
 									"frame": {
-										"x": 17.1796875,
-										"y": 742.66015625,
+										"x": 17,
+										"y": 743,
 										"width": 21,
 										"height": 19
 									}
@@ -389,8 +389,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "icon-flag",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 20.1796875,
-									"y": 291.66015625,
+									"x": 20,
+									"y": 292,
 									"width": 14,
 									"height": 18
 								},
@@ -401,8 +401,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-icon_flag-qjzcnejb.png",
 									"frame": {
-										"x": 20.1796875,
-										"y": 291.66015625,
+										"x": 20,
+										"y": 292,
 										"width": 14,
 										"height": 18
 									}
@@ -416,8 +416,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "icon-scoutsLog",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 17.1796875,
-									"y": 242.66015625,
+									"x": 17,
+									"y": 243,
 									"width": 20,
 									"height": 16
 								},
@@ -428,8 +428,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-icon_scoutsLog-mzhemuyz.png",
 									"frame": {
-										"x": 17.1796875,
-										"y": 242.66015625,
+										"x": 17,
+										"y": 243,
 										"width": 20,
 										"height": 16
 									}
@@ -443,8 +443,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "icon-scytheTools",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 18.1796875,
-									"y": 191.66015625,
+									"x": 18,
+									"y": 192,
 									"width": 18,
 									"height": 19
 								},
@@ -455,8 +455,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-icon_scytheTools-odjcmdy5.png",
 									"frame": {
-										"x": 18.1796875,
-										"y": 191.66015625,
+										"x": 18,
+										"y": 192,
 										"width": 18,
 										"height": 19
 									}
@@ -470,8 +470,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "icon-user",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 19.1796875,
-									"y": 143.66015625,
+									"x": 19,
+									"y": 144,
 									"width": 16,
 									"height": 19
 								},
@@ -482,8 +482,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-icon_user-otbgnjiw.png",
 									"frame": {
-										"x": 19.1796875,
-										"y": 143.66015625,
+										"x": 19,
+										"y": 144,
 										"width": 16,
 										"height": 19
 									}
@@ -497,8 +497,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "icon-leaderboard",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 20.1796875,
-									"y": 96.66015625,
+									"x": 20,
+									"y": 97,
 									"width": 15,
 									"height": 17
 								},
@@ -509,8 +509,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-icon_leaderboard-ntk3ndre.png",
 									"frame": {
-										"x": 20.1796875,
-										"y": 96.66015625,
+										"x": 20,
+										"y": 97,
 										"width": 15,
 										"height": 17
 									}
@@ -524,8 +524,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "icon-overview",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 17.1796875,
-									"y": 28.66015625,
+									"x": 17,
+									"y": 29,
 									"width": 22,
 									"height": 22
 								},
@@ -541,8 +541,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 										"originalName": "Group",
 										"maskFrame": null,
 										"layerFrame": {
-											"x": 17.1796875,
-											"y": 31.66015625,
+											"x": 17,
+											"y": 32,
 											"width": 18,
 											"height": 19
 										},
@@ -553,8 +553,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 										"image": {
 											"path": "images/Layer-Group-ntcyotm5.png",
 											"frame": {
-												"x": 17.1796875,
-												"y": 31.66015625,
+												"x": 17,
+												"y": 32,
 												"width": 18,
 												"height": 19
 											}
@@ -568,8 +568,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 										"originalName": "Group",
 										"maskFrame": null,
 										"layerFrame": {
-											"x": 21.1796875,
-											"y": 28.66015625,
+											"x": 21,
+											"y": 29,
 											"width": 18,
 											"height": 19
 										},
@@ -580,8 +580,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 										"image": {
 											"path": "images/Layer-Group-nem2rdq5.png",
 											"frame": {
-												"x": 21.1796875,
-												"y": 28.66015625,
+												"x": 21,
+												"y": 29,
 												"width": 18,
 												"height": 19
 											}
@@ -599,8 +599,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"originalName": "tiles",
 						"maskFrame": null,
 						"layerFrame": {
-							"x": 0.1796875,
-							"y": -0.33984375,
+							"x": 0,
+							"y": 0,
 							"width": 56,
 							"height": 900
 						},
@@ -616,8 +616,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-bottompad",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": 873.66015625,
+									"x": 0,
+									"y": 874,
 									"width": 56,
 									"height": 26
 								},
@@ -628,8 +628,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_bottompad-oddgnzg2.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": 873.66015625,
+										"x": 0,
+										"y": 874,
 										"width": 56,
 										"height": 26
 									}
@@ -643,8 +643,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-help",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": 824.66015625,
+									"x": 0,
+									"y": 825,
 									"width": 56,
 									"height": 51
 								},
@@ -655,8 +655,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_help-ntvbmefd.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": 824.66015625,
+										"x": 0,
+										"y": 825,
 										"width": 56,
 										"height": 51
 									}
@@ -670,8 +670,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-settings",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": 776.66015625,
+									"x": 0,
+									"y": 777,
 									"width": 56,
 									"height": 51
 								},
@@ -682,8 +682,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_settings-qzhdmjje.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": 776.66015625,
+										"x": 0,
+										"y": 777,
 										"width": 56,
 										"height": 51
 									}
@@ -697,8 +697,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-audio",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": 727.66015625,
+									"x": 0,
+									"y": 728,
 									"width": 56,
 									"height": 51
 								},
@@ -709,8 +709,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_audio-rdbcq0jb.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": 727.66015625,
+										"x": 0,
+										"y": 728,
 										"width": 56,
 										"height": 51
 									}
@@ -724,8 +724,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-flag",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": 273.66015625,
+									"x": 0,
+									"y": 274,
 									"width": 56,
 									"height": 51
 								},
@@ -736,8 +736,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_flag-mzrfnjcz.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": 273.66015625,
+										"x": 0,
+										"y": 274,
 										"width": 56,
 										"height": 51
 									}
@@ -751,8 +751,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-scoutsLog",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": 225.66015625,
+									"x": 0,
+									"y": 226,
 									"width": 56,
 									"height": 51
 								},
@@ -763,8 +763,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_scoutsLog-qzdentzc.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": 225.66015625,
+										"x": 0,
+										"y": 226,
 										"width": 56,
 										"height": 51
 									}
@@ -778,8 +778,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-scytheTools",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": 176.66015625,
+									"x": 0,
+									"y": 177,
 									"width": 56,
 									"height": 51
 								},
@@ -790,8 +790,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_scytheTools-ruyzmung.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": 176.66015625,
+										"x": 0,
+										"y": 177,
 										"width": 56,
 										"height": 51
 									}
@@ -805,8 +805,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-user",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": 128.66015625,
+									"x": 0,
+									"y": 129,
 									"width": 56,
 									"height": 50
 								},
@@ -817,8 +817,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_user-mkuymzm3.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": 128.66015625,
+										"x": 0,
+										"y": 129,
 										"width": 56,
 										"height": 50
 									}
@@ -832,8 +832,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-leaderboard",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": 79.66015625,
+									"x": 0,
+									"y": 80,
 									"width": 56,
 									"height": 50
 								},
@@ -844,8 +844,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_leaderboard-otgyrjnd.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": 79.66015625,
+										"x": 0,
+										"y": 80,
 										"width": 56,
 										"height": 50
 									}
@@ -859,8 +859,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"originalName": "tile-overview",
 								"maskFrame": null,
 								"layerFrame": {
-									"x": 0.1796875,
-									"y": -0.33984375,
+									"x": 0,
+									"y": 0,
 									"width": 56,
 									"height": 80
 								},
@@ -871,8 +871,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"image": {
 									"path": "images/Layer-tile_overview-otazree3.png",
 									"frame": {
-										"x": 0.1796875,
-										"y": -0.33984375,
+										"x": 0,
+										"y": 0,
 										"width": 56,
 										"height": 80
 									}
