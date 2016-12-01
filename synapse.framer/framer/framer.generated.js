@@ -680,8 +680,8 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
 		"objectId": "4E74332D-5C3B-46AC-92AC-88CACC0E7B10",
 		"kind": "artboard",
-		"name": "container_sidebar_bg",
-		"originalName": "container_sidebar_bg",
+		"name": "container_helper_sidebar_bg",
+		"originalName": "container-helper-sidebar-bg",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": 1083,

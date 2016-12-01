@@ -107,7 +107,7 @@ setupSidebar = (comp) ->
 			sidebarContainers.push(child.parent.parent)
 
 	sidebarContainers.push(synapse.container_view_navbar) # Add Navbar
-	sidebarContainers.push(synapse.container_sidebar_bg) # Add Sidebar BG
+	sidebarContainers.push(synapse.container_helper_sidebar_bg) # Add Sidebar BG
 
 	States.setupSlide(sidebarContainers, synapse.container_sidebar_overview.width)
 	States.setupFade(sidebarViews)
@@ -154,29 +154,31 @@ for child in navbarTiles.subLayers
 	child.on Events.Click, (event, layer) ->
 		layerAfter = (layer.name).match(regAfter)[0]
 		# if Open, Close Sidebar
-		if (State.current_view == layerAfter || State.close)
+		if (State.current_view == layerAfter || !State.open)
 			animation = ""
 
-			# Update current Icons + Active Icons
-			currentIcon = "icon_" + State.current_view
-			currentActive = "active_" + State.current_view
-			
 			if ( State.open )
 				animation = "close"
+
+				# Update current Icons + Active Icons
+				currentIcon = "icon_" + State.current_view
+				currentActive = "active_" + State.current_view
+
 				# Swap Icon --> >> -> [ ]
 				navbarActive.childrenWithName(currentActive)[0].animate('transparent')
 				navbarIcons.childrenWithName(currentIcon)[0].animate('visible')
+				
+				for tile in navbarTiles.subLayers
+					tile.animate('transparent') # Fadeout all other tiles
 			else
 				animation = "open"
-				# Swap Icon --> [ ] -> >>
-				navbarActive.childrenWithName(currentActive)[0].animate('visible')
-				navbarIcons.childrenWithName(currentIcon)[0].animate('transparent')
-				
+
 			State.open = !State.open
 			for layer in sidebarContainers # Toggle Open/Close containers
 				animateLayer(layer, animation)
 
-		changeView(layer, synapse)
+		changeView(layerAfter, synapse)
+
 		for other in navbarTiles.subLayers
 			if (other.name != activeTile.name) # Maintain highlight state
 				other.animate('transparent') # Fadeout all other tiles
@@ -185,10 +187,8 @@ for child in navbarTiles.subLayers
 # View Controller
 # --------------------------------------------------------------------------------
 
-changeView = (layer, comp) -> 
-
-	currentAfter  = (layer.name).match(regAfter)[0] 	# Layer Name | "flag"
-	currentBefore = (layer.name).match(regBefore)[0]	# Layer Type | "tile" 
+# Generalized to work with any similarly named Sketch file structure 
+changeView = (layerCurrent, comp) -> 
 
 	# Only continue for supported states
 	noMatch = true
@@ -197,24 +197,24 @@ changeView = (layer, comp) ->
 		matchBefore = (child.name).match(regBefore)[0]
 		matchAfter = (child.name).match(regAfter)[0]
 		if (matchBefore == "sidebar")
-			if (matchAfter == currentAfter)
+			if (matchAfter == layerCurrent)
 				noMatch = false
 
 	# Swap Views
 	if (noMatch)
 		return
 
-	activeTile = layer
+	activeTile = "tile_" + layerCurrent
 
 	for name, child of comp
 		matchBefore = (child.name).match(regBefore)[0]
 		matchAfter = (child.name).match(regAfter)[0]
 		if ( matchBefore == "sidebar" )
-			if ( matchAfter == currentAfter ) # FadeIn new View
-				currentIcon = prefix.icon + currentAfter
-				currentActive = prefix.active + currentAfter
+			if ( matchAfter == layerCurrent ) # FadeIn new View
+				currentIcon = prefix.icon + layerCurrent
+				currentActive = prefix.active + layerCurrent
 
-				State.current_view = currentAfter # Set Global State
+				State.current_view = layerCurrent # Set Global State
 
 				# Reset Icons
 				for icon in navbarIcons.children
@@ -234,7 +234,7 @@ changeView = (layer, comp) ->
 				child.parent.parent.visible = false
 
 	# Reset new scroll component
-	currentScroll = "container_sidebar_" + currentAfter
+	currentScroll = "container_sidebar_" + layerCurrent
 	for name, scroll of scroll_components
 		if ( scroll.name == currentScroll )
 			scroll.scrollY = 0
