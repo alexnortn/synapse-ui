@@ -107,6 +107,7 @@ setupSidebar = (comp) ->
 			sidebarContainers.push(child.parent.parent)
 
 	sidebarContainers.push(synapse.container_view_navbar) # Add Navbar
+	sidebarContainers.push(synapse.container_sidebar_bg) # Add Sidebar BG
 
 	States.setupSlide(sidebarContainers, synapse.container_sidebar_overview.width)
 	States.setupFade(sidebarViews)
@@ -153,13 +154,23 @@ for child in navbarTiles.subLayers
 	child.on Events.Click, (event, layer) ->
 		layerAfter = (layer.name).match(regAfter)[0]
 		# if Open, Close Sidebar
-		if (State.current_view == layerAfter)
+		if (State.current_view == layerAfter || State.close)
 			animation = ""
+
+			# Update current Icons + Active Icons
+			currentIcon = "icon_" + State.current_view
+			currentActive = "active_" + State.current_view
 			
 			if ( State.open )
 				animation = "close"
+				# Swap Icon --> >> -> [ ]
+				navbarActive.childrenWithName(currentActive)[0].animate('transparent')
+				navbarIcons.childrenWithName(currentIcon)[0].animate('visible')
 			else
 				animation = "open"
+				# Swap Icon --> [ ] -> >>
+				navbarActive.childrenWithName(currentActive)[0].animate('visible')
+				navbarIcons.childrenWithName(currentIcon)[0].animate('transparent')
 				
 			State.open = !State.open
 			for layer in sidebarContainers # Toggle Open/Close containers
@@ -202,9 +213,9 @@ changeView = (layer, comp) ->
 			if ( matchAfter == currentAfter ) # FadeIn new View
 				currentIcon = prefix.icon + currentAfter
 				currentActive = prefix.active + currentAfter
-				
+
 				State.current_view = currentAfter # Set Global State
-				
+
 				# Reset Icons
 				for icon in navbarIcons.children
 					icon.animate('visible')
@@ -212,7 +223,7 @@ changeView = (layer, comp) ->
 				for icon in navbarActive.children
 					icon.animate('transparent')
 
-				# Set current Icons + Active Icons
+				# Update current Icons + Active Icons
 				navbarIcons.childrenWithName(currentIcon)[0].animate('transparent')
 				navbarActive.childrenWithName(currentActive)[0].animate('visible')
 
@@ -254,8 +265,8 @@ THREE_Canvas.style.height = Utils.pxify(THREE_Layer.height)
 THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize 3D Viewer
-Overview.setup(THREE_Layer, THREE_Canvas)
-Overview.animate()
+# Overview.setup(THREE_Layer, THREE_Canvas)
+# Overview.animate()
 
 # Reorder layers
 THREE_Layer.sendToBack()
