@@ -1,6 +1,7 @@
 # Project Info
 # This info is presented in a widget when you share.
 # http://framerjs.com/docs/#info.info
+# 2016 Alex Norton, for Eyewire + Seung Lab
 
 Framer.Info =
 	title: "Synapse Design Prototypes"
