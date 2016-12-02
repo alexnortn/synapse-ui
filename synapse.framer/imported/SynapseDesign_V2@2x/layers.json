@@ -25,13 +25,41 @@
 		"layerFrame": {
 			"x": 1083,
 			"y": -313,
-			"width": 320,
+			"width": 500,
 			"height": 900
 		},
 		"visible": true,
 		"metadata": {},
 		"backgroundColor": "rgba(24, 26.000000000000004, 30, 1)",
-		"children": []
+		"children": [
+			{
+				"objectId": "2FEA5BB0-6E2E-4B4F-AB2B-3BCEBFAFEFF4",
+				"kind": "group",
+				"name": "helper_sidebar_bg",
+				"originalName": "helper-sidebar-bg",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 0,
+					"y": 0,
+					"width": 500,
+					"height": 348
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-helper_sidebar_bg-mkzfqtvc.png",
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"width": 500,
+						"height": 348
+					}
+				},
+				"children": []
+			}
+		]
 	},
 	{
 		"objectId": "ACEE159E-4E94-4536-8145-55F10CFE3C7F",

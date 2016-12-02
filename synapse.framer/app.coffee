@@ -1,5 +1,3 @@
-# Import file "SynapseDesign_V2" (sizes and positions are scaled 1:2)
-synapse = Framer.Importer.load("imported/SynapseDesign_V2@2x")
 # Project Info
 # This info is presented in a widget when you share.
 # http://framerjs.com/docs/#info.info
@@ -27,7 +25,6 @@ Utils = require("utils")
 # Define and set custom device 
 Framer.Device.deviceType = "desktop-safari-1440-900"
 Framer.Device.background.backgroundColor = "#181A1E"
-Framer.Device.contentScale = 0.5
 synapseParameters =
 	size: 
 		width: 1440
@@ -38,14 +35,16 @@ synapseParameters =
 document.body.style.cursor = "auto"
 
 
+# Import file "SynapseDesign_V2" (sizes and positions are scaled 1:2)
+synapse = Framer.Importer.load("imported/SynapseDesign_V2@2x")
+
 # Import file "SynapseDesign_V2"
 # synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
-# Rescale Incoming Sketch Document
-# for name, child of synapse
-# 	print child.size
-# 	child.scale.x = 0.5
-# 	child.scale.y = 0.5
 
+scaleFactor = 2 # Directly related to Sketch input scale
+scalify = Utils.scalify(scaleFactor)
+
+Framer.Device.contentScale = 1 /scaleFactor # Beware, this makes the prototype a bit wonky
 
 
 # Setup Globals
@@ -83,14 +82,14 @@ sidebarContainers = []
 
 # Overview scroll component
 scroll_overview = ScrollComponent.wrap(synapse.container_sidebar_overview)
-scroll_overview.height = synapse.container_view_navbar.height * 2
+scroll_overview.height = scalify(scroll_overview.height)
 scroll_overview.scrollHorizontal = false
 scroll_overview.propagateEvents = false
 
 
 # Leaderboard scroll component
 scroll_leaderboard = ScrollComponent.wrap(synapse.container_sidebar_leaderboard)
-scroll_leaderboard.height = synapse.container_view_navbar.height * 2
+scroll_leaderboard.height = scalify(scroll_leaderboard.height)
 scroll_leaderboard.scrollHorizontal = false
 scroll_leaderboard.propagateEvents = false
 
@@ -272,8 +271,8 @@ changeView = (layerCurrent, comp) ->
 THREE_Layer = new Layer
 THREE_Layer.name = "THREE_Layer"
 THREE_Layer.backgroundColor = "none"
-THREE_Layer.width = synapseParameters.size.width * 2
-THREE_Layer.height = synapseParameters.size.height * 2
+THREE_Layer.width = scalify(synapseParameters.size.width)
+THREE_Layer.height = scalify(synapseParameters.size.height)
 
 
 # Framer Layers ingore events by default 
@@ -291,8 +290,8 @@ THREE_Canvas.style.height = Utils.pxify(THREE_Layer.height)
 THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize 3D Viewer
-Overview.setup(THREE_Layer, THREE_Canvas)
-Overview.animate()
+# Overview.setup(THREE_Layer, THREE_Canvas)
+# Overview.animate()
 
 # Reorder layers
 THREE_Layer.sendToBack()

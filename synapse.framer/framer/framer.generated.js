@@ -459,7 +459,7 @@ window.__imported__["SynapseDesign@1x/layers.json.js"] = [
 	}
 ]
 window.__imported__ = window.__imported__ || {};
-window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
+window.__imported__["SynapseDesign_V2@2x/layers.json.js"] = [
 	{
 		"objectId": "EE3398C3-7887-4852-9260-09B4635DE777",
 		"kind": "artboard",
@@ -486,13 +486,41 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"layerFrame": {
 			"x": 1083,
 			"y": -313,
-			"width": 320,
+			"width": 500,
 			"height": 900
 		},
 		"visible": true,
 		"metadata": {},
 		"backgroundColor": "rgba(24, 26.000000000000004, 30, 1)",
-		"children": []
+		"children": [
+			{
+				"objectId": "2FEA5BB0-6E2E-4B4F-AB2B-3BCEBFAFEFF4",
+				"kind": "group",
+				"name": "helper_sidebar_bg",
+				"originalName": "helper-sidebar-bg",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 0,
+					"y": 0,
+					"width": 500,
+					"height": 348
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-helper_sidebar_bg-mkzfqtvc.png",
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"width": 500,
+						"height": 348
+					}
+				},
+				"children": []
+			}
+		]
 	},
 	{
 		"objectId": "ACEE159E-4E94-4536-8145-55F10CFE3C7F",
@@ -1697,7 +1725,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	}
 ]
 window.__imported__ = window.__imported__ || {};
-window.__imported__["SynapseDesign_V2@2x/layers.json.js"] = [
+window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
 		"objectId": "EE3398C3-7887-4852-9260-09B4635DE777",
 		"kind": "artboard",
@@ -1724,13 +1752,41 @@ window.__imported__["SynapseDesign_V2@2x/layers.json.js"] = [
 		"layerFrame": {
 			"x": 1083,
 			"y": -313,
-			"width": 320,
+			"width": 500,
 			"height": 900
 		},
 		"visible": true,
 		"metadata": {},
 		"backgroundColor": "rgba(24, 26.000000000000004, 30, 1)",
-		"children": []
+		"children": [
+			{
+				"objectId": "2FEA5BB0-6E2E-4B4F-AB2B-3BCEBFAFEFF4",
+				"kind": "group",
+				"name": "helper_sidebar_bg",
+				"originalName": "helper-sidebar-bg",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 0,
+					"y": 0,
+					"width": 500,
+					"height": 900
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-helper_sidebar_bg-mkzfqtvc.png",
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"width": 500,
+						"height": 900
+					}
+				},
+				"children": []
+			}
+		]
 	},
 	{
 		"objectId": "ACEE159E-4E94-4536-8145-55F10CFE3C7F",
@@ -2935,9 +2991,9 @@ window.__imported__["SynapseDesign_V2@2x/layers.json.js"] = [
 	}
 ]
 if (DeviceComponent) {DeviceComponent.Devices["iphone-6-silver"].deviceImageJP2 = false};
-if (window.Framer) {window.Framer.Defaults.DeviceView = {"deviceScale":0.75,"selectedHand":"","deviceType":"custom","contentScale":1,"orientation":0};
+if (window.Framer) {window.Framer.Defaults.DeviceView = {"deviceScale":0.5,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
 }
-if (window.Framer) {window.Framer.Defaults.DeviceComponent = {"deviceScale":0.75,"selectedHand":"","deviceType":"custom","contentScale":1,"orientation":0};
+if (window.Framer) {window.Framer.Defaults.DeviceComponent = {"deviceScale":0.5,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
 }
 window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"synapse.framer"};
 
