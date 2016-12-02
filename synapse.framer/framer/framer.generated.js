@@ -674,7 +674,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		},
 		"visible": true,
 		"metadata": {},
-		"backgroundColor": "rgba(24.48, 26.009999999999998, 30.599999999999998, 1)",
+		"backgroundColor": "rgba(22, 23, 26, 1)",
 		"children": []
 	},
 	{
@@ -1802,6 +1802,96 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					}
 				]
+			}
+		]
+	},
+	{
+		"objectId": "89B89EF1-2B00-492B-ABED-5F99177AEF02",
+		"kind": "artboard",
+		"name": "container_view_chip",
+		"originalName": "container-view-chip",
+		"maskFrame": null,
+		"layerFrame": {
+			"x": 3,
+			"y": -273,
+			"width": 238,
+			"height": 64
+		},
+		"visible": true,
+		"metadata": {},
+		"backgroundColor": "rgba(255, 255, 255, 0)",
+		"children": [
+			{
+				"objectId": "CBC07272-A520-4787-B380-DCDF3D553DD5",
+				"kind": "group",
+				"name": "view_chip",
+				"originalName": "view-chip",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 0,
+					"y": 0,
+					"width": 239,
+					"height": 64
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-view_chip-q0jdmdcy.png",
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"width": 239,
+						"height": 64
+					}
+				},
+				"children": []
+			}
+		]
+	},
+	{
+		"objectId": "06B5F5E3-7D29-48AE-A2C1-0E343769AACA",
+		"kind": "artboard",
+		"name": "container_view_chip2",
+		"originalName": "container-view-chip2",
+		"maskFrame": null,
+		"layerFrame": {
+			"x": 445,
+			"y": 487,
+			"width": 238,
+			"height": 64
+		},
+		"visible": true,
+		"metadata": {},
+		"backgroundColor": "rgba(255, 255, 255, 0)",
+		"children": [
+			{
+				"objectId": "F35B0CD2-54B1-4446-9B6C-C99D77D14327",
+				"kind": "group",
+				"name": "view_chip2",
+				"originalName": "view-chip2",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 0,
+					"y": 0,
+					"width": 239,
+					"height": 64
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-view_chip2-rjm1qjbd.png",
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"width": 239,
+						"height": 64
+					}
+				},
+				"children": []
 			}
 		]
 	}

@@ -40,7 +40,6 @@ setup = (_layer, _canvas) ->
 	renderer.setSize(_width, _height);
 
 	controls = new Trackball( camera, renderer.domElement ); # Only interact when over canvas
-	controls.noPan = false;
 
 	material = new THREE.MeshPhongMaterial();
 
