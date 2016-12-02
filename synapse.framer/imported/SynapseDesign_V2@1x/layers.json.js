@@ -1162,7 +1162,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "CBC07272-A520-4787-B380-DCDF3D553DD5",
+				"objectId": "429AAF9C-5D0D-4BBF-B0BA-8BE406E9D316",
 				"kind": "group",
 				"name": "view_chip",
 				"originalName": "view-chip",
@@ -1170,7 +1170,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 				"layerFrame": {
 					"x": 0,
 					"y": 0,
-					"width": 239,
+					"width": 238,
 					"height": 64
 				},
 				"visible": true,
@@ -1178,11 +1178,11 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-view_chip-q0jdmdcy.png",
+					"path": "images/Layer-view_chip-ndi5qufg.png",
 					"frame": {
 						"x": 0,
 						"y": 0,
-						"width": 239,
+						"width": 238,
 						"height": 64
 					}
 				},
@@ -1207,7 +1207,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "F35B0CD2-54B1-4446-9B6C-C99D77D14327",
+				"objectId": "D2732BAA-D2ED-4E14-8616-314B71FC1C2B",
 				"kind": "group",
 				"name": "view_chip2",
 				"originalName": "view-chip2",
@@ -1215,7 +1215,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 				"layerFrame": {
 					"x": 0,
 					"y": 0,
-					"width": 239,
+					"width": 238,
 					"height": 64
 				},
 				"visible": true,
@@ -1223,11 +1223,11 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-view_chip2-rjm1qjbd.png",
+					"path": "images/Layer-view_chip2-rdi3mzjc.png",
 					"frame": {
 						"x": 0,
 						"y": 0,
-						"width": 239,
+						"width": 238,
 						"height": 64
 					}
 				},

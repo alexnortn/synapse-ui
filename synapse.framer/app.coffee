@@ -1,3 +1,5 @@
+# Import file "SynapseDesign_V2" (sizes and positions are scaled 1:2)
+synapse = Framer.Importer.load("imported/SynapseDesign_V2@2x")
 # Project Info
 # This info is presented in a widget when you share.
 # http://framerjs.com/docs/#info.info
@@ -25,6 +27,7 @@ Utils = require("utils")
 # Define and set custom device 
 Framer.Device.deviceType = "desktop-safari-1440-900"
 Framer.Device.background.backgroundColor = "#181A1E"
+Framer.Device.contentScale = 0.5
 synapseParameters =
 	size: 
 		width: 1440
@@ -36,7 +39,13 @@ document.body.style.cursor = "auto"
 
 
 # Import file "SynapseDesign_V2"
-synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
+# synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
+# Rescale Incoming Sketch Document
+# for name, child of synapse
+# 	print child.size
+# 	child.scale.x = 0.5
+# 	child.scale.y = 0.5
+
 
 
 # Setup Globals
@@ -74,12 +83,14 @@ sidebarContainers = []
 
 # Overview scroll component
 scroll_overview = ScrollComponent.wrap(synapse.container_sidebar_overview)
+scroll_overview.height = synapse.container_view_navbar.height * 2
 scroll_overview.scrollHorizontal = false
 scroll_overview.propagateEvents = false
 
 
 # Leaderboard scroll component
 scroll_leaderboard = ScrollComponent.wrap(synapse.container_sidebar_leaderboard)
+scroll_leaderboard.height = synapse.container_view_navbar.height * 2
 scroll_leaderboard.scrollHorizontal = false
 scroll_leaderboard.propagateEvents = false
 
@@ -261,8 +272,8 @@ changeView = (layerCurrent, comp) ->
 THREE_Layer = new Layer
 THREE_Layer.name = "THREE_Layer"
 THREE_Layer.backgroundColor = "none"
-THREE_Layer.width = synapseParameters.size.width
-THREE_Layer.height = synapseParameters.size.height
+THREE_Layer.width = synapseParameters.size.width * 2
+THREE_Layer.height = synapseParameters.size.height * 2
 
 
 # Framer Layers ingore events by default 
