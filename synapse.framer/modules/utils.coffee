@@ -22,10 +22,3 @@ scalify = (scaleFactor) =>
 exports.scalify = scalify
 
 
-# scalify = ( function(scaleFactor) {
-# 	return function (val) {
-# 		return val * scaleFactor;
-# 	}
-# }
-
-

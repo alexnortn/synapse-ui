@@ -36,12 +36,12 @@ document.body.style.cursor = "auto"
 
 
 # Import file "SynapseDesign_V2" (sizes and positions are scaled 1:2)
-synapse = Framer.Importer.load("imported/SynapseDesign_V2@2x")
+# synapse = Framer.Importer.load("imported/SynapseDesign_V2@2x")
 
 # Import file "SynapseDesign_V2"
-# synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
+synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
 
-scaleFactor = 2 # Directly related to Sketch input scale
+scaleFactor = 1 # Directly related to Sketch input scale
 scalify = Utils.scalify(scaleFactor)
 
 Framer.Device.contentScale = 1 /scaleFactor # Beware, this makes the prototype a bit wonky
@@ -290,8 +290,8 @@ THREE_Canvas.style.height = Utils.pxify(THREE_Layer.height)
 THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize 3D Viewer
-# Overview.setup(THREE_Layer, THREE_Canvas)
-# Overview.animate()
+Overview.setup(THREE_Layer, THREE_Canvas)
+Overview.animate()
 
 # Reorder layers
 THREE_Layer.sendToBack()
