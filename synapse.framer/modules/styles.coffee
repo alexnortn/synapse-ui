@@ -52,12 +52,11 @@ styles.colors.accent =
 	blue_1 : "#5A98C7"
 
 styles.colors.gradient = 
-	gray_0 : "webkit-linear-gradient(0deg, #2A2C34, #24262E)",
-	gray_1 : "webkit-linear-gradient(0deg, #2A2C34, #24262E)",
-	gray_2 : "webkit-linear-gradient(0deg, #5D6574, #303540)",
-	gray_3 : "webkit-linear-gradient(0deg, #9DA2AB, #646873)",
-	green_0 : "webkit-linear-gradient(0deg, #82D99E, #66CC7F)"
-
+	gray_0 : "linear-gradient( 0deg, #1F2126, #1C1E23 )",
+	gray_1 : "linear-gradient( 0deg, #2A2C34, #24262E )",
+	gray_2 : "linear-gradient( 0deg, #5D6574, #303540 )",
+	gray_3 : "linear-gradient( 0deg, #9DA2AB, #646873 )",
+	green_0 : "linear-gradient( 0deg, #82D99E, #66CC7F )"
 
 # Apply Styles --------------------------------------------------------
 
@@ -67,14 +66,16 @@ applyStyle = (layer, style) -> # Accepts an opject with property objects
 		layer.style[name] = prop
 
 
+# Apply Propertry -----------------------------------------------------
+
+applyProperty = (layer, property, value) -> # Accepts an opject with property objects
+	layer.style[property] = value # Need to get name of object
+
+
 # Need to build a styles parser
 exports.styles = styles
 exports.applyStyle = applyStyle
-
-
-
-
-
+exports.applyProperty = applyProperty
 
 
 

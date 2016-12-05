@@ -28,6 +28,7 @@ Typography = Styles.styles.typography
 
 # Apply Styles
 ApplyStyle = Styles.applyStyle
+ApplyProperty = Styles.applyProperty
 
 
 # Define and set custom device 
@@ -309,15 +310,34 @@ synapse.container_view_bg.sendToBack()
 # Test
 # --------------------------------------------------------------------------------
 
-testLayer = new Layer
-	x: 0
-	y: 0
-	width: 100
-	height: 100
-	backgroundColor: Colors.ui.gray_4
+element_notification = new Layer
+	x: Align.center
+	y: Align.center
+	width: 238
+	height: 64
+	borderRadius: 32
 
-ApplyStyle(testLayer, Typography.p)
-testLayer.html = "My name is Jonas."
+element_notification_hitbox_left = new Layer
+	parent: element_notification
+
+element_notification_hitbox_left.borderRadius = element_notification_hitbox_left.parent.borderRadius
+element_notification_hitbox_left.width = element_notification_hitbox_left.parent.height
+element_notification_hitbox_left.height = element_notification_hitbox_left.parent.height
+
+
+element_notification_hitbox_right = new Layer
+	parent: element_notification
+
+element_notification_hitbox_right.borderRadius = element_notification_hitbox_right.parent.borderRadius
+element_notification_hitbox_right.width = element_notification_hitbox_right.parent.height
+element_notification_hitbox_right.height = element_notification_hitbox_right.parent.height
+element_notification_hitbox_right.x = Align.right
+
+ApplyProperty(element_notification, "background", Colors.gradient.gray_0)
+ApplyProperty(element_notification, "color", Colors.ui.gray_5)
+ApplyStyle(element_notification, Typography.p)
+
+# element_notification.html = "My name is Jonas."
 
 
 
