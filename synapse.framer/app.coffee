@@ -19,7 +19,15 @@ ViewController = require('ViewController')
 # My Modules
 Overview = require("overview")
 States = require("states")
-Utils = require("utils") 
+Utils = require("utils")
+Styles = require("styles")
+
+# Styles
+Colors = Styles.styles.colors
+Typography = Styles.styles.typography
+
+# Apply Styles
+ApplyStyle = Styles.applyStyle
 
 
 # Define and set custom device 
@@ -296,5 +304,22 @@ THREE_Layer._element.appendChild(THREE_Canvas);
 # Reorder layers
 THREE_Layer.sendToBack()
 synapse.container_view_bg.sendToBack()
+
+
+# Test
+# --------------------------------------------------------------------------------
+
+testLayer = new Layer
+	x: 0
+	y: 0
+	width: 100
+	height: 100
+	backgroundColor: Colors.ui.gray_4
+
+ApplyStyle(testLayer, Typography.p)
+testLayer.html = "My name is Jonas."
+
+
+
 
 
