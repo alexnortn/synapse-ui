@@ -52,11 +52,11 @@ styles.colors.accent =
 	blue_1 : "#5A98C7"
 
 styles.colors.gradient = 
-	gray_0 : "linear-gradient( 0deg, #1F2126, #1C1E23 )",
-	gray_1 : "linear-gradient( 0deg, #2A2C34, #24262E )",
-	gray_2 : "linear-gradient( 0deg, #5D6574, #303540 )",
-	gray_3 : "linear-gradient( 0deg, #9DA2AB, #646873 )",
-	green_0 : "linear-gradient( 0deg, #82D99E, #66CC7F )"
+	gray_0 : "-webkit-linear-gradient( top, #1F2126, #1C1E23 )",
+	gray_1 : "-webkit-linear-gradient( top, #282A2E, #1F2123 )",
+	gray_2 : "-webkit-linear-gradient( top, #5D6574, #303540 )",
+	gray_3 : "-webkit-linear-gradient( top, #9DA2AB, #646873 )",
+	green_0 : "-webkit-linear-gradient( top, #82D99E, #66CC7F )"
 
 # Apply Styles --------------------------------------------------------
 

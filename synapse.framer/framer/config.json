@@ -4,11 +4,11 @@
   },
   "deviceOrientation" : 0,
   "sharedPrototype" : 0,
-  "contentScale" : 1,
+  "contentScale" : 0.5,
   "deviceType" : "custom",
   "selectedHand" : "",
   "updateDelay" : 0,
-  "deviceScale" : 0.5,
+  "deviceScale" : 1.5,
   "foldedCodeRanges" : [
 
   ],
