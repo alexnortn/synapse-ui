@@ -72,7 +72,8 @@ applyProperty = (layer, property, value) -> # Accepts an opject with property ob
 	layer.style[property] = value # Need to get name of object
 
 
-# Need to build a styles parser
+# Module Exports ------------------------------------------------------
+
 exports.styles = styles
 exports.applyStyle = applyStyle
 exports.applyProperty = applyProperty
