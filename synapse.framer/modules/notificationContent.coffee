@@ -22,11 +22,11 @@ content.CTA =
 		icon: "points"
 	complete5:
 		header: "Announcement"
-		copy: "Remember to keep it all-ages in chat!  Review the chat rules here."
+		copy: "Remember to keep it all-ages in chat!  Chat rules here."
 		icon: "help"
 	complete5:
 		header: "Announcement"
-		copy: "Watch here to improve your accuracy to precision perfect."
+		copy: "Watch here to improve your accuracy to perfection!"
 		icon: "help"
 	bigNews1:
 		header: "Big News"

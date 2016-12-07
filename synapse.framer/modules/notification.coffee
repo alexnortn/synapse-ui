@@ -6,11 +6,17 @@
 {TextLayer} = require('TextLayer')
 {ƒ,ƒƒ} = require ('findModule')
 Styles = require("styles")
+States = require("states")
 
 
 # Styles
 Colors = Styles.styles.colors
 Typography = Styles.styles.typography
+
+# Globals
+queue = []
+exiting = false
+pushing = false
 
 
 
@@ -26,8 +32,6 @@ Simple = (content, CTA=false, elemName='element_notification') ->
 	header = content.header
 	copy = content.copy
 	icon = content.icon
-
-	console.log header
 	
 	elem = ''
 	elem2 = ''
@@ -49,8 +53,7 @@ Simple = (content, CTA=false, elemName='element_notification') ->
 	fadeInNotification()
 	pushNotification()
 
-	fadeOutNotification(CTA, 10000)
-
+	fadeOutNotification(10000) 
 # Generate Progress { Green } Progress Notifcation -> Spawn top left, stacking
 # header | copy | icon 
 
@@ -68,7 +71,7 @@ CTA = (content) ->
 # Create Notification 
 generateContainer = (elemName) ->
 
-	element_notification = new Layer
+	_this = new Layer
 		name: elemName
 		x: Align.left(25)
 		y: Align.top(-64)
@@ -77,23 +80,34 @@ generateContainer = (elemName) ->
 		borderRadius: 32
 		opacity: 0
 
-	element_notification.style.background = Colors.gradient.gray_0
+	_this.style.background = Colors.gradient.gray_0
 
-	return element_notification
+	# Setup States
+	States.setupTogglePush(_this)
+	States.setupFadeOnce(_this)
+
+	# Event Handlers
+	_this.on Events.MouseOver, (event, layer) ->
+		layer.animate('pushRight')
+
+	_this.on Events.MouseOut, (event, layer) ->
+		layer.animate('pushLeft')
+
+	return _this
 
 
 # Create Notification Hitbox, Left
 generateHitboxLeft = (elem) ->
-	element_notification_hitbox_left = new Layer
+	_this = new Layer
 		parent: elem
 		name: "hitbox_left"
 		backgroundColor: "transparent"
 
-	element_notification_hitbox_left.borderRadius = element_notification_hitbox_left.parent.borderRadius
-	element_notification_hitbox_left.width = element_notification_hitbox_left.parent.height
-	element_notification_hitbox_left.height = element_notification_hitbox_left.parent.height
+	_this.borderRadius = _this.parent.borderRadius
+	_this.width = _this.parent.height
+	_this.height = _this.parent.height
 
-	return element_notification_hitbox_left
+	return _this
 
 
 # Create Notification Hitbox, Left BG
@@ -106,7 +120,7 @@ generateHitboxLeftBG = (elem, CTA) ->
 		backgroundGradient = Colors.gradient.gray_1
 
 	# Create Notification Hitbox, Left BG
-	element_notification_hitbox_left_BG = new Layer
+	_this = new Layer
 		parent: elem
 		name: "hitbox_left_BG"
 		width: 48
@@ -115,38 +129,81 @@ generateHitboxLeftBG = (elem, CTA) ->
 		x: Align.center
 		y: Align.center
 
-	element_notification_hitbox_left_BG.style.background = backgroundGradient
+	_this.style.background = backgroundGradient
 
-	return element_notification_hitbox_left_BG
+	return _this
 
 
 # Create Notification Hitbox, Right
 generateHitboxRight = (elem) ->
-	element_notification_hitbox_right = new Layer
+
+	_this = new Layer
 		parent: elem
 		name: "hitbox_right"
 		backgroundColor: "transparent"
 
-	element_notification_hitbox_right.borderRadius = element_notification_hitbox_right.parent.borderRadius
-	element_notification_hitbox_right.width = element_notification_hitbox_right.parent.height
-	element_notification_hitbox_right.height = element_notification_hitbox_right.parent.height
-	element_notification_hitbox_right.x = Align.right
+	_this.borderRadius = _this.parent.borderRadius
+	_this.width = _this.parent.height
+	_this.height = _this.parent.height
+	_this.x = Align.right
 
-	return element_notification_hitbox_right
+	# Setup States
+	States.setupFadeOnce(_this)
+
+	# Event Handlers
+	_this.on Events.MouseOver, (event, layer) ->
+		layer.children[0].animate('visible')
+
+	_this.on Events.MouseOut, (event, layer) ->
+		layer.children[0].animate('translucent')
+
+	_this.on Events.Click, (event, layer) ->
+		if (pushing)
+			return
+
+		# Check current element status
+		elems = ƒƒ('element_notification*')
+
+		if (elems.length > 1)
+			shift = true
+			offset = 12
+			for elem, index in elems
+				if (elem == layer.parent)
+					# offset = index == 0 ? 0 : 24 # If newest element removed, make up for initial offset
+					shift = false
+
+				if (shift) # push all remaining elements upwards
+					console.log "shift"
+					exiting = true # global for managing generator + queue
+					elem.animate
+						y: (elem.y - elem.height - offset)
+						options:
+							time: 1
+							curve: "spring(250, 25, 0)"
+
+					elem.onAnimationEnd -> 
+						exiting = false
+
+
+		layer.parent.animate('translucent')
+		# Remove notification element after animtion completes
+		layer.parent.onAnimationEnd -> layer.parent.destroy()	
+
+	return _this
 
 
 # Create Notification Hitbox, Left Icon
 generateHitboxLeftIcon = (elem, icon, CTA) ->
 	icon = 'icons_' + icon.toString()
 
-	element_notification_icon = ƒ(icon).copy()	
-	element_notification_icon.parent = elem
+	_this = ƒ(icon).copy()	
+	_this.parent = elem
 
-	element_notification_icon.x = Align.center
-	element_notification_icon.y = Align.center
+	_this.x = Align.center
+	_this.y = Align.center
 
 	if (CTA)
-		element_notification_icon.style["mixBlendMode"] = "multiply"
+		_this.style["mixBlendMode"] = "multiply"
 
 
 # Create Notification Hitbox, Right Close Icon
@@ -158,15 +215,20 @@ generateHitboxRightIcon = (elem, CTA) ->
 	# else
 	icon += 'close'
 
-	element_notification_hitbox_right_icon = ƒ(icon).copy()	
-	element_notification_hitbox_right_icon.parent = elem
-	element_notification_hitbox_right_icon.x = Align.center
-	element_notification_hitbox_right_icon.y = Align.center
+	_this = ƒ(icon).copy()	
+	_this.parent = elem
+	_this.x = Align.center
+	_this.y = Align.center
+
+	_this.opacity = 0.25
+
+	# Setup States
+	States.setupFadeOnce(_this)
 
 
 # Create Notification Header
 generateHeader = (elem, headerCopy) ->
-	element_notification_header = new TextLayer
+	_this = new TextLayer
 		text: headerCopy
 		autoSize: true
 		color: Colors.ui.gray_5
@@ -178,15 +240,15 @@ generateHeader = (elem, headerCopy) ->
 		letterSpacing: 1
 		fontFamily: "Source Sans Pro"
 
-	element_notification_header.parent = elem
-	element_notification_header.name = "header"
-	element_notification_header.x = 72
-	element_notification_header.y = Align.center(-12)
+	_this.parent = elem
+	_this.name = "header"
+	_this.x = 72
+	_this.y = Align.center(-12)
 
 
 # Create Notification Copy
 generateCopy = (elem, copy) ->
-	element_notification_copy = new TextLayer
+	_this = new TextLayer
 		text: copy
 		autoSize: true
 		width: 112
@@ -197,10 +259,10 @@ generateCopy = (elem, copy) ->
 		lineHeight: 1.25
 		fontFamily: "Source Sans Pro"
 
-	element_notification_copy.parent = elem
-	element_notification_copy.name = "copy"
-	element_notification_copy.x = 72
-	element_notification_copy.y = Align.center(4)
+	_this.parent = elem
+	_this.name = "copy"
+	_this.x = 72
+	_this.y = Align.center(4)
 
 
 # Notification Animators
@@ -222,6 +284,8 @@ pushNotification = () ->
 	elems = ƒƒ('element_notification*')
 	padding = ''
 
+	pushing = true
+
 	for elem, index in elems
 		if (index == elems.length-1)
 			padding = 24
@@ -236,9 +300,11 @@ pushNotification = () ->
 				time: 1
 				curve: "spring(250, 25, 0)"
 
+		elem.onAnimationEnd -> pushing = false
+
 
 # Fade Out notification after timeOut
-fadeOutNotification = (CTA, timer=10000) ->
+fadeOutNotification = (timer=10000) ->
 
 	# Animate out 
 	animateOut = (CTA=false) ->
@@ -267,6 +333,8 @@ fadeOutNotification = (CTA, timer=10000) ->
 	$p.then(
 		() ->
 			animateOut(CTA)
+			if (!exiting)
+				queueCheck(queue)
 	)
 	.catch(
 		(reason) ->
@@ -315,9 +383,30 @@ setNotificationType = (options) ->
 		num2++
 
 
+# Check notification queue
+queueCheck = (queue) ->
+	if (!queue.length)
+		return
+	
+	elems = ƒƒ('element_notification*')
+	if (elems.length > 3)
+		return
+
+	# Notifcation Creation Functions
+	makeNotification = 
+		Simple: Simple
+		Progress: Progress
+		CTA: CTA
+
+	queueItem = queue.shift()
+
+	for name, create of makeNotification
+		if (name == queueItem.name)	
+			create(queueItem.content)
+
+
 # Recursively generate notifications
 Generator = (options) ->
-	
 	# Notifcation Creation Functions
 	makeNotification = 
 		Simple: Simple
@@ -326,23 +415,25 @@ Generator = (options) ->
 
 	notificationContents = setNotificationType(options)
 
-	if (notificationContents)
+	if (notificationContents && !exiting)
 		for name, create of makeNotification
 			if (name == notificationContents.name)
-					# Need to build a queue to deal with this
 				elems = ƒƒ('element_notification*')
+				
 				if (elems.length < 3)
-					console.log "Make Notifcation"
 					create(notificationContents.content)
-				else
-					console.log "queue"
+				else					
+					if create.name == "CTA" # Priority first queuing
+						queue.unshift(notificationContents) # CTA notifications get priority
+					else
+						queue.push(notificationContents) # over Simple notifications
 
 
 	recurGen = () ->
 		Generator(options)
 	
-	timeOut = Utils.randomNumber(1000, 10000)
-	window.setTimeout(recurGen, timeOut)
+	timeOut = Utils.randomNumber(1000, 6000)
+	window.setTimeout(recurGen, 1500)
 
 
 # Module Exports ------------------------------------------------------
