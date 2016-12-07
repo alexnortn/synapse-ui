@@ -116,6 +116,9 @@ scroll_components = [ scroll_overview, scroll_leaderboard ]
 navbarActive.childrenWithName('active_leaderboard')[0].opacity = 0
 navbarActive.childrenWithName('active_overview')[0].opacity = 0 
 
+synapse.container_view_chip.visible = false
+synapse.container_view_chip2.visible = false
+
 for child in navbarTiles.subLayers
 	child.opacity = 0
 
