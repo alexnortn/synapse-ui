@@ -26,6 +26,8 @@ Simple = (content, CTA=false, elemName='element_notification') ->
 	header = content.header
 	copy = content.copy
 	icon = content.icon
+
+	console.log header
 	
 	elem = ''
 	elem2 = ''
@@ -47,7 +49,7 @@ Simple = (content, CTA=false, elemName='element_notification') ->
 	fadeInNotification()
 	pushNotification()
 
-	fadeOutNotification(CTA, 5000)
+	fadeOutNotification(CTA, 10000)
 
 # Generate Progress { Green } Progress Notifcation -> Spawn top left, stacking
 # header | copy | icon 
@@ -151,10 +153,10 @@ generateHitboxLeftIcon = (elem, icon, CTA) ->
 generateHitboxRightIcon = (elem, CTA) ->
 	icon = 'icons_'
 	
-	if (CTA)
-		icon += 'go_alt'
-	else
-		icon += 'close'
+	# if (CTA)
+	# 	icon += 'go_alt'
+	# else
+	icon += 'close'
 
 	element_notification_hitbox_right_icon = ƒ(icon).copy()	
 	element_notification_hitbox_right_icon.parent = elem
@@ -173,7 +175,7 @@ generateHeader = (elem, headerCopy) ->
 		fontSize: 10
 		fontWeight: "Bold"
 		lineHeight: 1.15
-		letterSpacing: 2
+		letterSpacing: 1
 		fontFamily: "Source Sans Pro"
 
 	element_notification_header.parent = elem
@@ -236,7 +238,7 @@ pushNotification = () ->
 
 
 # Fade Out notification after timeOut
-fadeOutNotification = (CTA, timer=5000) ->
+fadeOutNotification = (CTA, timer=10000) ->
 
 	# Animate out 
 	animateOut = (CTA=false) ->
@@ -327,13 +329,19 @@ Generator = (options) ->
 	if (notificationContents)
 		for name, create of makeNotification
 			if (name == notificationContents.name)
-				create(notificationContents.content)
+					# Need to build a queue to deal with this
+				elems = ƒƒ('element_notification*')
+				if (elems.length < 3)
+					console.log "Make Notifcation"
+					create(notificationContents.content)
+				else
+					console.log "queue"
 
 
 	recurGen = () ->
 		Generator(options)
 	
-	timeOut = Utils.randomNumber(2500, 7500)
+	timeOut = Utils.randomNumber(1000, 10000)
 	window.setTimeout(recurGen, timeOut)
 
 
