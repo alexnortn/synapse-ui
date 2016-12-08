@@ -9314,7 +9314,7 @@ window.__imported__["SynapseDesign_V2@2x/layers.json.js"] = [
 window.__imported__ = window.__imported__ || {};
 window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	{
-		"objectId": "EE3398C3-7887-4852-9260-09B4635DE777",
+		"objectId": "C671CCF0-AD5D-4D78-9440-16B2CAFA71AD",
 		"kind": "artboard",
 		"name": "container_view_bg",
 		"originalName": "container-view-bg",
@@ -9331,7 +9331,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"children": []
 	},
 	{
-		"objectId": "4E74332D-5C3B-46AC-92AC-88CACC0E7B10",
+		"objectId": "B70E3EE2-EF92-4C3C-AC2E-A1BF14BCA193",
 		"kind": "artboard",
 		"name": "container_helper_sidebar_bg",
 		"originalName": "container-helper-sidebar-bg",
@@ -9344,10 +9344,10 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		},
 		"visible": true,
 		"metadata": {},
-		"backgroundColor": "rgba(24, 26.000000000000004, 30, 1)",
+		"backgroundColor": "rgba(24, 26.000000000000004, 30, 0.05)",
 		"children": [
 			{
-				"objectId": "2FEA5BB0-6E2E-4B4F-AB2B-3BCEBFAFEFF4",
+				"objectId": "533C383E-69D2-4B94-9D5B-3805FD9BA346",
 				"kind": "group",
 				"name": "helper_sidebar_bg",
 				"originalName": "helper-sidebar-bg",
@@ -9356,19 +9356,19 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"x": 0,
 					"y": 0,
 					"width": 500,
-					"height": 900
+					"height": 348
 				},
 				"visible": true,
 				"metadata": {
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-helper_sidebar_bg-mkzfqtvc.png",
+					"path": "images/Layer-helper_sidebar_bg-ntmzqzm4.png",
 					"frame": {
 						"x": 0,
 						"y": 0,
 						"width": 500,
-						"height": 900
+						"height": 348
 					}
 				},
 				"children": []
@@ -9376,7 +9376,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		]
 	},
 	{
-		"objectId": "ACEE159E-4E94-4536-8145-55F10CFE3C7F",
+		"objectId": "54315E98-F626-445E-A6B5-AF68DB611A71",
 		"kind": "artboard",
 		"name": "container_sidebar_leaderboard",
 		"originalName": "container-sidebar-leaderboard",
@@ -9389,10 +9389,10 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		},
 		"visible": true,
 		"metadata": {},
-		"backgroundColor": "rgba(255, 255, 255, 1)",
+		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "C4A1C569-B704-4599-89A4-E88E6A02F448",
+				"objectId": "95D7F51B-0049-4B22-BDD3-FE3A8FF09344",
 				"kind": "group",
 				"name": "sidebar_leaderboard",
 				"originalName": "sidebar-leaderboard",
@@ -9408,7 +9408,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-sidebar_leaderboard-qzrbmum1.png",
+					"path": "images/Layer-sidebar_leaderboard-otven0y1.png",
 					"frame": {
 						"x": -1,
 						"y": 0,
@@ -9421,7 +9421,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		]
 	},
 	{
-		"objectId": "4117B9D1-9034-49A1-9C8A-CE4BFC9B2EF0",
+		"objectId": "FAC51263-48DC-458C-8F30-16971D440361",
 		"kind": "artboard",
 		"name": "container_view_chat",
 		"originalName": "container-view-chat",
@@ -9437,7 +9437,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "CA2D8376-D42C-400F-999C-07DF255314DD",
+				"objectId": "0A8B06BE-39EB-40C9-AD0B-19F732D75AE8",
 				"kind": "group",
 				"name": "view_chat",
 				"originalName": "view-chat",
@@ -9454,7 +9454,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 				},
 				"children": [
 					{
-						"objectId": "B13BCBFD-5D12-4EA8-BC36-19633EF210CB",
+						"objectId": "3AEBE624-AD6C-4F14-955E-25558C7E971B",
 						"kind": "group",
 						"name": "view_chat_textInput",
 						"originalName": "view-chat-textInput",
@@ -9470,7 +9470,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-view_chat_textInput-qjezqknc.png",
+							"path": "images/Layer-view_chat_textInput-m0ffqku2.png",
 							"frame": {
 								"x": 31,
 								"y": 576,
@@ -9481,7 +9481,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "7DE0B226-81FA-4A40-8798-6951331A973A",
+						"objectId": "A7C1CBF3-3182-4FFD-A0C2-801C2656EC85",
 						"kind": "group",
 						"name": "view_chat_scrollbar",
 						"originalName": "view-chat-scrollbar",
@@ -9497,7 +9497,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-view_chat_scrollbar-n0rfmeiy.png",
+							"path": "images/Layer-view_chat_scrollbar-qtddmunc.png",
 							"frame": {
 								"x": 20,
 								"y": 215,
@@ -9508,7 +9508,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "FF993276-D49F-4D3A-B342-A5919DA0E4F4",
+						"objectId": "C4C4E732-BC68-4C0A-8888-F139EEB79CCB",
 						"kind": "group",
 						"name": "view_chat_activity",
 						"originalName": "view-chat-activity",
@@ -9529,7 +9529,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-view_chat_activity-rky5otmy.png",
+							"path": "images/Layer-view_chat_activity-qzrdneu3.png",
 							"frame": {
 								"x": 40,
 								"y": 204,
@@ -9539,7 +9539,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "5E3DB52E-60D7-4DBC-BBEF-AA238A39B7E1",
+								"objectId": "B5E3D308-D9E6-4E2E-A495-ED9987FE25E4",
 								"kind": "group",
 								"name": "Chat_Activity",
 								"originalName": "Chat_Activity",
@@ -9556,7 +9556,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "D9957B03-345A-4804-BCF4-59E0E602EB9A",
+										"objectId": "27A9E814-09F9-40DC-8B5C-A2F870D4BFDF",
 										"kind": "group",
 										"name": "Links",
 										"originalName": "Links",
@@ -9572,7 +9572,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 											"opacity": 1
 										},
 										"image": {
-											"path": "images/Layer-Links-rdk5ntdc.png",
+											"path": "images/Layer-Links-mjdbouu4.png",
 											"frame": {
 												"x": 40,
 												"y": 272,
@@ -9583,7 +9583,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 										"children": []
 									},
 									{
-										"objectId": "EB06C42E-A79B-4BFA-A8B6-1EA1AB1FA357",
+										"objectId": "73623A27-D233-4C8F-A681-1155A30F11EA",
 										"kind": "text",
 										"name": "Anouncement",
 										"originalName": "Anouncement",
@@ -9608,7 +9608,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 											]
 										},
 										"image": {
-											"path": "images/Layer-Anouncement-ruiwnkm0.png",
+											"path": "images/Layer-Anouncement-nzm2mjnb.png",
 											"frame": {
 												"x": 40,
 												"y": 248,
@@ -9619,7 +9619,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 										"children": []
 									},
 									{
-										"objectId": "A7DD2B08-A4B4-4FB3-9FA8-B16164197612",
+										"objectId": "F4B7F2FF-C026-4A11-890D-CCD3C4D95250",
 										"kind": "text",
 										"name": "Congrats",
 										"originalName": "Congrats",
@@ -9644,7 +9644,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 											]
 										},
 										"image": {
-											"path": "images/Layer-Congrats-qtderdjc.png",
+											"path": "images/Layer-Congrats-rjrcn0yy.png",
 											"frame": {
 												"x": 40,
 												"y": 208,
@@ -9655,7 +9655,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 										"children": []
 									},
 									{
-										"objectId": "EBC7B88B-2172-48C6-B477-C94174DE673C",
+										"objectId": "56D509AA-AE51-4611-90B2-43BB2534CDD5",
 										"kind": "group",
 										"name": "Conversation",
 										"originalName": "Conversation",
@@ -9671,7 +9671,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 											"opacity": 1
 										},
 										"image": {
-											"path": "images/Layer-Conversation-rujdn0i4.png",
+											"path": "images/Layer-Conversation-ntzenta5.png",
 											"frame": {
 												"x": 40,
 												"y": 328,
@@ -9682,7 +9682,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 										"children": []
 									},
 									{
-										"objectId": "8757E06D-BB3F-4B57-821F-4F3F53690BF0",
+										"objectId": "D6817BF0-9762-4CFE-9479-58186F64B107",
 										"kind": "text",
 										"name": "Awards",
 										"originalName": "Awards",
@@ -9707,7 +9707,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 											]
 										},
 										"image": {
-											"path": "images/Layer-Awards-odc1n0uw.png",
+											"path": "images/Layer-Awards-rdy4mtdc.png",
 											"frame": {
 												"x": 40,
 												"y": 464,
@@ -9726,7 +9726,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		]
 	},
 	{
-		"objectId": "284EA459-ABF2-4C2E-A53D-B58291E58BE8",
+		"objectId": "0931574F-4CE9-4A02-9108-20FA586938F0",
 		"kind": "artboard",
 		"name": "container_sidebar_overview",
 		"originalName": "container-sidebar-overview",
@@ -9742,7 +9742,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "BE17C681-45AE-4A7B-B2C8-3C0CDBB4AB93",
+				"objectId": "C0C6B42F-9976-48D4-A72B-169AFC1EBC67",
 				"kind": "group",
 				"name": "sidebar_overview",
 				"originalName": "sidebar-overview",
@@ -9758,7 +9758,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-sidebar_overview-qkuxn0m2.png",
+					"path": "images/Layer-sidebar_overview-qzbdnki0.png",
 					"frame": {
 						"x": -1,
 						"y": 0,
@@ -9771,7 +9771,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		]
 	},
 	{
-		"objectId": "B68F1401-C868-499B-91ED-FC14CE0562B7",
+		"objectId": "DDBF10EA-9C00-4BF7-A726-045793D19751",
 		"kind": "artboard",
 		"name": "container_view_navbar",
 		"originalName": "container-view-navbar",
@@ -9784,10 +9784,10 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		},
 		"visible": true,
 		"metadata": {},
-		"backgroundColor": "rgba(255, 255, 255, 1)",
+		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "98340238-C5D9-4057-A95E-DC22257AC77F",
+				"objectId": "F1AB445F-4DFA-48FD-856B-23101F77938F",
 				"kind": "group",
 				"name": "view_navbar",
 				"originalName": "view-navbar",
@@ -9802,18 +9802,9 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"image": {
-					"path": "images/Layer-view_navbar-otgznday.png",
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"width": 56,
-						"height": 900
-					}
-				},
 				"children": [
 					{
-						"objectId": "11C480B0-E9E1-4253-A14B-DAEF9BE39E7A",
+						"objectId": "68E4E9C9-363B-4132-AC5E-B368725C0ADA",
 						"kind": "group",
 						"name": "active",
 						"originalName": "active",
@@ -9830,7 +9821,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "CE1D2049-1121-47F3-B48D-F0AC35287ED8",
+								"objectId": "E1BCF940-E509-45CF-ABB7-FDD0C7C21698",
 								"kind": "group",
 								"name": "active_overview",
 								"originalName": "active-overview",
@@ -9846,7 +9837,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-active_overview-q0uxrdiw.png",
+									"path": "images/Layer-active_overview-rtfcq0y5.png",
 									"frame": {
 										"x": 21,
 										"y": 33,
@@ -9857,7 +9848,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "93BD0FDD-5FB7-446D-97C0-9810924D6EBE",
+								"objectId": "5084E927-BEA2-49FA-B060-8F12BC73AC27",
 								"kind": "group",
 								"name": "active_leaderboard",
 								"originalName": "active-leaderboard",
@@ -9873,7 +9864,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-active_leaderboard-otncrdbg.png",
+									"path": "images/Layer-active_leaderboard-nta4neu5.png",
 									"frame": {
 										"x": 21,
 										"y": 99,
@@ -9886,7 +9877,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "53B5BAC4-411C-4EAB-9929-C3C5DC5D74B5",
+						"objectId": "A0E92210-8EAD-416F-B4DB-C11FFFF31FF4",
 						"kind": "group",
 						"name": "icons",
 						"originalName": "icons",
@@ -9903,7 +9894,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "CCF239CA-AD07-4D6C-9839-34048F959C0A",
+								"objectId": "4D3A0026-AE63-45A4-9C85-75B6629A40B5",
 								"kind": "group",
 								"name": "icon_help",
 								"originalName": "icon-help",
@@ -9919,7 +9910,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-icon_help-q0ngmjm5.png",
+									"path": "images/Layer-icon_help-neqzqtaw.png",
 									"frame": {
 										"x": 18,
 										"y": 841,
@@ -9930,7 +9921,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "A2428BC4-F4DA-4144-8183-5F68B16F3FAA",
+								"objectId": "FEAD059A-B768-4AF6-BB2C-2B4D9F3B4556",
 								"kind": "group",
 								"name": "icon_settings",
 								"originalName": "icon-settings",
@@ -9946,7 +9937,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-icon_settings-qti0mjhc.png",
+									"path": "images/Layer-icon_settings-rkvbrda1.png",
 									"frame": {
 										"x": 17,
 										"y": 793,
@@ -9957,7 +9948,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "57504215-0E42-4B1D-93AE-7A555CD96A1B",
+								"objectId": "EF581446-C101-4132-9DF9-E455D35879FD",
 								"kind": "group",
 								"name": "icon_audio",
 								"originalName": "icon-audio",
@@ -9973,7 +9964,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-icon_audio-ntc1mdqy.png",
+									"path": "images/Layer-icon_audio-ruy1ode0.png",
 									"frame": {
 										"x": 17,
 										"y": 743,
@@ -9984,7 +9975,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "B6B4BA8B-A050-46B7-BACE-92ADFC796357",
+								"objectId": "18E61E15-7308-43A6-8B62-E905DD33C950",
 								"kind": "group",
 								"name": "icon_flag",
 								"originalName": "icon-flag",
@@ -10000,7 +9991,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-icon_flag-qjzcnejb.png",
+									"path": "images/Layer-icon_flag-mthfnjff.png",
 									"frame": {
 										"x": 20,
 										"y": 292,
@@ -10011,7 +10002,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "38D1F35D-C5C9-42A0-A0B5-D07C66A66D52",
+								"objectId": "D065DA3E-3426-4522-A511-1F94E24706C8",
 								"kind": "group",
 								"name": "icon_scoutsLog",
 								"originalName": "icon-scoutsLog",
@@ -10027,7 +10018,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-icon_scoutsLog-mzhemuyz.png",
+									"path": "images/Layer-icon_scoutsLog-rda2nurb.png",
 									"frame": {
 										"x": 17,
 										"y": 243,
@@ -10038,7 +10029,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "82B06924-4C0F-4C19-B895-AD491EA6B4D0",
+								"objectId": "AA82C449-2235-4C9E-9C0B-C78DE0ED632B",
 								"kind": "group",
 								"name": "icon_scytheTools",
 								"originalName": "icon-scytheTools",
@@ -10054,7 +10045,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-icon_scytheTools-odjcmdy5.png",
+									"path": "images/Layer-icon_scytheTools-que4mkm0.png",
 									"frame": {
 										"x": 18,
 										"y": 192,
@@ -10065,7 +10056,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "90F620A6-8E8D-452C-9555-DB800C6AFA15",
+								"objectId": "B0DE94F7-B5E2-41A3-9E40-6D3F2E6361F6",
 								"kind": "group",
 								"name": "icon_user",
 								"originalName": "icon-user",
@@ -10081,7 +10072,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-icon_user-otbgnjiw.png",
+									"path": "images/Layer-icon_user-qjbertk0.png",
 									"frame": {
 										"x": 19,
 										"y": 144,
@@ -10092,7 +10083,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "59744DA7-753D-4575-8090-CACC0BD72B71",
+								"objectId": "08B905EB-E32B-4C3A-8628-58C12D7D256D",
 								"kind": "group",
 								"name": "icon_leaderboard",
 								"originalName": "icon-leaderboard",
@@ -10108,7 +10099,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-icon_leaderboard-ntk3ndre.png",
+									"path": "images/Layer-icon_leaderboard-mdhcota1.png",
 									"frame": {
 										"x": 20,
 										"y": 97,
@@ -10119,7 +10110,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "C0B9102D-BE60-4A94-A937-D6BB880E07DE",
+								"objectId": "50137F74-DC1D-442C-9023-3A993C740D9A",
 								"kind": "group",
 								"name": "icon_overview",
 								"originalName": "icon-overview",
@@ -10136,7 +10127,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "5729394A-2CE9-41D6-BF05-0D79B4659057",
+										"objectId": "86174C6B-E81B-46E8-A178-81B6E10BA7EF",
 										"kind": "group",
 										"name": "Group",
 										"originalName": "Group",
@@ -10152,7 +10143,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 											"opacity": 0.3500000238418579
 										},
 										"image": {
-											"path": "images/Layer-Group-ntcyotm5.png",
+											"path": "images/Layer-Group-odyxnzrd.png",
 											"frame": {
 												"x": 17,
 												"y": 32,
@@ -10163,7 +10154,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 										"children": []
 									},
 									{
-										"objectId": "4C6D498B-573A-4A9E-AA52-A9452733F845",
+										"objectId": "A4A3228C-C887-4E03-A157-4CDACF86E398",
 										"kind": "group",
 										"name": "Group1",
 										"originalName": "Group",
@@ -10179,7 +10170,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 											"opacity": 0.3500000238418579
 										},
 										"image": {
-											"path": "images/Layer-Group-nem2rdq5.png",
+											"path": "images/Layer-Group-qtrbmziy.png",
 											"frame": {
 												"x": 21,
 												"y": 29,
@@ -10194,7 +10185,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "DCC95117-41C9-4911-B65B-552CEFB33F2F",
+						"objectId": "F50E1287-A5E9-4A51-BF23-98290BA35FF2",
 						"kind": "group",
 						"name": "tiles",
 						"originalName": "tiles",
@@ -10211,7 +10202,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "87F786BE-DDE2-41D6-897D-5946F7CF8206",
+								"objectId": "BB674151-CA60-4430-9BF0-D83B84885640",
 								"kind": "group",
 								"name": "tile_bottompad",
 								"originalName": "tile-bottompad",
@@ -10227,7 +10218,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_bottompad-oddgnzg2.png",
+									"path": "images/Layer-tile_bottompad-qki2nzqx.png",
 									"frame": {
 										"x": 0,
 										"y": 874,
@@ -10238,7 +10229,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "55A0AC2A-DA74-4706-9E92-5D7091F94424",
+								"objectId": "EF8FA28C-887F-49D2-8E3A-7D4DC48A8477",
 								"kind": "group",
 								"name": "tile_help",
 								"originalName": "tile-help",
@@ -10254,7 +10245,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_help-ntvbmefd.png",
+									"path": "images/Layer-tile_help-ruy4rkey.png",
 									"frame": {
 										"x": 0,
 										"y": 825,
@@ -10265,7 +10256,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "C8C22D9D-4BEB-4B93-99D1-266D6FFF45A4",
+								"objectId": "DC1905F0-A75B-47A5-BC22-B968137306E1",
 								"kind": "group",
 								"name": "tile_settings",
 								"originalName": "tile-settings",
@@ -10281,7 +10272,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_settings-qzhdmjje.png",
+									"path": "images/Layer-tile_settings-remxota1.png",
 									"frame": {
 										"x": 0,
 										"y": 777,
@@ -10292,7 +10283,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "D0BCBA7F-E041-4E2D-8501-0A72EF5DA629",
+								"objectId": "6F4FE138-FE82-4CDC-8BCD-FAB77C090EB1",
 								"kind": "group",
 								"name": "tile_audio",
 								"originalName": "tile-audio",
@@ -10308,7 +10299,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_audio-rdbcq0jb.png",
+									"path": "images/Layer-tile_audio-nky0rkux.png",
 									"frame": {
 										"x": 0,
 										"y": 728,
@@ -10319,7 +10310,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "34E67397-ADC3-42E5-A977-5E2B318C8D92",
+								"objectId": "5F0475D3-DEB4-45A4-BFBE-2113D4A73339",
 								"kind": "group",
 								"name": "tile_flag",
 								"originalName": "tile-flag",
@@ -10335,7 +10326,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_flag-mzrfnjcz.png",
+									"path": "images/Layer-tile_flag-nuywndc1.png",
 									"frame": {
 										"x": 0,
 										"y": 274,
@@ -10346,7 +10337,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "C7D56BBE-0B8A-41AE-8B2F-4B07EB1FFB28",
+								"objectId": "F38EAD51-B262-449F-9ABF-0EEE7BAE2785",
 								"kind": "group",
 								"name": "tile_scoutsLog",
 								"originalName": "tile-scoutsLog",
@@ -10362,7 +10353,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_scoutsLog-qzdentzc.png",
+									"path": "images/Layer-tile_scoutsLog-rjm4rufe.png",
 									"frame": {
 										"x": 0,
 										"y": 226,
@@ -10373,7 +10364,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "EF31CFB5-52C8-45BF-B60B-2432C8BFE96E",
+								"objectId": "9BD3DCDB-7502-4E98-B932-678242BB95A8",
 								"kind": "group",
 								"name": "tile_scytheTools",
 								"originalName": "tile-scytheTools",
@@ -10389,7 +10380,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_scytheTools-ruyzmung.png",
+									"path": "images/Layer-tile_scytheTools-oujem0rd.png",
 									"frame": {
 										"x": 0,
 										"y": 177,
@@ -10400,7 +10391,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "2E233797-0C04-4EB1-85E2-7F4D97441EF8",
+								"objectId": "902B136D-C483-4619-966B-F643D1D13A61",
 								"kind": "group",
 								"name": "tile_user",
 								"originalName": "tile-user",
@@ -10416,7 +10407,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_user-mkuymzm3.png",
+									"path": "images/Layer-tile_user-otayqjez.png",
 									"frame": {
 										"x": 0,
 										"y": 129,
@@ -10427,7 +10418,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "982F3CE3-F3AF-497A-BD05-780ADF324B23",
+								"objectId": "B450EFF8-1BC5-44BB-8296-E8A9C01995E4",
 								"kind": "group",
 								"name": "tile_leaderboard",
 								"originalName": "tile-leaderboard",
@@ -10443,7 +10434,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_leaderboard-otgyrjnd.png",
+									"path": "images/Layer-tile_leaderboard-qjq1mevg.png",
 									"frame": {
 										"x": 0,
 										"y": 80,
@@ -10454,7 +10445,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "903DA717-CAD0-410F-957F-755D891341D3",
+								"objectId": "667082F1-A326-492D-B4E4-3F209826A4F1",
 								"kind": "group",
 								"name": "tile_overview",
 								"originalName": "tile-overview",
@@ -10470,7 +10461,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-tile_overview-otazree3.png",
+									"path": "images/Layer-tile_overview-njy3mdgy.png",
 									"frame": {
 										"x": 0,
 										"y": 0,
@@ -10481,13 +10472,40 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								"children": []
 							}
 						]
+					},
+					{
+						"objectId": "E416D155-A0B5-4B2A-807D-E48201B1605E",
+						"kind": "group",
+						"name": "helper_navbar_bg",
+						"originalName": "helper-navbar-bg",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 0,
+							"y": 0,
+							"width": 56,
+							"height": 900
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-helper_navbar_bg-rtqxnkqx.png",
+							"frame": {
+								"x": 0,
+								"y": 0,
+								"width": 56,
+								"height": 900
+							}
+						},
+						"children": []
 					}
 				]
 			}
 		]
 	},
 	{
-		"objectId": "89B89EF1-2B00-492B-ABED-5F99177AEF02",
+		"objectId": "2AA2624A-50E2-4214-BF85-065C0E8D42DD",
 		"kind": "artboard",
 		"name": "container_view_chip",
 		"originalName": "container-view-chip",
@@ -10503,7 +10521,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "429AAF9C-5D0D-4BBF-B0BA-8BE406E9D316",
+				"objectId": "552B61A4-62DB-43CF-913A-1766A3339C88",
 				"kind": "group",
 				"name": "view_chip",
 				"originalName": "view-chip",
@@ -10519,7 +10537,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-view_chip-ndi5qufg.png",
+					"path": "images/Layer-view_chip-ntuyqjyx.png",
 					"frame": {
 						"x": 0,
 						"y": 0,
@@ -10532,7 +10550,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		]
 	},
 	{
-		"objectId": "06B5F5E3-7D29-48AE-A2C1-0E343769AACA",
+		"objectId": "69C1C32B-090C-4E45-A9D4-98AF26C973E6",
 		"kind": "artboard",
 		"name": "container_view_chip2",
 		"originalName": "container-view-chip2",
@@ -10548,7 +10566,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "D2732BAA-D2ED-4E14-8616-314B71FC1C2B",
+				"objectId": "4B6F5065-5C40-4443-B5E8-0B025465F521",
 				"kind": "group",
 				"name": "view_chip2",
 				"originalName": "view-chip2",
@@ -10564,7 +10582,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-view_chip2-rdi3mzjc.png",
+					"path": "images/Layer-view_chip2-nei2rjuw.png",
 					"frame": {
 						"x": 0,
 						"y": 0,
@@ -10577,7 +10595,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		]
 	},
 	{
-		"objectId": "D2994E35-6FB5-441F-983A-CECD53F49CF1",
+		"objectId": "8D8DD04A-DE8C-4726-9C23-03608A267388",
 		"kind": "artboard",
 		"name": "container_view_icons_small",
 		"originalName": "container-view-icons-small",
@@ -10593,7 +10611,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 		"backgroundColor": "rgba(255, 255, 255, 0)",
 		"children": [
 			{
-				"objectId": "6874EEB6-C68F-4833-9E4E-13EFEE5A816C",
+				"objectId": "97D5A3B2-737F-4FA5-8D2D-40F0589C383D",
 				"kind": "group",
 				"name": "icons_small",
 				"originalName": "icons-small",
@@ -10609,7 +10627,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-icons_small-njg3nevf.png",
+					"path": "images/Layer-icons_small-otdenuez.png",
 					"frame": {
 						"x": 0,
 						"y": 0,
@@ -10619,7 +10637,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 				},
 				"children": [
 					{
-						"objectId": "FEAA400E-5953-420E-BB70-D58C45874371",
+						"objectId": "A8178044-D665-4B83-86DC-EB100521469F",
 						"kind": "group",
 						"name": "icons_badge",
 						"originalName": "icons/badge",
@@ -10635,7 +10653,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-icons_badge-rkvbqtqw.png",
+							"path": "images/Layer-icons_badge-qtgxnzgw.png",
 							"frame": {
 								"x": 9596,
 								"y": 2,
@@ -10646,7 +10664,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "0A5B00D9-B082-4CE5-8F41-F2ACDD229538",
+						"objectId": "BD60B837-6739-496D-9FAA-88057E165A07",
 						"kind": "group",
 						"name": "icons_browse",
 						"originalName": "icons/browse",
@@ -10662,7 +10680,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-icons_browse-mee1qjaw.png",
+							"path": "images/Layer-icons_browse-qkq2mei4.png",
 							"frame": {
 								"x": 9457,
 								"y": 2,
@@ -10673,7 +10691,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "133138D9-52FC-4E90-BEB0-A3A2946D973B",
+						"objectId": "1C6D2B86-DECE-47C4-B273-3BD6D73E1C63",
 						"kind": "group",
 						"name": "icons_last",
 						"originalName": "icons/last",
@@ -10690,7 +10708,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "BAB71EE2-1987-4E33-9C4F-F09C71946BD7",
+								"objectId": "326028A5-AC84-4B05-92C7-82ED5D717280",
 								"kind": "group",
 								"name": "Icons",
 								"originalName": "Icons",
@@ -10706,7 +10724,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qkfcnzff.png",
+									"path": "images/Layer-Icons-mzi2mdi4.png",
 									"frame": {
 										"x": 9320.987499557436,
 										"y": 5.074999913573265,
@@ -10719,7 +10737,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "095512CE-DEF1-4F74-A1B3-87B381C4AFA5",
+						"objectId": "53F80493-D8E9-469B-BA8C-E0126ADAA76F",
 						"kind": "group",
 						"name": "icons_first",
 						"originalName": "icons/first",
@@ -10736,7 +10754,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "6F0AE4B2-A130-4852-B093-A9CB2A0D5542",
+								"objectId": "9DDAA8EB-C929-4B1F-83A9-95D57BF59E1E",
 								"kind": "group",
 								"name": "Icons1",
 								"originalName": "Icons",
@@ -10752,7 +10770,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-nkywquu0.png",
+									"path": "images/Layer-Icons-oureque4.png",
 									"frame": {
 										"x": 9181.987499557436,
 										"y": 5.074999913573265,
@@ -10765,7 +10783,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "405AB235-C167-4411-AB92-01AE96B4CA87",
+						"objectId": "24BF4AB1-9D4D-40C0-AB9C-2E33D6756032",
 						"kind": "group",
 						"name": "icons_previous",
 						"originalName": "icons/previous",
@@ -10782,7 +10800,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "CB2FBAC2-F903-4FA5-AE8F-4FF5F69F957A",
+								"objectId": "039CD474-F4AA-4CA5-8E44-A9CA9AFEC32D",
 								"kind": "group",
 								"name": "Icons2",
 								"originalName": "Icons",
@@ -10798,7 +10816,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-q0iyrkjb.png",
+									"path": "images/Layer-Icons-mdm5q0q0.png",
 									"frame": {
 										"x": 9058.037499539554,
 										"y": 5.074999913573285,
@@ -10811,7 +10829,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "EDF958F4-991A-4FCD-A6EE-57F960CEA201",
+						"objectId": "6117A727-C559-4209-A7FC-51AC77AC4D1C",
 						"kind": "group",
 						"name": "icons_next",
 						"originalName": "icons/next",
@@ -10828,7 +10846,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "978C9D04-FB8F-4718-99D0-FE0F4691AD42",
+								"objectId": "001FD34F-E5D6-41E6-92CD-719BC065502F",
 								"kind": "group",
 								"name": "Icons3",
 								"originalName": "Icons",
@@ -10844,7 +10862,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-otc4qzle.png",
+									"path": "images/Layer-Icons-mdaxrkqz.png",
 									"frame": {
 										"x": 8933.037499539554,
 										"y": 5.074999913573285,
@@ -10857,7 +10875,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "41AC7AC7-9E0B-405A-A3A8-5066CAB84FA7",
+						"objectId": "464D7267-F85D-4A0E-8F70-EE8C1B228658",
 						"kind": "group",
 						"name": "icons_current",
 						"originalName": "icons/current",
@@ -10874,7 +10892,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "5EBB509F-797E-41B6-81EE-9A09A235F5A6",
+								"objectId": "838F40C0-18F6-4301-B03F-3052D500CC3D",
 								"kind": "group",
 								"name": "Icons4",
 								"originalName": "Icons",
@@ -10890,7 +10908,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-nuvcqjuw.png",
+									"path": "images/Layer-Icons-odm4rjqw.png",
 									"frame": {
 										"x": 8783.637499563396,
 										"y": 4.724999919533749,
@@ -10903,7 +10921,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "EE696B5C-E1FE-44D7-8571-B10E028CE3C7",
+						"objectId": "CF954B46-941B-4547-A035-221195E9A544",
 						"kind": "group",
 						"name": "icons_go_alt",
 						"originalName": "icons/go-alt",
@@ -10920,7 +10938,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "DCC56A1C-57AE-4982-AC45-991063D2B476",
+								"objectId": "785C4165-F12F-48AD-9629-101B400CCDDA",
 								"kind": "group",
 								"name": "Icons5",
 								"originalName": "Icons",
@@ -10936,7 +10954,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-rendntzb.png",
+									"path": "images/Layer-Icons-nzg1qzqx.png",
 									"frame": {
 										"x": 8640.637499563396,
 										"y": 5.424999907612801,
@@ -10949,7 +10967,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "3F80D94D-FB55-43E5-9C0B-3268FF44D0C5",
+						"objectId": "C3F29AB3-FE86-4451-A3B8-2F92555532AA",
 						"kind": "group",
 						"name": "icons_go",
 						"originalName": "icons/go",
@@ -10966,7 +10984,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "AE63155C-F0CB-4CA9-9D77-4F58D339D392",
+								"objectId": "CD2CE6FB-3FFA-416F-840A-0CD07E50892E",
 								"kind": "group",
 								"name": "Icons6",
 								"originalName": "Icons",
@@ -10982,7 +11000,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-quu2mze1.png",
+									"path": "images/Layer-Icons-q0qyq0u2.png",
 									"frame": {
 										"x": 8511.687499545515,
 										"y": 5.424999907612801,
@@ -10995,7 +11013,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "4B5C56C1-A659-4A97-9A0D-2A88C659ABF3",
+						"objectId": "0BDCAB07-BE8A-42D7-AD9C-8F3773761FA6",
 						"kind": "group",
 						"name": "icons_reward",
 						"originalName": "icons/reward",
@@ -11011,7 +11029,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-icons_reward-nei1qzu2.png",
+							"path": "images/Layer-icons_reward-mejeq0fc.png",
 							"frame": {
 								"x": 8327,
 								"y": 1,
@@ -11022,7 +11040,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "7585303D-0B5A-4E0C-8349-147181C72AFE",
+						"objectId": "98521974-7EEF-4A48-98CE-4ACF0D5A9EE8",
 						"kind": "group",
 						"name": "icons_difficulty_expert",
 						"originalName": "icons/difficulty-expert",
@@ -11038,7 +11056,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-icons_difficulty_expert-nzu4ntmw.png",
+							"path": "images/Layer-icons_difficulty_expert-otg1mje5.png",
 							"frame": {
 								"x": 8126,
 								"y": 2,
@@ -11049,7 +11067,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "523D2D64-8B3E-47A4-9436-398F81320BFE",
+						"objectId": "3A3140A7-D56C-4E1F-8219-98A97B30613A",
 						"kind": "group",
 						"name": "icons_difficulty_hard",
 						"originalName": "icons/difficulty-hard",
@@ -11065,7 +11083,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-icons_difficulty_hard-ntizrdje.png",
+							"path": "images/Layer-icons_difficulty_hard-m0ezmtqw.png",
 							"frame": {
 								"x": 7963,
 								"y": 2,
@@ -11076,7 +11094,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "45560AFF-3BA5-4475-99FC-7DC026E8AA57",
+						"objectId": "17F0CCDC-E33F-4FDC-B612-1087400ABC0D",
 						"kind": "group",
 						"name": "icons_difficulty_moderate",
 						"originalName": "icons/difficulty-moderate",
@@ -11092,7 +11110,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-icons_difficulty_moderate-ndu1njbb.png",
+							"path": "images/Layer-icons_difficulty_moderate-mtdgmend.png",
 							"frame": {
 								"x": 7814,
 								"y": 3,
@@ -11103,7 +11121,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "0A66863C-5927-4BAB-8DDB-A2A88CDC9F74",
+						"objectId": "89B4B5B5-9820-4077-A0A7-F11EA2934679",
 						"kind": "group",
 						"name": "icons_difficulty_easy",
 						"originalName": "icons/difficulty-easy",
@@ -11119,7 +11137,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-icons_difficulty_easy-mee2njg2.png",
+							"path": "images/Layer-icons_difficulty_easy-odlcnei1.png",
 							"frame": {
 								"x": 7649,
 								"y": 2,
@@ -11130,7 +11148,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "85A396D3-875C-4A7F-8B8A-0A2AD3B1E704",
+						"objectId": "03596C4B-96FD-48C2-8BB5-B130BBA2B542",
 						"kind": "group",
 						"name": "icons_close",
 						"originalName": "icons/close",
@@ -11146,7 +11164,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-icons_close-odvbmzk2.png",
+							"path": "images/Layer-icons_close-mdm1otzd.png",
 							"frame": {
 								"x": 7503,
 								"y": 4,
@@ -11157,7 +11175,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "7D9FC65A-F60E-4AE3-970B-E6E227DB0D39",
+						"objectId": "A377DD85-4AFF-4B94-8188-B9BEE7451B52",
 						"kind": "group",
 						"name": "icons_zoom",
 						"originalName": "icons/zoom",
@@ -11174,7 +11192,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "99BF7553-9C04-43DD-BAD6-D38E247B0163",
+								"objectId": "FD5D0075-0871-4589-9C70-5FA4AE51FC30",
 								"kind": "group",
 								"name": "Icons7",
 								"originalName": "Icons",
@@ -11190,7 +11208,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-otlcrjc1.png",
+									"path": "images/Layer-Icons-rkq1rdaw.png",
 									"frame": {
 										"x": 7356.112499572337,
 										"y": 4.199999928474426,
@@ -11203,7 +11221,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "6D82DD90-C8FD-4860-BD46-8E0ED3BD3BFE",
+						"objectId": "8FF51561-FA14-4A75-A7C1-DD32BF339D9C",
 						"kind": "group",
 						"name": "icons_user",
 						"originalName": "icons/user",
@@ -11220,7 +11238,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "10B99E9C-6EB5-4C77-AB3F-3131663975F4",
+								"objectId": "CF85370F-AADC-4BB2-9E35-A56CDB7F52ED",
 								"kind": "group",
 								"name": "Icons8",
 								"originalName": "Icons",
@@ -11236,7 +11254,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-mtbcotlf.png",
+									"path": "images/Layer-Icons-q0y4ntm3.png",
 									"frame": {
 										"x": 7179.83749961108,
 										"y": 0.5249999910593033,
@@ -11249,7 +11267,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "BD638F3C-8A83-42E2-B262-412498969435",
+						"objectId": "7F7C53ED-A6FE-469F-8BA1-2738A984632F",
 						"kind": "group",
 						"name": "icons_trailblaze",
 						"originalName": "icons/trailblaze",
@@ -11266,7 +11284,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "9E55E894-D52F-4804-8947-E99116B1E97F",
+								"objectId": "DE42F4E5-58E4-48FC-89AC-3360399BE7A0",
 								"kind": "group",
 								"name": "Icons9",
 								"originalName": "Icons",
@@ -11282,7 +11300,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-ouu1nuu4.png",
+									"path": "images/Layer-Icons-reu0mky0.png",
 									"frame": {
 										"x": 7015.537499599159,
 										"y": 0,
@@ -11295,7 +11313,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "9DFF4ADF-742B-4C5A-A5DE-F4694D676348",
+						"objectId": "B8038C1C-33D5-4DB2-98E8-538200257603",
 						"kind": "group",
 						"name": "icons_submit",
 						"originalName": "icons/submit",
@@ -11312,7 +11330,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "D99DEE34-B46C-4FD4-97B8-4A6DD2C17215",
+								"objectId": "F47BEA7B-D3AD-4E78-B103-EC1FC917380C",
 								"kind": "group",
 								"name": "Icons10",
 								"originalName": "Icons",
@@ -11328,7 +11346,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-rdk5revf.png",
+									"path": "images/Layer-Icons-rjq3qkvb.png",
 									"frame": {
 										"x": 6848.362499602139,
 										"y": 4.7249999195337296,
@@ -11341,7 +11359,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "2DE092D8-0AAF-4AFA-9366-D6AF7A336162",
+						"objectId": "C1E1F44F-3F9F-43AC-BD51-7644E23EC932",
 						"kind": "group",
 						"name": "icons_stopwatch",
 						"originalName": "icons/stopwatch",
@@ -11358,7 +11376,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "4177C2AA-6633-42E9-BC3A-D5E1E8536C12",
+								"objectId": "63E38A34-9FFF-4BD3-92D3-7C336F5F8DFF",
 								"kind": "group",
 								"name": "Icons11",
 								"originalName": "Icons",
@@ -11374,7 +11392,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-nde3n0my.png",
+									"path": "images/Layer-Icons-njnfmzhb.png",
 									"frame": {
 										"x": 6671.66249961406,
 										"y": 0.8749999850988388,
@@ -11387,7 +11405,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "E9A1AC56-A800-4163-AFC0-38487145544F",
+						"objectId": "B7285472-DC12-483A-9A3C-D9FBEBF14F76",
 						"kind": "group",
 						"name": "icons_stats",
 						"originalName": "icons/stats",
@@ -11404,7 +11422,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "43581A7D-E4DE-45DF-91A7-EED2050DA889",
+								"objectId": "4A33ABC8-1E64-42F5-B6CD-C37E44EB6DF6",
 								"kind": "group",
 								"name": "Icons12",
 								"originalName": "Icons",
@@ -11420,7 +11438,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-ndm1odfb.png",
+									"path": "images/Layer-Icons-neezm0fc.png",
 									"frame": {
 										"x": 6502.187499605119,
 										"y": 1.399999976158142,
@@ -11433,7 +11451,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "BEDCAFD8-A5F6-480E-BAEE-B59AE1E9BAA8",
+						"objectId": "D02D2072-D2EE-464E-9196-DE8ED578C56A",
 						"kind": "group",
 						"name": "icons_skip",
 						"originalName": "icons/skip",
@@ -11450,7 +11468,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "6162D558-CFB3-40BF-B9F8-6B2C908CD848",
+								"objectId": "0C2765DE-99FF-45C1-9B07-F64A78717507",
 								"kind": "group",
 								"name": "Icons13",
 								"originalName": "Icons",
@@ -11466,7 +11484,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-nje2mkq1.png",
+									"path": "images/Layer-Icons-memynzy1.png",
 									"frame": {
 										"x": 6331.537499599159,
 										"y": 3.674999937415123,
@@ -11479,7 +11497,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "2DD4B56C-67C5-4E60-A358-8B798DC45DAA",
+						"objectId": "F45736B2-B372-49ED-83D5-9F970A42BC55",
 						"kind": "group",
 						"name": "icons_share",
 						"originalName": "icons/share",
@@ -11496,7 +11514,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "E25E62A3-70B8-4C2D-8C47-97B86225521B",
+								"objectId": "BD4B132C-8836-46F8-B79A-E33BB796A7AF",
 								"kind": "group",
 								"name": "Icons14",
 								"originalName": "Icons",
@@ -11512,7 +11530,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-rti1rtyy.png",
+									"path": "images/Layer-Icons-qkq0qjez.png",
 									"frame": {
 										"x": 6132.962499625981,
 										"y": 1.0499999821186066,
@@ -11525,7 +11543,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "EA4860A8-15F1-4F0A-8C60-4EBF030364CC",
+						"objectId": "3B6C1D06-4C4B-4A32-AD1D-92D4CDBAEC47",
 						"kind": "group",
 						"name": "icons_settings",
 						"originalName": "icons/settings",
@@ -11542,7 +11560,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "B897DBC3-C1F1-449F-BCCD-AF4F28273367",
+								"objectId": "39EF601A-0833-48C9-AF9D-8A20B7725685",
 								"kind": "group",
 								"name": "Icons15",
 								"originalName": "Icons",
@@ -11558,7 +11576,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qjg5n0rc.png",
+									"path": "images/Layer-Icons-mzlfrjyw.png",
 									"frame": {
 										"x": 5935.912499643862,
 										"y": 0.699999988079071,
@@ -11571,7 +11589,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "857F6C50-56AF-4B26-91B0-01A28F5B412A",
+						"objectId": "61C75AFC-CC90-4091-B03C-A813BF5E3400",
 						"kind": "group",
 						"name": "icons_search",
 						"originalName": "icons/search",
@@ -11588,7 +11606,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "B39AE8F9-7894-40A8-A827-1CF3A3D30303",
+								"objectId": "278FF806-FC49-4CC3-BBAA-8C3D2B556E4E",
 								"kind": "group",
 								"name": "Icons16",
 								"originalName": "Icons",
@@ -11604,7 +11622,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qjm5quu4.png",
+									"path": "images/Layer-Icons-mjc4rky4.png",
 									"frame": {
 										"x": 5779.237499587238,
 										"y": 3.3249999433755875,
@@ -11617,7 +11635,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "D756AA4C-90B3-4904-B6C2-F1D26DC26D8D",
+						"objectId": "746E59A3-341D-4A63-BF76-86AA05E735D8",
 						"kind": "group",
 						"name": "icons_scythe_tools",
 						"originalName": "icons/scythe-tools",
@@ -11634,7 +11652,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "A8C9C71E-909E-4D4F-AF3F-D48D984A7699",
+								"objectId": "F955DF73-E75B-44C0-A0A8-6BFD6C8BF0D1",
 								"kind": "group",
 								"name": "Icons17",
 								"originalName": "Icons",
@@ -11650,7 +11668,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qthdoum3.png",
+									"path": "images/Layer-Icons-rjk1nurg.png",
 									"frame": {
 										"x": 5593.962499625981,
 										"y": 0.5249999910593033,
@@ -11663,7 +11681,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "055F82E3-6CEC-4564-8E73-234B29D7E6C0",
+						"objectId": "DB262523-62C2-490D-90E2-E1C700923054",
 						"kind": "group",
 						"name": "icons_scythe_points",
 						"originalName": "icons/scythe-points",
@@ -11680,7 +11698,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "C9A0C4E7-4D91-4E0C-A8A9-032B50D337FF",
+								"objectId": "96CE850C-C166-45D3-A17E-3C7D2A251468",
 								"kind": "group",
 								"name": "Icons18",
 								"originalName": "Icons",
@@ -11696,7 +11714,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qzlbmem0.png",
+									"path": "images/Layer-Icons-otzdrtg1.png",
 									"frame": {
 										"x": 5405.612499631941,
 										"y": 0.17499999701976776,
@@ -11709,7 +11727,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "E429554B-BD34-4A12-8998-FF9C488DC265",
+						"objectId": "31EF92F0-AA8E-4657-A2AB-BDEEBE49D91E",
 						"kind": "group",
 						"name": "icons_scouts_log",
 						"originalName": "icons/scouts-log",
@@ -11726,7 +11744,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "44BB9ABB-0DC1-431E-84A2-CDFFC66C939E",
+								"objectId": "E4A8EEF5-128A-4E50-AEE3-6EE755E063DD",
 								"kind": "group",
 								"name": "Icons19",
 								"originalName": "Icons",
@@ -11742,7 +11760,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-ndrcqjlb.png",
+									"path": "images/Layer-Icons-rtrboevf.png",
 									"frame": {
 										"x": 5202.387499652803,
 										"y": 1.9249999672174454,
@@ -11755,7 +11773,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "83D21553-B55E-4466-8829-3ED49C4FF651",
+						"objectId": "D135F9C3-969F-4840-A157-F304FE02A969",
 						"kind": "group",
 						"name": "icons_reset",
 						"originalName": "icons/reset",
@@ -11772,7 +11790,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "A79EFB6A-8816-4714-8DDF-C0A60C4A59BA",
+								"objectId": "92EB632D-4B14-400F-9D94-0815C28F40BA",
 								"kind": "group",
 								"name": "Icons20",
 								"originalName": "Icons",
@@ -11788,7 +11806,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qtc5ruzc.png",
+									"path": "images/Layer-Icons-otjfqjyz.png",
 									"frame": {
 										"x": 5051.412499584258,
 										"y": 2.099999964237213,
@@ -11801,7 +11819,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "CE0759AA-E09A-4B51-9B92-1D6C048E368A",
+						"objectId": "11FA7B8E-3E23-48E4-B46E-FE9FDFBF2374",
 						"kind": "group",
 						"name": "icons_reset_zoom",
 						"originalName": "icons/reset-zoom",
@@ -11818,7 +11836,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "6DC4C19D-3ED0-4CC4-863A-130BB58CA420",
+								"objectId": "B1750F9C-F0D6-401F-B067-F25ACF6B53B2",
 								"kind": "group",
 								"name": "Icons21",
 								"originalName": "Icons",
@@ -11834,7 +11852,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-nkrdnemx.png",
+									"path": "images/Layer-Icons-qje3ntbg.png",
 									"frame": {
 										"x": 4898.587499581277,
 										"y": 3.674999937415123,
@@ -11847,7 +11865,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "128D8711-A180-4550-9F7D-6B0387A1ACBC",
+						"objectId": "D71CCD2F-C9AB-4F21-BA53-24F2835F1578",
 						"kind": "group",
 						"name": "icons_reap",
 						"originalName": "icons/reap",
@@ -11864,7 +11882,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "C4BA980C-4581-40B3-907E-B8E572C5B559",
+								"objectId": "945DE91F-C45E-47EF-82FA-3F0EDD31F675",
 								"kind": "group",
 								"name": "Icons22",
 								"originalName": "Icons",
@@ -11880,7 +11898,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qzrcqtk4.png",
+									"path": "images/Layer-Icons-otq1reu5.png",
 									"frame": {
 										"x": 4712.962499625981,
 										"y": 0.17499999701976776,
@@ -11893,7 +11911,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "6A94BD1A-9358-41E9-8C29-AD8E1359A0F0",
+						"objectId": "B27CD981-274B-4089-95FA-5DDF175940E8",
 						"kind": "group",
 						"name": "icons_points",
 						"originalName": "icons/points",
@@ -11910,7 +11928,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "0E2E9A55-17DA-4DB8-BBDF-49D7D6C1012D",
+								"objectId": "A506CD70-23BA-4860-9CEB-FBD06A493FAD",
 								"kind": "group",
 								"name": "Icons23",
 								"originalName": "Icons",
@@ -11926,7 +11944,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-meuyrtlb.png",
+									"path": "images/Layer-Icons-qtuwnkne.png",
 									"frame": {
 										"x": 4514.7374996468425,
 										"y": 0.3499999940395355,
@@ -11939,7 +11957,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "9D17FB0D-2FAD-41BD-8614-46CF21B5FAD6",
+						"objectId": "714D9929-D578-4C25-9F88-1F371AB0EEC3",
 						"kind": "group",
 						"name": "icons_password",
 						"originalName": "icons/password",
@@ -11956,7 +11974,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "C1296FD2-67C6-4DBD-9646-477182390F5B",
+								"objectId": "6EE065BD-70C7-4694-9762-7CD3BEED0369",
 								"kind": "group",
 								"name": "Icons24",
 								"originalName": "Icons",
@@ -11972,7 +11990,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qzeyotzg.png",
+									"path": "images/Layer-Icons-nkvfmdy1.png",
 									"frame": {
 										"x": 4349.887499593198,
 										"y": 1.5749999731779099,
@@ -11985,7 +12003,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "D3AF734F-224A-43BD-B833-1945B54DA01E",
+						"objectId": "67216964-95B4-4CE4-856D-103039E2AFFD",
 						"kind": "group",
 						"name": "icons_parent",
 						"originalName": "icons/parent",
@@ -12002,7 +12020,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "46EBD1CA-4A9D-45BD-BD7D-99381804439E",
+								"objectId": "91A3BFCD-A82F-43B9-BB4F-807F60F8CEEF",
 								"kind": "group",
 								"name": "Icons25",
 								"originalName": "Icons",
@@ -12018,7 +12036,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-ndzfqkqx.png",
+									"path": "images/Layer-Icons-otfbm0jg.png",
 									"frame": {
 										"x": 4197.112499572337,
 										"y": 2.974999949336052,
@@ -12031,7 +12049,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "CA1E4969-FC62-43EE-BA8C-D35DEF3A4F79",
+						"objectId": "5E82A538-5A61-424E-B4F3-4E4861F3B5C5",
 						"kind": "group",
 						"name": "icons_jump",
 						"originalName": "icons/jump",
@@ -12048,7 +12066,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "CCA4EF19-8C95-491F-BF69-0DCCE8CA54E9",
+								"objectId": "EF436B9B-3977-43A4-9B5C-7DCF296E7A2F",
 								"kind": "group",
 								"name": "Icons26",
 								"originalName": "Icons",
@@ -12064,7 +12082,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-q0nbnevg.png",
+									"path": "images/Layer-Icons-ruy0mzzc.png",
 									"frame": {
 										"x": 4002.787499628961,
 										"y": 0.8749999850988388,
@@ -12077,7 +12095,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "02D2431D-D3B1-4C06-9B9B-3496F6BC529F",
+						"objectId": "5A5D0B7E-3C07-4E6C-B05F-B10FA5C32BBC",
 						"kind": "group",
 						"name": "icons_invert_selection",
 						"originalName": "icons/invert-selection",
@@ -12094,7 +12112,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "409375DD-7B5D-4C80-B0C2-B35913987791",
+								"objectId": "D4EFC8C8-DAC9-418D-A308-2D39AD5F3851",
 								"kind": "group",
 								"name": "Icons27",
 								"originalName": "Icons",
@@ -12110,7 +12128,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-nda5mzc1.png",
+									"path": "images/Layer-Icons-rdrfrkm4.png",
 									"frame": {
 										"x": 3821.66249961406,
 										"y": 4.0249999314546585,
@@ -12123,7 +12141,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "1E17805D-BA62-4F33-AD1F-DF57E960186F",
+						"objectId": "DDCF7C02-D44B-4C44-9EE2-A36E3EA20615",
 						"kind": "group",
 						"name": "icons_help",
 						"originalName": "icons/help",
@@ -12140,7 +12158,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "495CEAE8-2F0F-4FF6-8D97-3A4D0A6C1C35",
+								"objectId": "B17CCD0B-6E3D-4EEA-96AF-84E7C55ADE32",
 								"kind": "group",
 								"name": "Icons28",
 								"originalName": "Icons",
@@ -12156,7 +12174,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-ndk1q0vb.png",
+									"path": "images/Layer-Icons-qje3q0ne.png",
 									"frame": {
 										"x": 3625.4374996349216,
 										"y": 0.699999988079071,
@@ -12169,7 +12187,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "79165E46-CB9B-4CE1-AC48-31B3E73F5CAA",
+						"objectId": "7ECA8301-79A9-4AE1-82B7-D5A08E57EAED",
 						"kind": "group",
 						"name": "icons_game_controls",
 						"originalName": "icons/game-controls",
@@ -12186,7 +12204,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "DB359BEB-A2D0-406D-B181-0F4AEAE388C9",
+								"objectId": "6FDEDB73-27EC-4838-8279-340795CD3891",
 								"kind": "group",
 								"name": "Icons29",
 								"originalName": "Icons",
@@ -12202,7 +12220,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-reizntlc.png",
+									"path": "images/Layer-Icons-nkzerurc.png",
 									"frame": {
 										"x": 3417.262499637902,
 										"y": 0.3499999940395355,
@@ -12215,7 +12233,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "34EA9155-B6B2-46EB-A7BE-332C56EAB000",
+						"objectId": "04D7EA0C-9C20-4356-A3F9-12FF2D990EF0",
 						"kind": "group",
 						"name": "icons_fullscreen",
 						"originalName": "icons/fullscreen",
@@ -12232,7 +12250,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "B6671CDD-CC7C-44C4-942C-B52C27091D63",
+								"objectId": "42958284-A178-43D8-8D78-C6F9ED798BA2",
 								"kind": "group",
 								"name": "Icons30",
 								"originalName": "Icons",
@@ -12248,7 +12266,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qjy2nzfd.png",
+									"path": "images/Layer-Icons-ndi5ntgy.png",
 									"frame": {
 										"x": 3255.7124995961785,
 										"y": 2.799999952316284,
@@ -12261,7 +12279,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "A79453AE-8396-4DCE-AFE1-67950EA8724A",
+						"objectId": "D4D29403-5C9E-4079-9B47-7C68E00E4375",
 						"kind": "group",
 						"name": "icons_flag",
 						"originalName": "icons/flag",
@@ -12278,7 +12296,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "DE47E3BD-3E06-4038-82FE-B1ED73210400",
+								"objectId": "716E4A1E-4E8F-463A-853F-B54D76A9DE40",
 								"kind": "group",
 								"name": "Icons31",
 								"originalName": "Icons",
@@ -12294,7 +12312,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-reu0n0uz.png",
+									"path": "images/Layer-Icons-nze2rtrb.png",
 									"frame": {
 										"x": 3086.1874996051192,
 										"y": 0.3499999940395355,
@@ -12307,7 +12325,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "189D41DA-3429-4065-BA7E-D1F830AE1436",
+						"objectId": "F7AB66C5-AD4A-42D8-AD69-3FCF09223663",
 						"kind": "group",
 						"name": "icons_facebook",
 						"originalName": "icons/facebook",
@@ -12324,7 +12342,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "17266FBF-76AB-4529-A462-5C40F64B32B5",
+								"objectId": "BCC862DD-2968-4B5C-B165-040EE8C2A6CD",
 								"kind": "group",
 								"name": "Icons32",
 								"originalName": "Icons",
@@ -12340,7 +12358,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-mtcynjzg.png",
+									"path": "images/Layer-Icons-qkndodyy.png",
 									"frame": {
 										"x": 2951.512499548495,
 										"y": 2.4499999582767487,
@@ -12353,7 +12371,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "C2E39977-50DB-4FD1-8776-447C565A89C7",
+						"objectId": "E1019470-C33D-4848-8DCB-7F38155C0E4E",
 						"kind": "group",
 						"name": "icons_facebook_alt",
 						"originalName": "icons/facebook-alt",
@@ -12370,7 +12388,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "1FF8D9F2-4B17-47C4-90FC-CA32A51D501E",
+								"objectId": "B75982EC-1DF7-45F0-854D-203CE4C2DBF2",
 								"kind": "group",
 								"name": "Icons33",
 								"originalName": "Icons",
@@ -12387,7 +12405,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "A98FE4DE-8FEC-492E-A2A7-FEE293D23F25",
+										"objectId": "4E07C70F-AA5C-4CD4-A22D-82767EA15167",
 										"kind": "group",
 										"name": "f",
 										"originalName": "f",
@@ -12403,7 +12421,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 											"opacity": 1
 										},
 										"image": {
-											"path": "images/Layer-f-qtk4rku0.png",
+											"path": "images/Layer-f-neuwn0m3.png",
 											"frame": {
 												"x": 2800.462499566376,
 												"y": 1.399999976158142,
@@ -12418,7 +12436,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "AE64A5D8-DC3A-4B2A-8A69-D8BE48822070",
+						"objectId": "4310B603-89CD-4511-ACA3-D6A11F2E072B",
 						"kind": "group",
 						"name": "icons_explore",
 						"originalName": "icons/explore",
@@ -12435,7 +12453,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "9CCAA546-6A28-441C-B0A9-3DD6ADEAEF24",
+								"objectId": "E5116800-E066-4380-9C83-34329B139427",
 								"kind": "group",
 								"name": "Icons34",
 								"originalName": "Icons",
@@ -12451,7 +12469,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-oundque1.png",
+									"path": "images/Layer-Icons-rtuxmty4.png",
 									"frame": {
 										"x": 2592.212499655783,
 										"y": 3.674999937415123,
@@ -12464,7 +12482,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "0E21E350-79FB-48FB-8927-E6644C626C35",
+						"objectId": "E573439E-351E-46DA-980A-CF6564AB5EA0",
 						"kind": "group",
 						"name": "icons_email",
 						"originalName": "icons/email",
@@ -12481,7 +12499,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "8441DEB1-13FE-4AD8-8691-1E03A8447397",
+								"objectId": "5888D621-1CD5-4FEA-96E7-51FB84F93152",
 								"kind": "group",
 								"name": "Icons35",
 								"originalName": "Icons",
@@ -12497,7 +12515,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-odq0murf.png",
+									"path": "images/Layer-Icons-ntg4oeq2.png",
 									"frame": {
 										"x": 2394.087499640882,
 										"y": 2.974999949336052,
@@ -12510,7 +12528,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "069FEBB2-3930-4017-B894-F81B95EC802C",
+						"objectId": "4DD338ED-E8C4-41F1-9CC7-D98711A8A4C2",
 						"kind": "group",
 						"name": "icons_deselect_trace",
 						"originalName": "icons/deselect-trace",
@@ -12527,7 +12545,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "BAD21860-DA85-4AC9-9112-3C827E744808",
+								"objectId": "00EFE834-EA06-4349-A9B5-AEBC2C2D45AE",
 								"kind": "group",
 								"name": "Icons36",
 								"originalName": "Icons",
@@ -12543,7 +12561,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qkfemje4.png",
+									"path": "images/Layer-Icons-mdbfrku4.png",
 									"frame": {
 										"x": 2197.087499640882,
 										"y": 0.17499999701976776,
@@ -12556,7 +12574,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "EFA02B3F-98E5-4BE9-94F9-DF25B62C362F",
+						"objectId": "1C18FB52-806C-4E66-9BDA-DE792B3F6596",
 						"kind": "group",
 						"name": "icons_deselect_seed",
 						"originalName": "icons/deselect-seed",
@@ -12573,7 +12591,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "25D7D33D-DDE1-4AE5-B75C-122591122506",
+								"objectId": "A9BD8E39-FCAF-44F8-877E-86D5515204A3",
 								"kind": "group",
 								"name": "Icons37",
 								"originalName": "Icons",
@@ -12589,7 +12607,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-mjven0qz.png",
+									"path": "images/Layer-Icons-qtlcrdhf.png",
 									"frame": {
 										"x": 2016.66249961406,
 										"y": 1.7499999701976776,
@@ -12602,7 +12620,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "46738CE1-EF7E-41A0-B877-0E574CFAB143",
+						"objectId": "DEC83E0C-6593-4144-A1DD-EDC17C99622D",
 						"kind": "group",
 						"name": "icons_cubes",
 						"originalName": "icons/cubes",
@@ -12619,7 +12637,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "4E1B8938-C3C9-4F03-8E70-AFCEE2011FDA",
+								"objectId": "AE926E95-78D1-422F-9762-A136153A0103",
 								"kind": "group",
 								"name": "Icons38",
 								"originalName": "Icons",
@@ -12635,7 +12653,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-neuxqjg5.png",
+									"path": "images/Layer-Icons-quu5mjzf.png",
 									"frame": {
 										"x": 1832.9624996259809,
 										"y": 0.17499999701976776,
@@ -12648,7 +12666,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "32E32303-6DBA-40CA-B25D-3E227790E9AD",
+						"objectId": "4A6670C9-632B-43D5-B65B-BDFE374D60FE",
 						"kind": "group",
 						"name": "icons_create_account",
 						"originalName": "icons/create-account",
@@ -12665,7 +12683,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "93CA39B7-7FE0-4409-AE36-24081FE5DAB0",
+								"objectId": "5D524F26-0D25-486F-8E49-861E4D703DC0",
 								"kind": "group",
 								"name": "Icons39",
 								"originalName": "Icons",
@@ -12681,7 +12699,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-otndqtm5.png",
+									"path": "images/Layer-Icons-nuq1mjrg.png",
 									"frame": {
 										"x": 1639.087499640882,
 										"y": 0.5249999910593033,
@@ -12694,7 +12712,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "3FF3C3B0-D8C6-41AB-A59C-90872678E939",
+						"objectId": "A3261264-39BC-405A-8F86-F9D396241631",
 						"kind": "group",
 						"name": "icons_controls",
 						"originalName": "icons/controls",
@@ -12711,7 +12729,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "C8283A08-98A6-4FF0-9C7E-33C4CA7C1732",
+								"objectId": "68090228-F948-4C58-B84D-9983F1ADB135",
 								"kind": "group",
 								"name": "Icons40",
 								"originalName": "Icons",
@@ -12727,7 +12745,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-qzgyodnb.png",
+									"path": "images/Layer-Icons-njgwotay.png",
 									"frame": {
 										"x": 1460.3124996200204,
 										"y": 2.099999964237213,
@@ -12740,7 +12758,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "EB03AD09-FB26-4686-9B84-0A6F87FB8066",
+						"objectId": "339E433E-0C9F-443B-836D-C7E84F0B5DBC",
 						"kind": "group",
 						"name": "icons_completed",
 						"originalName": "icons/completed",
@@ -12757,7 +12775,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "85364BEB-D106-476E-BDBB-830F2B49C48B",
+								"objectId": "305B62E1-4586-4D75-AFCC-FE02B93BD9DC",
 								"kind": "group",
 								"name": "Icons41",
 								"originalName": "Icons",
@@ -12773,7 +12791,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-oduznjrc.png",
+									"path": "images/Layer-Icons-mza1qjyy.png",
 									"frame": {
 										"x": 1270.4374996349216,
 										"y": 1.2249999791383743,
@@ -12786,7 +12804,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "D47CBDCC-EE29-4D6C-BD6A-6B065624FA7F",
+						"objectId": "73EE3CB9-6F9B-4018-BC6E-8D5C45E15271",
 						"kind": "group",
 						"name": "icons_children",
 						"originalName": "icons/children",
@@ -12803,7 +12821,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "5A197A3D-826C-4AFA-89A7-154694472980",
+								"objectId": "5EF9BFCE-0ED0-460E-B70C-F848A841B33E",
 								"kind": "group",
 								"name": "Icons42",
 								"originalName": "Icons",
@@ -12819,7 +12837,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-nuexotdb.png",
+									"path": "images/Layer-Icons-nuvgoujg.png",
 									"frame": {
 										"x": 1090.66249961406,
 										"y": 3.8499999344348907,
@@ -12832,7 +12850,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "236E9111-8827-4EBD-A993-295B7CCB031C",
+						"objectId": "03C8ADBB-50B3-4FCE-8F1B-8A672023C9EA",
 						"kind": "group",
 						"name": "icons_branch_complete",
 						"originalName": "icons/branch-complete",
@@ -12849,7 +12867,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "3D91CFA3-BA74-4453-8E6E-86E46A00A453",
+								"objectId": "A8900EA8-86D1-4592-AD63-C75343046DE3",
 								"kind": "group",
 								"name": "Icons43",
 								"originalName": "Icons",
@@ -12865,7 +12883,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-m0q5mung.png",
+									"path": "images/Layer-Icons-qtg5mdbf.png",
 									"frame": {
 										"x": 918.1874996051192,
 										"y": 0.17499999701976776,
@@ -12878,7 +12896,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "C0F42369-ED3C-4C51-9559-108304D30214",
+						"objectId": "495A34BF-B26C-46A4-8833-5B05BAA9CA83",
 						"kind": "group",
 						"name": "icons_perspective",
 						"originalName": "icons/perspective",
@@ -12895,7 +12913,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "2AD3F424-EC0F-4F79-956F-C700A2A79EB1",
+								"objectId": "2DA7CFFB-AC4E-425A-9160-ABDC6667B6F2",
 								"kind": "group",
 								"name": "Icons44",
 								"originalName": "Icons",
@@ -12911,7 +12929,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-mkfem0y0.png",
+									"path": "images/Layer-Icons-mkrbn0ng.png",
 									"frame": {
 										"x": 726.4374996349216,
 										"y": 0.17499999701976776,
@@ -12924,7 +12942,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "D06D7964-A7F7-4869-B8E8-052A416DED1D",
+						"objectId": "4ADBBA2B-5277-44DD-9665-AF4AABA09389",
 						"kind": "group",
 						"name": "icons_orthographic",
 						"originalName": "icons/orthographic",
@@ -12941,7 +12959,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "5773CBEA-9D3F-4E02-897C-D87B92CA2342",
+								"objectId": "B2CEE096-B260-44A4-95CF-A052D3E037E6",
 								"kind": "group",
 								"name": "Icons45",
 								"originalName": "Icons",
@@ -12957,7 +12975,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-ntc3m0nc.png",
+									"path": "images/Layer-Icons-qjjdruuw.png",
 									"frame": {
 										"x": 549.4874996170402,
 										"y": 1.5749999731779099,
@@ -12970,7 +12988,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "1642BDFB-278C-407B-A729-25183D6B4105",
+						"objectId": "2FBE433E-4425-4048-A8DD-39A7479E53DE",
 						"kind": "group",
 						"name": "icons_audio_on",
 						"originalName": "icons/audio-on",
@@ -12987,7 +13005,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "255EBEF4-A8F5-4B38-BD94-C947FD9533CB",
+								"objectId": "E20FDF17-DD95-4FA1-AE23-74EC59CD4D7E",
 								"kind": "group",
 								"name": "Icons46",
 								"originalName": "Icons",
@@ -13003,7 +13021,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-mju1rujf.png",
+									"path": "images/Layer-Icons-rtiwrkrg.png",
 									"frame": {
 										"x": 342.38749965280294,
 										"y": 0.3499999940395355,
@@ -13016,7 +13034,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "C4A330B4-C1C0-4FFD-8119-BF521BE13F78",
+						"objectId": "E9DB946D-B991-412A-B526-546D22B7D37A",
 						"kind": "group",
 						"name": "icons_audio_mute",
 						"originalName": "icons/audio-mute",
@@ -13033,7 +13051,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "58E49127-9467-478B-B56F-7274CA755BE1",
+								"objectId": "0DC9E196-0113-4A72-8106-24021B107B3C",
 								"kind": "group",
 								"name": "Icons47",
 								"originalName": "Icons",
@@ -13049,7 +13067,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-nthfndkx.png",
+									"path": "images/Layer-Icons-merdouux.png",
 									"frame": {
 										"x": 180.01249960809946,
 										"y": 0.3499999940395355,
@@ -13062,7 +13080,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "41F62FFB-54DD-4176-9BD4-5496288B66FB",
+						"objectId": "F2B4ACDD-6C48-429E-BE6E-E2D7B02EED1E",
 						"kind": "group",
 						"name": "icons_advanced_search",
 						"originalName": "icons/advanced-search",
@@ -13079,7 +13097,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "08AB5FB8-527C-42E8-BD52-E01899F2CBCD",
+								"objectId": "53843C53-829A-4534-9601-97B3C592329E",
 								"kind": "group",
 								"name": "Icons48",
 								"originalName": "Icons",
@@ -13095,7 +13113,7 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-Icons-mdhbqjvg.png",
+									"path": "images/Layer-Icons-ntm4ndnd.png",
 									"frame": {
 										"x": 0.3124996200203668,
 										"y": 2.799999952316284,
@@ -13113,9 +13131,9 @@ window.__imported__["SynapseDesign_V2@1x/layers.json.js"] = [
 	}
 ]
 if (DeviceComponent) {DeviceComponent.Devices["iphone-6-silver"].deviceImageJP2 = false};
-if (window.Framer) {window.Framer.Defaults.DeviceView = {"deviceScale":0.75,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
+if (window.Framer) {window.Framer.Defaults.DeviceView = {"deviceScale":0.5,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
 }
-if (window.Framer) {window.Framer.Defaults.DeviceComponent = {"deviceScale":0.75,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
+if (window.Framer) {window.Framer.Defaults.DeviceComponent = {"deviceScale":0.5,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
 }
 window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"synapse.framer"};
 

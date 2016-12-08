@@ -2,6 +2,8 @@
 # This info is presented in a widget when you share.
 # http://framerjs.com/docs/#info.info
 
+
+
 Framer.Info =
 	title: "Synapse Design Prototypes"
 	author: "alex norton"
@@ -51,12 +53,29 @@ document.body.style.cursor = "auto"
 # synapse = Framer.Importer.load("imported/SynapseDesign_V2@2x")
 
 # Import file "SynapseDesign_V2"
+# synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
+
+# Import file "SynapseDesign_V2" --> Transparent
 synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
+_clear = true # Global for translucency
 
 scaleFactor = 1 # Directly related to Sketch input scale
 scalify = Utils.scalify(scaleFactor)
 
 Framer.Device.contentScale = 1 /scaleFactor # Beware, this makes the prototype a bit wonky
+
+
+# Setup with Webkit Nightly Builds
+# --------------------------------------------------------------------------------
+
+	# Set global flags for prototyping locally using the Webkit Nightly Builds
+	# Essentially we're getting very stoked about visualizing a *future* where
+	# blur-behind is a possibility
+	
+	# This technique could already be hacked by creating multiple canvases
+	# and projecting the background there.
+	
+	# So not totally impossible to achieve... ;) 
 
 
 # Setup Globals
@@ -122,7 +141,6 @@ synapse.container_view_chip2.visible = false
 for child in navbarTiles.subLayers
 	child.opacity = 0
 
-
 # Setup Chat States
 activeChatElements = []
 activeChatElements.push(ƒ('view_chat_activity'))
@@ -150,6 +168,17 @@ setupSidebar = (comp) ->
 
 setupSidebar(synapse)
 
+# Translucency
+if (_clear)
+	synapse.container_helper_sidebar_bg.visible = true
+	synapse.container_helper_sidebar_bg.style = '-webkit-backdrop-filter': 'blur(30px)'
+	
+	synapse.container_view_navbar.childrenWithName("view_navbar")[0]
+		.childrenWithName("helper_navbar_bg")[0]
+			.visible = true
+	synapse.container_view_navbar.childrenWithName("view_navbar")[0]
+		.childrenWithName("helper_navbar_bg")[0]
+			.style = '-webkit-backdrop-filter': 'blur(30px)'
 
 # Initialize element states
 # Pass in reference to @Sketch Imported layers
@@ -305,8 +334,8 @@ THREE_Canvas.style.height = Utils.pxify(THREE_Layer.height)
 THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize 3D Viewer
-# Overview.setup(THREE_Layer, THREE_Canvas)
-# Overview.animate()
+Overview.setup(THREE_Layer, THREE_Canvas)
+Overview.animate()
 
 # Reorder layers
 THREE_Layer.sendToBack()
@@ -317,4 +346,4 @@ synapse.container_view_bg.sendToBack()
 # --------------------------------------------------------------------------------
 
 # Kick off recursive notification generator 
-Notification.Generator(NotificationContent.content)
+Notification.Generator(NotificationContent.content, _clear)

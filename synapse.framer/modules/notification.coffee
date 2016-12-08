@@ -17,6 +17,7 @@ Typography = Styles.styles.typography
 queue = []
 exiting = false
 pushing = false
+_clear = false
 
 
 
@@ -77,10 +78,15 @@ generateContainer = (elemName) ->
 		y: Align.top(-64)
 		width: 238
 		height: 64
+		backgroundColor: "transparent"
 		borderRadius: 32
 		opacity: 0
 
-	_this.style.background = Colors.gradient.gray_0
+	if (_clear)
+		_this.style.background = Colors.gradient.gray_0A
+		_this.style = '-webkit-backdrop-filter': 'blur(30px)'
+	else
+		_this.style.background = Colors.gradient.gray_0
 
 	# Setup States
 	States.setupTogglePush(_this)
@@ -173,7 +179,6 @@ generateHitboxRight = (elem) ->
 					shift = false
 
 				if (shift) # push all remaining elements upwards
-					console.log "shift"
 					exiting = true # global for managing generator + queue
 					elem.animate
 						y: (elem.y - elem.height - offset)
@@ -201,6 +206,7 @@ generateHitboxLeftIcon = (elem, icon, CTA) ->
 
 	_this.x = Align.center
 	_this.y = Align.center
+	_this.opacity = 0.5
 
 	if (CTA)
 		_this.style["mixBlendMode"] = "multiply"
@@ -406,7 +412,8 @@ queueCheck = (queue) ->
 
 
 # Recursively generate notifications
-Generator = (options) ->
+Generator = (options, clear=false) ->
+	_clear = clear
 	# Notifcation Creation Functions
 	makeNotification = 
 		Simple: Simple
@@ -421,7 +428,7 @@ Generator = (options) ->
 				elems = ƒƒ('element_notification*')
 				
 				if (elems.length < 3)
-					create(notificationContents.content)
+					create(notificationContents.content, clear)
 				else					
 					if create.name == "CTA" # Priority first queuing
 						queue.unshift(notificationContents) # CTA notifications get priority
@@ -430,7 +437,7 @@ Generator = (options) ->
 
 
 	recurGen = () ->
-		Generator(options)
+		Generator(options, clear)
 	
 	timeOut = Utils.randomNumber(1000, 6000)
 	window.setTimeout(recurGen, 1500)
