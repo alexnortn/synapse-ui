@@ -56,7 +56,8 @@ styles.colors.gradient =
 	gray_1 : "-webkit-linear-gradient( top, #282A2E, #1F2123 )",
 	gray_2 : "-webkit-linear-gradient( top, #5D6574, #303540 )",
 	gray_3 : "-webkit-linear-gradient( top, #9DA2AB, #646873 )",
-	gray_0A : "-webkit-linear-gradient( top, rgba(157,162,171,0.025), rgba(100,105,115,0.025) )",
+	gray_0A025 : "-webkit-linear-gradient( top, rgba(157,162,171,0.025), rgba(100,105,115,0.025) )",
+	gray_0A75 : "-webkit-linear-gradient( top, rgba(31,33,38,0.75), rgba(28,30,35,0.75) )",
 	green_0 : "-webkit-linear-gradient( top, #82D99E, #66CC7F )"
 
 

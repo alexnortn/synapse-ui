@@ -83,7 +83,7 @@ generateContainer = (elemName) ->
 		opacity: 0
 
 	if (_clear)
-		_this.style.background = Colors.gradient.gray_0A
+		_this.style.background = Colors.gradient.gray_0A25
 		_this.style = '-webkit-backdrop-filter': 'blur(30px)'
 	else
 		_this.style.background = Colors.gradient.gray_0
@@ -440,7 +440,7 @@ Generator = (options, clear=false) ->
 		Generator(options, clear)
 	
 	timeOut = Utils.randomNumber(1000, 6000)
-	window.setTimeout(recurGen, 1500)
+	window.setTimeout(recurGen, timeOut)
 
 
 # Module Exports ------------------------------------------------------
