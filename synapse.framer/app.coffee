@@ -370,7 +370,7 @@ Sidebar.Generate.section( ƒƒ('sidebar_announcements')[1], "notices" ) # While 
 Sidebar.Generate.section( ƒƒ('sidebar_announcements')[1], "events + invitations" )
 Sidebar.Generate.section( ƒƒ('sidebar_announcements')[1], "achievements" )
 
-Sidebar.Generate.interaction( ƒƒ('sidebar_announcements')[1], _scroll_components, _sidebarViews, _sidebarContainers, synapse )
+Sidebar.Generate.interaction( ƒ('_container_sidebar_announcements'), _scroll_components, _sidebarViews, _sidebarContainers, synapse )
 
 # Generate sidebar Announcement section content
 # Searches for all matching sections within container
