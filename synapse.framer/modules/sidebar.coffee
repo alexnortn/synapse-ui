@@ -25,7 +25,7 @@ scalify = Utils.scalify(scaleFactor)
 structure = (header) ->
 	# Setup --> create layers + hierarchy
 	_container_sidebar = new Layer
-		name: "_container_sidebar_" + header
+		name: "container_sidebar_" + header
 		x: 1120
 		y: 0
 		width: 320 # Standard sidebar width
