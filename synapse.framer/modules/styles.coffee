@@ -39,7 +39,8 @@ styles.colors.ui =
 	gray_7 : "#A9AEB5",
 	gray_8 : "#CED4D9",
 	gray_9 : "#EEF1F3",
-	gray_10 : "#FAFEFF"
+	gray_10 : "#FAFEFF",
+	gray_5A : "rgba(24,26,30,0.75)"
 
 styles.colors.accent = 
 	green_0 : "#6CD9A7",
@@ -57,7 +58,7 @@ styles.colors.gradient =
 	gray_2 : "-webkit-linear-gradient( top, #5D6574, #303540 )",
 	gray_3 : "-webkit-linear-gradient( top, #9DA2AB, #646873 )",
 	gray_0A025 : "-webkit-linear-gradient( top, rgba(157,162,171,0.025), rgba(100,105,115,0.025) )",
-	gray_0A75 : "-webkit-linear-gradient( top, rgba(31,33,38,0.75), rgba(28,30,35,0.75) )",
+	gray_0A75 : "-webkit-linear-gradient( top, rgba(31,33,38,0.75), rgba(28,30,35,0) )",
 	green_0 : "-webkit-linear-gradient( top, #82D99E, #66CC7F )"
 
 

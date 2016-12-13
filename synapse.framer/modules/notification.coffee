@@ -7,6 +7,7 @@
 {ƒ,ƒƒ} = require ('findModule')
 Styles = require("styles")
 States = require("states")
+Announcements = require("announcements")
 
 
 # Styles
@@ -30,9 +31,10 @@ _clear = false
 # Generate Simple { Gray } Notifcation -> Spawn top left, stacking
 # header | copy | icon | CTA:bool | elemName
 Simple = (content, CTA=false, elemName='element_notification') ->
-	header = content.header
-	copy = content.copy
-	icon = content.icon
+	header = content.header || "points"
+	copy = content.copy || "points"
+	icon = content.icon || "points"
+	duration = content.duration || 10000
 	
 	elem = ''
 	elem2 = ''
@@ -54,7 +56,12 @@ Simple = (content, CTA=false, elemName='element_notification') ->
 	fadeInNotification()
 	pushNotification()
 
-	fadeOutNotification(10000) 
+	elem = ƒƒ('element_notification*')
+	elem = elem[elem.length-1]
+
+	fadeOutNotification(elem, duration, content) 
+
+
 # Generate Progress { Green } Progress Notifcation -> Spawn top left, stacking
 # header | copy | icon 
 
@@ -83,7 +90,7 @@ generateContainer = (elemName) ->
 		opacity: 0
 
 	if (_clear)
-		_this.style.background = Colors.gradient.gray_0A25
+		_this.style.background = Colors.ui.gray_5A
 		_this.style = '-webkit-backdrop-filter': 'blur(30px)'
 	else
 		_this.style.background = Colors.gradient.gray_0
@@ -167,28 +174,7 @@ generateHitboxRight = (elem) ->
 		if (pushing)
 			return
 
-		# Check current element status
-		elems = ƒƒ('element_notification*')
-
-		if (elems.length > 1)
-			shift = true
-			offset = 12
-			for elem, index in elems
-				if (elem == layer.parent)
-					# offset = index == 0 ? 0 : 24 # If newest element removed, make up for initial offset
-					shift = false
-
-				if (shift) # push all remaining elements upwards
-					exiting = true # global for managing generator + queue
-					elem.animate
-						y: (elem.y - elem.height - offset)
-						options:
-							time: 1
-							curve: "spring(250, 25, 0)"
-
-					elem.onAnimationEnd -> 
-						exiting = false
-
+		reFlowNotification(layer.parent)
 
 		layer.parent.animate('translucent')
 		# Remove notification element after animtion completes
@@ -239,11 +225,10 @@ generateHeader = (elem, headerCopy) ->
 		autoSize: true
 		color: Colors.ui.gray_5
 		textAlign: "left"
-		textTransform: "uppercase"
-		fontSize: 10
-		fontWeight: "Bold"
+		fontSize: 9
+		fontWeight: "600"
 		lineHeight: 1.15
-		letterSpacing: 1
+		letterSpacing: 0.25
 		fontFamily: "Source Sans Pro"
 
 	_this.parent = elem
@@ -261,7 +246,7 @@ generateCopy = (elem, copy) ->
 		color: Colors.ui.gray_5
 		textAlign: "left"
 		fontSize: 9
-		fontWeight: "600"
+		fontWeight: "400"
 		lineHeight: 1.25
 		fontFamily: "Source Sans Pro"
 
@@ -309,36 +294,59 @@ pushNotification = () ->
 		elem.onAnimationEnd -> pushing = false
 
 
+reFlowNotification = (current) ->
+	# Check current element status
+	elems = ƒƒ('element_notification*')
+
+	if (elems.length > 1)
+		shift = true
+		offset = 12
+
+		for elem, index in elems
+			if (elem == current)
+				shift = false
+
+			if (shift) # push all remaining elements upwards
+				exiting = true # global for managing generator + queue
+				elem.animate
+					y: (elem.y - elem.height - offset)
+					options:
+						time: 1
+						curve: "spring(250, 25, 0)"
+
+				elem.onAnimationEnd -> 
+					exiting = false
+
+
 # Fade Out notification after timeOut
-fadeOutNotification = (timer=10000) ->
+fadeOutNotification = (elem, duration=10000, content) ->
 
 	# Animate out 
-	animateOut = (CTA=false) ->
+	animateOut = (elem, CTA=false) ->
 
-		# Target all other notifications
-		elems = ƒƒ('element_notification*')
-
-		elem_n = elems[0]
-		elem_n.animate # Fadeout the final notification element
+		elem.animate # Fadeout the final notification element
 			opacity: 0
 			options:
 	        	time: 1
 
 		# Remove notification element after animtion completes
-		elem_n.onAnimationEnd -> elem_n.destroy()	
+		elem.onAnimationEnd -> 
+			reFlowNotification(elem)
+			elem.destroy()	
 
 
 	$p = new Promise (
 		(resolve, reject) ->
 			window.setTimeout(
 				-> resolve()
-				timer
+				duration
 			)
 	)
 
 	$p.then(
 		() ->
-			animateOut(CTA)
+			animateOut(elem, CTA)
+			Announcements.Generate(content)
 			if (!exiting)
 				queueCheck(queue)
 	)

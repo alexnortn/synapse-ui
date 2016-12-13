@@ -25,6 +25,8 @@ States = require("states")
 Utils = require("utils")
 Styles = require("styles")
 Notification = require("notification")
+Sidebar = require("sidebar")
+Announcements = require("announcements")
 NotificationContent = require 'notificationContent'
 
 # Styles
@@ -56,7 +58,10 @@ document.body.style.cursor = "auto"
 # synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
 
 # Import file "SynapseDesign_V2" --> Transparent
-synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
+# synapse = Framer.Importer.load("imported/SynapseDesign_V2@1x")
+
+# Import file "SynapseDesign_V3"
+synapse = Framer.Importer.load("imported/SynapseDesign_V3@1x")
 _clear = true # Global for translucency
 
 scaleFactor = 1 # Directly related to Sketch input scale
@@ -104,8 +109,9 @@ prefix =
 	icon: 		"icon_"
 	tile: 		"tile_"
 
-sidebarViews = []
-sidebarContainers = []
+_sidebarViews = []
+_sidebarContainers = []
+_scroll_components = []
 
 
 # Setup Scroll Components
@@ -124,7 +130,14 @@ scroll_leaderboard.height = scalify(scroll_leaderboard.height)
 scroll_leaderboard.scrollHorizontal = false
 scroll_leaderboard.propagateEvents = false
 
-scroll_components = [ scroll_overview, scroll_leaderboard ]
+
+# Announcements scroll component
+scroll_announcements = ScrollComponent.wrap(synapse.container_sidebar_announcements)
+scroll_announcements.height = scalify(scroll_announcements.height)
+scroll_announcements.scrollHorizontal = false
+scroll_announcements.propagateEvents = false
+
+_scroll_components = [ scroll_overview, scroll_leaderboard, scroll_announcements ]
 
 
 # Setup States
@@ -134,6 +147,7 @@ scroll_components = [ scroll_overview, scroll_leaderboard ]
 # synapse.container_sidebar_leaderboard.visible = false
 navbarActive.childrenWithName('active_leaderboard')[0].opacity = 0
 navbarActive.childrenWithName('active_overview')[0].opacity = 0 
+navbarActive.childrenWithName('active_announcements')[0].opacity = 0 
 
 synapse.container_view_chip.visible = false
 synapse.container_view_chip2.visible = false
@@ -157,14 +171,14 @@ setupSidebar = (comp) ->
 		matchAfter = (child.name).match(regAfter)[0]
 
 		if ( matchBefore == "sidebar" )
-			sidebarViews.push(child)
-			sidebarContainers.push(child.parent.parent)
+			_sidebarViews.push(child)
+			_sidebarContainers.push(child.parent.parent)
 
-	sidebarContainers.push(synapse.container_view_navbar) # Add Navbar
-	sidebarContainers.push(synapse.container_helper_sidebar_bg) # Add Sidebar BG
+	_sidebarContainers.push(synapse.container_view_navbar) # Add Navbar
+	_sidebarContainers.push(synapse.container_helper_sidebar_bg) # Add Sidebar BG
 
-	States.setupSlide(sidebarContainers, synapse.container_sidebar_overview.width)
-	States.setupFade(sidebarViews)
+	States.setupSlide(_sidebarContainers, synapse.container_sidebar_overview.width)
+	States.setupFade(_sidebarViews)
 
 setupSidebar(synapse)
 
@@ -178,6 +192,10 @@ if (_clear)
 			.visible = true
 	synapse.container_view_navbar.childrenWithName("view_navbar")[0]
 		.childrenWithName("helper_navbar_bg")[0]
+			.style = '-webkit-backdrop-filter': 'blur(30px)'
+
+	synapse.container_view_chat.childrenWithName("view_chat")[0]
+		.childrenWithName("view_chat_textInput")[0]
 			.style = '-webkit-backdrop-filter': 'blur(30px)'
 
 # Initialize element states
@@ -202,7 +220,7 @@ animateLayer = (layer, state) ->
 # Event Handlers
 # --------------------------------------------------------------------------------
 
-# Sidebar MouseOver Interaction
+# Sidebar "MouseOver" Interaction
 for child in navbarTiles.subLayers
 	child.on Events.MouseOver, (event, layer) ->
 		for other in navbarTiles.subLayers
@@ -214,7 +232,7 @@ for child in navbarTiles.subLayers
 			if (layer2.name != activeTile) # Maintain highlight state
 				layer2.animate('transparent')
 
-# Sidebar Click Interaction
+# Sidebar "Click" Interaction
 for child in navbarTiles.subLayers
 	child.on Events.Click, (event, layer) ->
 		layerAfter = (layer.name).match(regAfter)[0]
@@ -239,7 +257,7 @@ for child in navbarTiles.subLayers
 				animation = "open"
 
 			SidebarState.open = !SidebarState.open
-			for layer in sidebarContainers # Toggle Open/Close containers
+			for layer in _sidebarContainers # Toggle Open/Close containers
 				animateLayer(layer, animation)
 
 		changeView(layerAfter, synapse)
@@ -248,7 +266,7 @@ for child in navbarTiles.subLayers
 			if (other.name != activeTile) # Maintain highlight state
 				other.animate('transparent') # Fadeout all other tiles
 
-# Chat Click Interaction
+# Chat "Click" Interaction
 chatElement.on Events.Click, (event, layer) ->
 	for elem in activeChatElements
 		elem.stateCycle()
@@ -304,7 +322,7 @@ changeView = (layerCurrent, comp) ->
 
 	# Reset new scroll component
 	currentScroll = "container_sidebar_" + layerCurrent
-	for name, scroll of scroll_components
+	for name, scroll of _scroll_components
 		if ( scroll.name == currentScroll )
 			scroll.scrollY = 0
 
@@ -334,16 +352,38 @@ THREE_Canvas.style.height = Utils.pxify(THREE_Layer.height)
 THREE_Layer._element.appendChild(THREE_Canvas);
 
 # Initialize 3D Viewer
-Overview.setup(THREE_Layer, THREE_Canvas)
-Overview.animate()
+# Overview.setup(THREE_Layer, THREE_Canvas)
+# Overview.animate()
 
 # Reorder layers
 THREE_Layer.sendToBack()
 synapse.container_view_bg.sendToBack()
 
 
+# Sidebar Generator
+# --------------------------------------------------------------------------------
+	
+Sidebar.Generate.structure("announcements")
+
+# Generate sidebar Announcement sections 
+Sidebar.Generate.section( ƒƒ('sidebar_announcements')[1], "notices" ) # While sketch is blocking...
+Sidebar.Generate.section( ƒƒ('sidebar_announcements')[1], "events + invitations" )
+Sidebar.Generate.section( ƒƒ('sidebar_announcements')[1], "achievements" )
+
+Sidebar.Generate.interaction( ƒƒ('sidebar_announcements')[1], _scroll_components, _sidebarViews, _sidebarContainers, synapse )
+
+# Generate sidebar Announcement section content
+# Searches for all matching sections within container
+# Initialization --> Empty text
+# Perfectly Centered within
+pushNotification = Announcements.Generate(ƒƒ('sidebar_announcements')[1]) # While sketch is blocking...
+pushNotification("Hello")
+
+
+
 # Notification Generator
 # --------------------------------------------------------------------------------
 
 # Kick off recursive notification generator 
-Notification.Generator(NotificationContent.content, _clear)
+# Notification.Generator(NotificationContent.content, _clear)
+# Announcements.Generate("Hello")

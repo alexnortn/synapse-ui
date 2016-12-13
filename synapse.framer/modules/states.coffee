@@ -22,6 +22,22 @@ setupSlide = (layers, sidebarWidth) ->
 				curve: "spring(200, 17.5, 0)"
 
 
+# Sidebar Open/Close
+setupSlideOnce = (layer, sidebarWidth) ->	
+	# Sidebar Open
+	layer.states.open =
+		x: layer.x
+		y: 0
+		animationOptions:
+			curve: "spring(200, 17.5, 0)"
+	# Sidebar Close
+	layer.states.close = 
+		x: layer.x + sidebarWidth
+		y: 0	
+		animationOptions:
+			curve: "spring(200, 17.5, 0)"
+
+
 # Toggle opacity for all Navbar tiles
 setupFade = (layers) ->	
 	for layer in layers
@@ -65,6 +81,7 @@ setupTogglePush = (layer) ->
 
 
 exports.setupSlide = setupSlide
+exports.setupSlideOnce = setupSlideOnce
 exports.setupFade = setupFade
 exports.setupFadeOnce = setupFadeOnce
 exports.setupTogglePush = setupTogglePush
