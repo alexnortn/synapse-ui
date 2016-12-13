@@ -24,13 +24,13 @@ scalify = Utils.scalify(scaleFactor)
 
 structure = (header) ->
 	# Setup --> create layers + hierarchy
-	_container_sidebar = new Layer
-		name: "container_sidebar_" + header
-		x: 1120
-		y: 0
-		width: 320 # Standard sidebar width
-		height: 900 # Standart sidebar height
-		backgroundColor: Colors.ui.gray_5A
+	# _container_sidebar = new Layer
+	# 	name: "container_sidebar_" + header
+	# 	x: 0
+	# 	y: 0
+	# 	width: 320 # Standard sidebar width
+	# 	height: 1900 # Standart sidebar height
+	# 	backgroundColor: Colors.ui.gray_5A
 
 	_view_sidebar = new Layer
 		name: "sidebar_" + header
@@ -38,8 +38,8 @@ structure = (header) ->
 		y: 0
 		width: 320
 		height: 900
-		backgroundColor: "transparent"
-		parent: _container_sidebar
+		backgroundColor: Colors.ui.gray_5A
+		# parent: _container_sidebar
 
 	sidebar_gradient = new Layer
 		name: "gradient"
@@ -47,14 +47,14 @@ structure = (header) ->
 		y: 0
 		width: 320
 		height: 320 # Const
-		parent: _container_sidebar
+		parent: _view_sidebar
 
 	sidebar_gradient.style.background = Colors.gradient.gray_0A75 # Tweak the opacity on this guy
 
 	icon_name = "helper_icon_" + header
 
 	header_icon = ƒ(icon_name).copy()	
-	header_icon.parent = _container_sidebar
+	header_icon.parent = _view_sidebar
 	header_icon.x = Align.center
 	header_icon.y = 64
 	header_icon.opacity = 0.75
@@ -72,24 +72,38 @@ structure = (header) ->
 		letterSpacing: 0.25
 		fontFamily: "Source Sans Pro"
 
-	header_text.parent = _container_sidebar
+	header_text.parent = _view_sidebar
 	header_text.x = Align.center
 	header_text.y = 112
 
 
-interaction = (elem_sidebar, scroll_components, sidebarViews, sidebarContainers, synapse) ->
+interaction = (header, scroll_components, sidebarViews, sidebarContainers, synapse) ->
 
-	# Populate our App global interaction elements
-	sidebarViews.push(_view_sidebar)
-	sidebarContainers.push(elem_sidebar)
+	sidebar = new ScrollComponent
+	    width: 320
+	    height: 900
+	    x: 1120
+	    y: 0
 
+    sidebar.name = "container_sidebar_" + header
+    
+    sidebar_elem = "sidebar_" + header
+    sidebar_elem = ƒ( sidebar_elem )
+
+    sidebar_elem.parent = sidebar.content
+	# console.log elem_sidebar.name
+	
 	# Announcements scroll component
-	sidebar = ScrollComponent.wrap(elem_sidebar)
-	sidebar.height = scalify(sidebar.height)
+	# sidebar = ScrollComponent.wrap(elem_sidebar)
+	# sidebar.height = scalify(sidebar.height)
 	sidebar.scrollHorizontal = false
 	sidebar.propagateEvents = false
 
 	scroll_components.push(sidebar)
+
+	# Populate our App global interaction elements
+	sidebarViews.push(_view_sidebar)
+	sidebarContainers.push(sidebar)
 
 	# Setup animation states
 	States.setupSlideOnce( sidebarContainers[ sidebarContainers.length-1 ], synapse.container_sidebar_overview.width)
@@ -117,6 +131,7 @@ section = (container, name) ->
 	section.height = 160
 
 	section.style.borderTop = "1px solid #262A33"
+	section.style.overflow = "hidden"
 
 	sectionHeader = new TextLayer
 		text: name

@@ -211,6 +211,8 @@ navbarIcons.childrenWithName('icon_overview')[0].stateSwitch('transparent')
 navbarTiles.childrenWithName('tile_overview')[0].stateSwitch('visible')
 navbarActive.childrenWithName('active_overview')[0].stateSwitch('visible')
 
+synapse.static_container_sidebar_announcements.opacity = 0
+
 
 # Animate N layers together with similar properties 
 animateLayer = (layer, state) ->
@@ -355,23 +357,15 @@ synapse.container_view_bg.sendToBack()
 Sidebar.Generate.structure("announcements")
 
 # Generate sidebar Announcement sections 
-Sidebar.Generate.section( ƒ('sidebar_announcements'), "notices" ) # While sketch is blocking...
-Sidebar.Generate.section( ƒ('sidebar_announcements'), "events + invitations" )
-Sidebar.Generate.section( ƒ('sidebar_announcements'), "achievements" )
+Sidebar.Generate.section( ƒ('sidebar_announcements'), "notice" )
+Sidebar.Generate.section( ƒ('sidebar_announcements'), "event" )
+Sidebar.Generate.section( ƒ('sidebar_announcements'), "achievement" )
 
-Sidebar.Generate.interaction( ƒ('container_sidebar_announcements'), _scroll_components, _sidebarViews, _sidebarContainers, synapse )
+Sidebar.Generate.interaction( "announcements", _scroll_components, _sidebarViews, _sidebarContainers, synapse )
 
 # Generate sidebar Announcement section content
-# Searches for all matching sections within container
 # Initialization --> Empty text
-# Perfectly Centered within
-pushNotification = Announcements.Generate(ƒ('sidebar_announcements')) # While sketch is blocking...
-pushNotification("Hello")
-
-
-# Just for testing
-synapse.static_container_sidebar_announcements.x = 750
-console.log synapse.static_container_sidebar_announcements.x
+Announcements.initialize( ƒ('sidebar_announcements') )
 
 
 
@@ -379,5 +373,5 @@ console.log synapse.static_container_sidebar_announcements.x
 # --------------------------------------------------------------------------------
 
 # Kick off recursive notification generator 
-# Notification.Generator(NotificationContent.content, _clear)
+Notification.Generator(NotificationContent.content, _clear)
 # Announcements.Generate("Hello")

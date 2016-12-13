@@ -13,25 +13,25 @@ content.CTA =
 		copy: "We need some players to help us finish cell 10001."
 		icon: "points"
 		duration: 30000
-		type: "invite"
+		type: "event"
 	complete4:
 		header: "Complete"
 		copy: "We need some players to help us finish cell 10004."
 		icon: "points"
 		duration: 30000
-		type: "invite"
+		type: "event"
 	complete5:
 		header: "Complete"
 		copy: "We need some players to help us finish cell 10005."
 		icon: "points"
 		duration: 30000
-		type: "invite"
+		type: "event"
 	complete5:
 		header: "Compete"
 		copy: "Join this new competition."
 		icon: "reward"
 		duration: 30000
-		type: "invite"
+		type: "event"
 	complete5:
 		header: "Announcement"
 		copy: "Remember to keep it all-ages in chat!  Chat rules here."
@@ -43,7 +43,7 @@ content.CTA =
 		copy: "Watch here to improve your accuracy to perfection!"
 		icon: "help"
 		duration: 30000
-		type: "invite"
+		type: "event"
 	bigNews1:
 		header: "Big News"
 		copy: "Eyewire just published a paper on xyz."

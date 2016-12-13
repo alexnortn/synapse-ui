@@ -25,9 +25,6 @@ _clear = false
 # Notification Generator
 # --------------------------------------------------------------------------------
 
-# Need to generate way to create/access layer for hover states
-
-
 # Generate Simple { Gray } Notifcation -> Spawn top left, stacking
 # header | copy | icon | CTA:bool | elemName
 Simple = (content, CTA=false, elemName='element_notification') ->
@@ -191,7 +188,7 @@ generateHitboxLeftIcon = (elem, icon, CTA) ->
 	_this.parent = elem
 
 	_this.x = Align.center
-	_this.y = Align.center
+	_this.y = Align.center(2)
 	_this.opacity = 0.5
 
 	if (CTA)
@@ -346,7 +343,7 @@ fadeOutNotification = (elem, duration=10000, content) ->
 	$p.then(
 		() ->
 			animateOut(elem, CTA)
-			Announcements.Generate(content)
+			Announcements.Announce(content)
 			if (!exiting)
 				queueCheck(queue)
 	)
