@@ -132,7 +132,7 @@ scroll_leaderboard.propagateEvents = false
 
 
 # Announcements scroll component
-scroll_announcements = ScrollComponent.wrap(synapse.container_sidebar_announcements)
+scroll_announcements = ScrollComponent.wrap(synapse.static_container_sidebar_announcements)
 scroll_announcements.height = scalify(scroll_announcements.height)
 scroll_announcements.scrollHorizontal = false
 scroll_announcements.propagateEvents = false
@@ -257,10 +257,11 @@ for child in navbarTiles.subLayers
 				animation = "open"
 
 			SidebarState.open = !SidebarState.open
+			
 			for layer in _sidebarContainers # Toggle Open/Close containers
 				animateLayer(layer, animation)
 
-		changeView(layerAfter, synapse)
+		changeView(layerAfter)
 
 		for other in navbarTiles.subLayers
 			if (other.name != activeTile) # Maintain highlight state
@@ -274,51 +275,39 @@ chatElement.on Events.Click, (event, layer) ->
 # View Controller
 # --------------------------------------------------------------------------------
 
-# Generalized to work with any similarly named Sketch file structure 
-changeView = (layerCurrent, comp) -> 
+# Generalized to work with ƒƒ{•}
+changeView = (layerCurrent) -> 
 
-	# Only continue for supported states
-	noMatch = true
-
-	for name, child of comp
-		matchBefore = (child.name).match(regBefore)[0]
-		matchAfter = (child.name).match(regAfter)[0]
-		if (matchBefore == "sidebar")
-			if (matchAfter == layerCurrent)
-				noMatch = false
-
-	# Swap Views
-	if (noMatch)
-		return
+	sidebars = ƒƒ("sidebar_*")
 
 	activeTile = "tile_" + layerCurrent
 
-	for name, child of comp
-		matchBefore = (child.name).match(regBefore)[0]
-		matchAfter = (child.name).match(regAfter)[0]
-		if ( matchBefore == "sidebar" )
-			if ( matchAfter == layerCurrent ) # FadeIn new View
-				currentIcon = prefix.icon + layerCurrent
-				currentActive = prefix.active + layerCurrent
+	for sidebar in sidebars
+		matchBefore = (sidebar.name).match(regBefore)[0]
+		matchAfter = (sidebar.name).match(regAfter)[0]
+		
+		if ( matchAfter == layerCurrent ) # FadeIn new View
+			currentIcon = prefix.icon + layerCurrent
+			currentActive = prefix.active + layerCurrent
 
-				SidebarState.current_view = layerCurrent # Set Global SidebarState
+			SidebarState.current_view = layerCurrent # Set Global SidebarState
 
-				# Reset Icons
-				for icon in navbarIcons.children
-					icon.animate('visible')
-				# Reset Active Icons
-				for icon in navbarActive.children
-					icon.animate('transparent')
+			# Reset Icons
+			for icon in navbarIcons.children
+				icon.animate('visible')
+			# Reset Active Icons
+			for icon in navbarActive.children
+				icon.animate('transparent')
 
-				# Update current Icons + Active Icons
-				navbarIcons.childrenWithName(currentIcon)[0].animate('transparent')
-				navbarActive.childrenWithName(currentActive)[0].animate('visible')
+			# Update current Icons + Active Icons
+			navbarIcons.childrenWithName(currentIcon)[0].animate('transparent')
+			navbarActive.childrenWithName(currentActive)[0].animate('visible')
 
-				child.parent.parent.visible = true # FadeIn new View
-				child.animate('visible')
-			else
-				child.animate('transparent') # FadeOut old View
-				child.parent.parent.visible = false
+			sidebar.parent.parent.visible = true # FadeIn new View
+			sidebar.animate('visible')
+		else
+			sidebar.animate('transparent') # FadeOut old View
+			sidebar.parent.parent.visible = false
 
 	# Reset new scroll component
 	currentScroll = "container_sidebar_" + layerCurrent
@@ -366,18 +355,23 @@ synapse.container_view_bg.sendToBack()
 Sidebar.Generate.structure("announcements")
 
 # Generate sidebar Announcement sections 
-Sidebar.Generate.section( ƒƒ('sidebar_announcements')[1], "notices" ) # While sketch is blocking...
-Sidebar.Generate.section( ƒƒ('sidebar_announcements')[1], "events + invitations" )
-Sidebar.Generate.section( ƒƒ('sidebar_announcements')[1], "achievements" )
+Sidebar.Generate.section( ƒ('sidebar_announcements'), "notices" ) # While sketch is blocking...
+Sidebar.Generate.section( ƒ('sidebar_announcements'), "events + invitations" )
+Sidebar.Generate.section( ƒ('sidebar_announcements'), "achievements" )
 
-Sidebar.Generate.interaction( ƒƒ('container_sidebar_announcements')[1], _scroll_components, _sidebarViews, _sidebarContainers, synapse )
+Sidebar.Generate.interaction( ƒ('container_sidebar_announcements'), _scroll_components, _sidebarViews, _sidebarContainers, synapse )
 
 # Generate sidebar Announcement section content
 # Searches for all matching sections within container
 # Initialization --> Empty text
 # Perfectly Centered within
-pushNotification = Announcements.Generate(ƒƒ('sidebar_announcements')[1]) # While sketch is blocking...
+pushNotification = Announcements.Generate(ƒ('sidebar_announcements')) # While sketch is blocking...
 pushNotification("Hello")
+
+
+# Just for testing
+synapse.static_container_sidebar_announcements.x = 750
+console.log synapse.static_container_sidebar_announcements.x
 
 
 

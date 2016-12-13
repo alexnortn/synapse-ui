@@ -65,8 +65,8 @@ window.__imported__["SynapseDesign_V3@1x/layers.json.js"] = [
 	{
 		"objectId": "AFED427B-2A98-48AF-8E12-114512A2023C",
 		"kind": "artboard",
-		"name": "container_sidebar_announcements",
-		"originalName": "container-sidebar-announcements",
+		"name": "static_container_sidebar_announcements",
+		"originalName": "static-container-sidebar-announcements",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": 1083,
@@ -81,11 +81,11 @@ window.__imported__["SynapseDesign_V3@1x/layers.json.js"] = [
 			{
 				"objectId": "1A532348-8205-46E2-9502-AA87A25E4A00",
 				"kind": "group",
-				"name": "sidebar_announcements",
-				"originalName": "sidebar-announcements",
+				"name": "static_sidebar_announcements",
+				"originalName": "static-sidebar-announcements",
 				"maskFrame": null,
 				"layerFrame": {
-					"x": 0,
+					"x": 1,
 					"y": -1,
 					"width": 321,
 					"height": 1657
@@ -95,9 +95,9 @@ window.__imported__["SynapseDesign_V3@1x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-sidebar_announcements-mue1mziz.png",
+					"path": "images/Layer-static_sidebar_announcements-mue1mziz.png",
 					"frame": {
-						"x": 0,
+						"x": 1,
 						"y": -1,
 						"width": 321,
 						"height": 1657

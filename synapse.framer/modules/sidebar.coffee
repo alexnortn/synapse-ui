@@ -42,7 +42,7 @@ structure = (header) ->
 		parent: _container_sidebar
 
 	sidebar_gradient = new Layer
-		name: "sidebar_gradient"
+		name: "gradient"
 		x: 0
 		y: 0
 		width: 320
@@ -93,7 +93,7 @@ interaction = (elem_sidebar, scroll_components, sidebarViews, sidebarContainers,
 
 	# Setup animation states
 	States.setupSlideOnce( sidebarContainers[ sidebarContainers.length-1 ], synapse.container_sidebar_overview.width)
-	States.setupFade(sidebarViews)
+	States.setupFadeOnce( sidebarViews[ sidebarViews.length-1 ] )
 
 
 section = (container, name) ->
