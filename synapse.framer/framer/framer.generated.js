@@ -17067,9 +17067,9 @@ window.__imported__["SynapseDesign_V3@1x/layers.json.js"] = [
 	}
 ]
 if (DeviceComponent) {DeviceComponent.Devices["iphone-6-silver"].deviceImageJP2 = false};
-if (window.Framer) {window.Framer.Defaults.DeviceView = {"deviceScale":1.5,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
+if (window.Framer) {window.Framer.Defaults.DeviceView = {"deviceScale":0.75,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
 }
-if (window.Framer) {window.Framer.Defaults.DeviceComponent = {"deviceScale":1.5,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
+if (window.Framer) {window.Framer.Defaults.DeviceComponent = {"deviceScale":0.75,"selectedHand":"","deviceType":"custom","contentScale":0.5,"orientation":0};
 }
 window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"synapse.framer"};
 

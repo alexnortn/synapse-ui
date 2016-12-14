@@ -295,26 +295,24 @@ fadeInAnnoucement = (elem) ->
 
 # This will need a bit more logic given the sections
 updateLayoutSystem = (type) ->	
-	section_elems = ƒƒ('section_*')
-	section_name = "section_" + type
+	section_elems = ƒƒ('section_*')   # Ref to all sections within <Announcements>
+	section_name = "section_" + type  # Ref to current section name
 	section_height_initial = 0
-	section_offset = 0
 	section_height = 0
 
 	displacement = 0
-	displacement_more = 0
+	displacement_queue = 0
 
-	container = ƒ( section_name )
-	section_height_initial = container.height
-	elems = container.ƒƒ('announcement_container')
+	section_elem = ƒ( section_name ) # Reference to each individual section within <Announcements>
+	section_height_initial = section_elem.height
+	elems = section_elem.ƒƒ('announcement_container')
 
 	push = false
 	padding = ''
 
 	# Update section attributes accordingly
-	updateHeight = (container, newHeight, initialHeight, padding=0) ->
-		console.log container.name, initialHeight, newHeight
-		container.animate
+	updateHeight = (section_elem, newHeight, initialHeight, padding=0) ->
+		section_elem.animate
 			height: newHeight
 			options:
 				time: 1
@@ -323,7 +321,7 @@ updateLayoutSystem = (type) ->
 		displacement = newHeight - initialHeight + padding
 
 		# Update sidebar dimensions
-		container.parent.animate
+		section_elem.parent.animate
 			height: ( ƒ( "sidebar_announcements" ).height + displacement )
 			options:
 				time: 1
@@ -337,17 +335,22 @@ updateLayoutSystem = (type) ->
 			if (elem.name == section_name)
 				push = true
 
-		# container.parent.height += displacement
-		container.parent.parent.height += displacement
-		container.parent.parent.parent.height += displacement
+		# section_elem.parent.height += displacement
+		section_elem.parent.parent.height += displacement
+		section_elem.parent.parent.parent.height += displacement
 
 		# ??????????????????? --> Scroll
 
-	
-	if (elems.length)
-		container.ƒ( "filler_text" ).animate('transparent')
 
-	# Animate all annoucements in section
+	# If there are annoucements present, toggle filler_text
+	if (elems.length)
+		section_elem.ƒ( "filler_text" ).animate('transparent')
+	else
+		section_elem.ƒ( "filler_text" ).animate('visible')
+		section_elem.height = 168 # Reset section height
+
+
+	# Animate <push> all annoucements in section
 	for elem, index in elems
 		if (index == elems.length-1)
 			padding = 32
@@ -355,35 +358,35 @@ updateLayoutSystem = (type) ->
 			padding = 0
 
 		offset = elem.height + padding
-
-		section_height += offset
+		section_height += offset # Perhaps this is part of the problem
+		
 		elem.animate
 			y: (elem.y + offset)
 			options:
 				time: 1
 				curve: "spring(250, 25, 0)"
 
-	section_height += 32 # Padding --> This will always be the total height of the section
-
+	
 	# Update section dimensions
 	if (elems.length < 5)
-		updateHeight(container, section_height, section_height_initial)
-	else if ( container.ƒƒ( "more_annoucements" ).length == 0 )
+		section_height += 32 # Padding --> This will always be the total height of the section
+		updateHeight(section_elem, section_height, section_height_initial)
+	else if ( section_elem.parent.ƒƒ( "more_annoucements" ).length == 0 ) # We're adding <more> to the current section's parent, to handle spacing
 
 		console.log "adding more button"
-		console.log container.ƒƒ( "more_annoucements" )
+		console.log section_elem.parent.ƒƒ( "more_annoucements" )
 
 		# Create a more section
-		button = askForMore(container)
+		button = askForMore(section_elem)
 		button.animate('visible')
 
-		padding = 72
-		updateHeight(container, section_height, section_height_initial, padding)
+		padding = 104
+		updateHeight(section_elem, section_height, section_height_initial, padding)
 
 		# If user asks for more
 		button.on Events.Click, (event, layer) ->
-			padding = -72
-			updateHeight(container, section_height, section_height_initial, padding)		
+			padding = -104
+			updateHeight(section_elem, section_height, section_height_initial, padding)		
 
 
 # This will need a bit more logic given the sections
