@@ -113,7 +113,7 @@ generateHitboxLeftIcon = (elem, icon, type) ->
 	_this.parent = elem
 
 	_this.x = Align.center
-	_this.y = Align.center(2)
+	_this.y = Align.center(1)
 	_this.opacity = 0.5
 
 	if (type != "achievement")
@@ -285,7 +285,6 @@ generateElapsed = (elem) ->
 # Annoucement Animators
 # --------------------------------------------------------------------------------
 
-
 # Fade In annoucement immediately
 fadeInAnnoucement = (elem) ->
 	elem.animate
@@ -312,6 +311,39 @@ updateLayoutSystem = (type) ->
 	push = false
 	padding = ''
 
+	# Update section attributes accordingly
+	updateHeight = (container, newHeight, initialHeight, padding=0) ->
+		console.log container.name, initialHeight, newHeight
+		container.animate
+			height: newHeight
+			options:
+				time: 1
+				curve: "spring(250, 25, 0)"
+
+		displacement = newHeight - initialHeight + padding
+
+		# Update sidebar dimensions
+		container.parent.animate
+			height: ( ƒ( "sidebar_announcements" ).height + displacement )
+			options:
+				time: 1
+				curve: "spring(250, 25, 0)"
+
+		# If Annoucement added before section, push section down
+		for elem, index in section_elems
+			if (push)
+				elem.y = (elem.y + displacement)
+
+			if (elem.name == section_name)
+				push = true
+
+		# container.parent.height += displacement
+		container.parent.parent.height += displacement
+		container.parent.parent.parent.height += displacement
+
+		# ??????????????????? --> Scroll
+
+	
 	if (elems.length)
 		container.ƒ( "filler_text" ).animate('transparent')
 
@@ -335,52 +367,23 @@ updateLayoutSystem = (type) ->
 
 	# Update section dimensions
 	if (elems.length < 5)
-		updateHeight(section_height_initial, section_height)
-	else if ( !container.ƒ( "more_annoucements" ) )
+		updateHeight(container, section_height, section_height_initial)
+	else if ( container.ƒƒ( "more_annoucements" ).length == 0 )
 
 		console.log "adding more button"
+		console.log container.ƒƒ( "more_annoucements" )
 
 		# Create a more section
 		button = askForMore(container)
 		button.animate('visible')
 
-		section_height += 72
-		updateHeight(section_height_initial, section_height)
+		padding = 72
+		updateHeight(container, section_height, section_height_initial, padding)
 
 		# If user asks for more
 		button.on Events.Click, (event, layer) ->
-			updateHeight(section_height_initial, section_height)		
-
-
-	updateHeight = (newHeight, initialHeight) ->
-		container.animate
-			height: newHeight
-			options:
-				time: 1
-				curve: "spring(250, 25, 0)"
-
-		displacement = newHeight - initialHeight
-
-		# Update sidebar dimensions
-		container.parent.animate
-			height: ( ƒ( "sidebar_announcements" ).height + displacement )
-			options:
-				time: 1
-				curve: "spring(250, 25, 0)"
-
-		# If Annoucement added before section, push section down
-		for elem, index in section_elems
-			if (push)
-				elem.y = (elem.y + displacement)
-
-			if (elem.name == section_name)
-				push = true
-
-		# container.parent.height += displacement
-		container.parent.parent.height += displacement
-		container.parent.parent.parent.height += displacement
-
-		# ??????????????????? --> Scroll
+			padding = -72
+			updateHeight(container, section_height, section_height_initial, padding)		
 
 
 # This will need a bit more logic given the sections
@@ -441,12 +444,12 @@ askForMore = (parent) ->
 	moreSection = new Layer
 		name: "more_annoucements"
 		x: 0
-		y: (32 + 5 * 64) # generalize this
+		y: (parent.y + 32 + 5 * 64) # generalize this
 		width: 320
 		height: 72
 		backgroundColor: "transparent"
 		opacity: 0
-		parent: parent
+		parent: parent.parent
 
 	
 	moreButton = new Layer
