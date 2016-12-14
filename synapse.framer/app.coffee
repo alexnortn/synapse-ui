@@ -102,6 +102,7 @@ SidebarState =
 # Regex Helpers
 regAfter  = /[^_]*$/g 		# regex for matching string after "_"
 regBefore = /^([^_]+)/g		# regex for matching string before "_"
+
 prefix = 
 	view:		"view_"
 	sidebar: 	"sidebar_"

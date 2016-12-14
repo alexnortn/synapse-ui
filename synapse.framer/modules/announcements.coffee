@@ -27,6 +27,10 @@ _section_state =
 		button: {}
 		more: false
 
+# Regex Helpers
+regAfter  = /[^_]*$/g 		# regex for matching string after "_"
+regBefore = /^([^_]+)/g		# regex for matching string before "_"
+
 
 # Annoucement Generator
 # --------------------------------------------------------------------------------
@@ -330,14 +334,19 @@ updateLayoutSystem = (type) ->
 			section_state.button = section_elem.parent.ƒ( buttonName )
 
 	# Update section attributes accordingly
-	updateHeight = (section_elem, newHeight, initialHeight, padding=0) ->
-		section_elem.animate
-			height: newHeight
-			options:
-				time: 1
-				curve: "spring(250, 25, 0)"
+	updateHeight = (section_elem, newHeight, initialHeight, padding=0, button, type) ->
+		displacement = ''
 
-		displacement = newHeight - initialHeight + padding
+		if (button)
+			displacement = 64 # <more> padding
+		else
+			displacement = newHeight - initialHeight + padding
+
+			section_elem.animate
+				height: newHeight
+				options:
+					time: 1
+					curve: "spring(250, 25, 0)"
 
 		# Update sidebar dimensions
 		section_elem.parent.animate
@@ -349,7 +358,20 @@ updateLayoutSystem = (type) ->
 		# If Annoucement added before section, push section down
 		for elem, index in section_elems
 			if (push)
-				elem.y = (elem.y + displacement)
+				elem.animate
+					y: (elem.y + displacement)
+					options:
+						time: 1
+						curve: "spring(250, 25, 0)"
+
+				# Match the annoucment type --> Find associated button
+				_button = "more_annoucements_" + (elem.name).match(regAfter)[0]
+				if ( ƒ(_button) )				
+					ƒ(_button).animate
+						y: (ƒ(_button).y + displacement)
+						options:
+							time: 1
+							curve: "spring(250, 25, 0)"
 
 			if (elem.name == section_name)
 				push = true
@@ -395,7 +417,7 @@ updateLayoutSystem = (type) ->
 
 		padding = 0 # reset padding
 
-	else
+	else if (elems.length > 5)
 		# If no button exists, make a button
 		if ( !section_state.button )
 			console.log "making button for " + section_elem.name
@@ -414,14 +436,8 @@ updateLayoutSystem = (type) ->
 					# Do Reveal
 
 
-	# if annoucements < 5
-		# grow section
-	# else
-		# don't
-
-
-	if ( elems.length <= 5 || section_state.more )
-		updateHeight(section_elem, section_height, section_height_initial, padding)
+	if ( elems.length <= 6 || section_state.more )
+		updateHeight(section_elem, section_height, section_height_initial, padding, section_state.button, type)
 
 
 	# If | there are more than 5 annoucements | a <more> button | showing all
