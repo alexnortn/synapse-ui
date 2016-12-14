@@ -13,8 +13,19 @@ States = require("states")
 Colors = Styles.styles.colors
 Typography = Styles.styles.typography
 
+
 # Globals
 _scroll_component = ''
+_section_state =
+	notice:
+		button: {}
+		more: false
+	event:
+		button: {}
+		more: false
+	achievement:
+		button: {}
+		more: false
 
 
 # Annoucement Generator
@@ -310,6 +321,14 @@ updateLayoutSystem = (type) ->
 	push = false
 	padding = ''
 
+	section_state = {}
+
+	for _type, state of _section_state
+		if (type == _type)
+			section_state = state
+			buttonName = "more_annoucements_" + type
+			section_state.button = section_elem.parent.ƒ( buttonName )
+
 	# Update section attributes accordingly
 	updateHeight = (section_elem, newHeight, initialHeight, padding=0) ->
 		section_elem.animate
@@ -339,7 +358,6 @@ updateLayoutSystem = (type) ->
 		section_elem.parent.parent.height += displacement
 		section_elem.parent.parent.parent.height += displacement
 
-		# ??????????????????? --> Scroll
 
 
 	# If there are annoucements present, toggle filler_text
@@ -368,25 +386,48 @@ updateLayoutSystem = (type) ->
 
 	
 	# Update section dimensions
-	if (elems.length < 5)
-		section_height += 32 # Padding --> This will always be the total height of the section
-		updateHeight(section_elem, section_height, section_height_initial)
-	else if ( section_elem.parent.ƒƒ( "more_annoucements" ).length == 0 ) # We're adding <more> to the current section's parent, to handle spacing
+	if (elems.length < 5)	
+		if (section_state.button)
+			section_state.button.animate('transparent')
+			section_state.button.onAnimationEnd -> section_state.button.destroy()	
+		else 
+			section_height += 32 # Padding --> This will always be the total height of the section
 
-		console.log "adding more button"
-		console.log section_elem.parent.ƒƒ( "more_annoucements" )
+		padding = 0 # reset padding
 
-		# Create a more section
-		button = askForMore(section_elem)
-		button.animate('visible')
+	else
+		# If no button exists, make a button
+		if ( !section_state.button )
+			console.log "making button for " + section_elem.name
+			section_state.button = askForMore(section_elem, type)
+			section_state.button.animate('visible')
 
-		padding = 104
-		updateHeight(section_elem, section_height, section_height_initial, padding)
+		padding = 104 # set padding to account for <more> section
 
 		# If user asks for more
-		button.on Events.Click, (event, layer) ->
-			padding = -104
-			updateHeight(section_elem, section_height, section_height_initial, padding)		
+		# button.on Events.Click, (event, layer) ->
+
+			# A bit of logic here:
+				# If button.state == reveal
+					# Do Hide
+				# Else
+					# Do Reveal
+
+
+	# if annoucements < 5
+		# grow section
+	# else
+		# don't
+
+
+	if ( elems.length <= 5 || section_state.more )
+		updateHeight(section_elem, section_height, section_height_initial, padding)
+
+
+	# If | there are more than 5 annoucements | a <more> button | showing all
+		# A click on more button causes "less to show"
+		# Animate section to fixed height
+		# Upddate all other sections
 
 
 # This will need a bit more logic given the sections
@@ -442,10 +483,10 @@ placeHolder = (section) ->
 	States.setupFadeOnce(_this)
 
 
-askForMore = (parent) ->
+askForMore = (parent, type) ->
 
 	moreSection = new Layer
-		name: "more_annoucements"
+		name: "more_annoucements_" + type
 		x: 0
 		y: (parent.y + 32 + 5 * 64) # generalize this
 		width: 320
