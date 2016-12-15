@@ -444,8 +444,8 @@ Generator = (options, clear=false) ->
 	recurGen = () ->
 		Generator(options, clear)
 	
-	timeOut = Utils.randomNumber(1000, 6000)
-	window.setTimeout(recurGen, timeOut)
+	# timeOut = Utils.randomNumber(1000, 6000)
+	window.setTimeout(recurGen, 2000)
 
 
 # Module Exports ------------------------------------------------------

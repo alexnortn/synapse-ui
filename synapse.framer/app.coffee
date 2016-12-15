@@ -173,13 +173,19 @@ setupSidebar = (comp) ->
 
 		if ( matchBefore == "sidebar" )
 			_sidebarViews.push(child)
+			States.setupFadeOnce(child)
 			_sidebarContainers.push(child.parent.parent)
 
 	_sidebarContainers.push(synapse.container_view_navbar) # Add Navbar
 	_sidebarContainers.push(synapse.container_helper_sidebar_bg) # Add Sidebar BG
 
 	States.setupSlide(_sidebarContainers, synapse.container_sidebar_overview.width)
-	States.setupFade(_sidebarViews)
+	
+	for view, index in _sidebarViews
+		if (index != 1)
+			view.animate("transparent")
+	
+
 
 setupSidebar(synapse)
 

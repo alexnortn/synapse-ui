@@ -109,6 +109,9 @@ interaction = (header, scroll_components, sidebarViews, sidebarContainers, synap
 	States.setupSlideOnce( sidebarContainers[ sidebarContainers.length-1 ], synapse.container_sidebar_overview.width)
 	States.setupFadeOnce( sidebarViews[ sidebarViews.length-1 ] )
 
+	# Start sidebar in "transparent state"
+	sidebar_elem.animate("transparent")
+
 
 section = (container, name) ->
 	# If any other sections exist in <this> container..
