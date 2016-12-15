@@ -68,6 +68,25 @@ Announce = (content) ->
 	fadeInAnnoucement(elem)
 	updateLayoutSystem(type)
 
+	# Add crack to announcements icon
+	if ( !ƒ("crack") )
+		addCrack()
+
+
+# Create crack element to announcement icon
+addCrack = () ->
+	_this = new Layer
+		name: "crack"
+		width: 5
+		height: 5
+		backgroundColor: Colors.accent.green_0
+		borderRadius: 5
+		parent:	ƒ("view_navbar")
+		x: Align.center
+		y: Align.center(-150)
+
+	States.setupFadeOnce(_this)
+
 
 # Create Annoucement Container 
 generateContainer = (parent) ->

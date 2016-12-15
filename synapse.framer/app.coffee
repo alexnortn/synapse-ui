@@ -41,6 +41,7 @@ ApplyProperty = Styles.applyProperty
 # Define and set custom device 
 Framer.Device.deviceType = "desktop-safari-1440-900"
 Framer.Device.background.backgroundColor = "#181A1E"
+
 synapseParameters =
 	size: 
 		width: 1440
@@ -252,6 +253,9 @@ for child in navbarTiles.subLayers
 			if ( SidebarState.open )
 				animation = "close"
 
+				if ( SidebarState.current_view == "announcements" && ƒ("crack") )
+					ƒ("crack").animate("visible")
+
 				# Update current Icons + Active Icons
 				currentIcon = "icon_" + SidebarState.current_view
 				currentActive = "active_" + SidebarState.current_view
@@ -259,11 +263,17 @@ for child in navbarTiles.subLayers
 				# Swap Icon --> >> -> [ ]
 				navbarActive.childrenWithName(currentActive)[0].animate('transparent')
 				navbarIcons.childrenWithName(currentIcon)[0].animate('visible')
-				
+
 				for tile in navbarTiles.subLayers
 					tile.animate('transparent') # Fadeout all other tiles
 			else
 				animation = "open"
+
+				if ( SidebarState.current_view == "announcements" && ƒ("crack") )
+					ƒ("crack").animate("transparent")
+				else if ( ƒ("crack") )
+					ƒ("crack").animate("visible")
+
 
 			SidebarState.open = !SidebarState.open
 			
@@ -271,6 +281,12 @@ for child in navbarTiles.subLayers
 				animateLayer(layer, animation)
 
 		changeView(layerAfter)
+
+		if ( SidebarState.current_view != "announcements" && ƒ("crack") )
+			ƒ("crack").animate("visible")
+
+		if ( SidebarState.current_view == "announcements" && ƒ("crack") )
+			ƒ("crack").animate("transparent")
 
 		for other in navbarTiles.subLayers
 			if (other.name != activeTile) # Maintain highlight state
@@ -381,4 +397,3 @@ Announcements.initialize( ƒ('sidebar_announcements') )
 
 # Kick off recursive notification generator 
 Notification.Generator(NotificationContent.content, _clear)
-# Announcements.Generate("Hello")
