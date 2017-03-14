@@ -23,7 +23,7 @@ setup = (_layer, _canvas) ->
 	_x      = _layer.x
 	_y      = _layer.y
 
-	camera = new THREE.PerspectiveCamera( 75, _width / _height, 1, 1000 );
+	camera = new THREE.PerspectiveCamera( 75, _width / _height, 1, 5000 );
 	camera.position.z = 500;
 
 	scene = new THREE.Scene();

@@ -33,7 +33,6 @@ body:active {
 	) 32 32, auto;
 }
 
-
 .framerAlertBackground {
  	position: absolute; top:0px; left:0px; right:0px; bottom:0px;
  	z-index: 1000;
