@@ -3,7 +3,7 @@
   "updateDelay" : 0,
   "contentScale" : 0.5,
   "fullScreen" : false,
-  "sharedPrototype" : 0,
+  "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
     "Filters" : false
   },
